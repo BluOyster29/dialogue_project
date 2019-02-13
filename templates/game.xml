@@ -14,23 +14,19 @@
   </grammar>
 </link>
 
-
-
-
-
   <nomatch>
-    I didn't understand, try talking with an American accent.
+    no match needs something
     <reprompt/>
   </nomatch>
   
   <noinput>
-    Speak up drongo!
+    no input needs something
     <reprompt/>
   </noinput>
 
   <!-- Data model -->
-  <var name="from" />
-  <var name="to" />
+  <var name="name" />
+  <var name="ready2Play" />
   <var name="when"/>
   <var name="isRetrun"/>
   <var name="correct"/>
@@ -39,31 +35,49 @@
 
   <!-- State machine -->
   <form id="welcome">
-    <block>
-      
+    <field name="playerName">
       <prompt>
-	<audio src="https://instaud.io/_/3hLZ.wav"/>
-	<break time="2000" />
 	
-	Welcome to The Altered Beast flight booking service.
+	Welcome to The Altered Beast escape room game!
+    What is your name?
 
       </prompt>
-      <goto next="#mainMenu"/>
-    </block>
-  </form>
+      </field>
+      <filled>
+      <assign name="name" expr="playerName">
+      </filled>
+    <field name="readyPlay">
+        <prompt>
+        Welcome <var expr="playerName"/>,
+        Are you ready to play?
+        </prompt>
+        <filled>
+        <assign name="ready2Play" expr="readyPlay"/>
+        <if cond="ready2Play" != "yes">
+            <prompt> 
+            Tough titties mate.
+            </prompt>
+        <else>
+            Ok then lets go!
+            <goto next="instructions"/>
+        </else>
+    </form>
+            
+  
 
-<menu id="mainMenu">
+<menu id="instructions">
   <prompt>
-    Main Menu, please choose from; flight booking service, delayed flights, or life advice.
+    This is the main menu where you will make some choices. Please say whether you would 
+    like to play in easy mode, medium mode, or hard mode. 
   </prompt>
-  <choice next="flight_booking">
-    Flight booking service
+  <choice next="easy">
+    Easy mode
   </choice>
-  <choice next="delayed_flights">
-    delayed flights
+  <choice next="medium">
+    medium mode
   </choice>
-  <choice next="life_advice">
-    life advice
+  <choice next="hard">
+    hard mode
   </choice>
   
 </menu>
