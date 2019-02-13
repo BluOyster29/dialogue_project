@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<vxml version="2.1" xmlns="http://www.w3.org/2001/vxml"
+      xmlns:voxeo="http://community.voxeo.com/xmlns/vxml">
+
+  <link next="lab1">
+  <grammar mode="voice" version="1.0" root="root">
+    <rule id="root" scope="public">
+       <one-of>
+         <item>main menu</item>
+	 <item> start over</item>
+       </one-of>
+    </rule>
+  </grammar>
+</link>
+
+
+
+
+
+  <nomatch>
+    I didn't understand, try talking with an American accent.
+    <reprompt/>
+  </nomatch>
+  
+  <noinput>
+    Speak up drongo!
+    <reprompt/>
+  </noinput>
+
+  <!-- Data model -->
+  <var name="from" />
+  <var name="to" />
+  <var name="when"/>
+  <var name="isRetrun"/>
+  <var name="correct"/>
+  <var name="returnDay"/>
+
+
+  <!-- State machine -->
+  <form id="welcome">
+    <block>
+      
+      <prompt>
+	<audio src="https://instaud.io/_/3hLZ.wav"/>
+	<break time="2000" />
+	
+	Welcome to The Altered Beast flight booking service.
+
+      </prompt>
+      <goto next="#mainMenu"/>
+    </block>
+  </form>
+
+<menu id="mainMenu">
+  <prompt>
+    Main Menu, please choose from; flight booking service, delayed flights, or life advice.
+  </prompt>
+  <choice next="flight_booking">
+    Flight booking service
+  </choice>
+  <choice next="delayed_flights">
+    delayed flights
+  </choice>
+  <choice next="life_advice">
+    life advice
+  </choice>
+  
+</menu>
+
+</vxml>
