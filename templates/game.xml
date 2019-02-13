@@ -44,23 +44,27 @@
       </prompt>
       </field>
       <filled>
-      <assign name="name" expr="playerName">
+      <assign name="name" expr="playerName"/>
       </filled>
     <field name="readyPlay">
         <prompt>
         Welcome <var expr="playerName"/>,
         Are you ready to play?
         </prompt>
+    </field>
         <filled>
         <assign name="ready2Play" expr="readyPlay"/>
-        <if cond="ready2Play" != "yes">
+        <if cond="ready2Play == 'no'">
             <prompt> 
             Tough titties mate.
             </prompt>
-        <else>
+        <else/>
+	<prompt>
             Ok then lets go!
             <goto next="instructions"/>
-        </else>
+        </prompt>
+	</if>
+	</filled>
     </form>
             
   
