@@ -7,7 +7,7 @@
         <field name="q1">   
             <grammar src="grammars/medium_grammar.xml"/>   
         <prompt xml:lang="es-mx">
-            <grammar src="grammars/medium_grammar.xml#q2"/>
+            <grammar src="grammars/medium_grammar.xml#q1"/>
 			Hola
 			</prompt>
         </field>
