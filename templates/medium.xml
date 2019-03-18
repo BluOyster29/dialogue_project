@@ -4,7 +4,8 @@
       xmlns:voxeo="http://community.voxeo.com/xmlns/vxml">
 
     <form id="questionOne">
-        <field name="q1">      
+        <field name="q1">   
+            <grammar src="grammars/medium_grammar.xml/>   
         <prompt xml:lang="es-mx">
             <grammar src="grammars/medium_grammar.xml#q2"/>
 			Hola
