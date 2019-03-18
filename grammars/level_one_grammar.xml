@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<grammar version="1.0" tag-format="semantics/1.0" root="commands">
+  
+  <rule id="level_one">
+      <item>
+          she sells sea shells on the sea shore
+      </item>
+  </rule>
+
+</grammar>

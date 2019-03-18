@@ -5,7 +5,9 @@
 
     <form id="question_one">
         <field name="level_one">
+
             <prompt>
+            <grammar src="grammars/level_one_grammars.xml"/>
                 Repeat after me.
                 She sells sea shells on the sea shore.
             </prompt>
