@@ -5,27 +5,9 @@
 
     <form id="questionOne">
         <field name="q1">      
-        <prompt xml:lang="es-mx">
+        <block xml:lang="es-mx">
 			Hola
-			</prompt>
-            <grammar root="Y">
-		    <rule id="Y">
-			<one-of>
-				<item>hola</item>
-			</one-of>
-		</rule>
-	</grammar>
-            <!--
-			<grammar root="Y" xml:lang="fr-fr">
-				<rule id="Y">
-					<one-of>
-						<item>oui</item>
-						<item>non</item>
-						<item>bonjour</item>
-					</one-of>
-				</rule>
-			</grammar>
-            -->
+			</block>
         </field>
         <filled>
           <prompt>
