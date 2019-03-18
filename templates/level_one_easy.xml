@@ -89,8 +89,7 @@
             <prompt>
                 <grammar src="grammars/easy_grammar.xml#q5"/>
                 Here is the final easy twister. It's a bit tougher than the last.
-                Fred fed Ted bread and Ted fed Fred Bread
-                
+                Fred fed Ted bread and Ted fed Fred Bread 
             </prompt>
         </field>
         <filled>
@@ -100,7 +99,6 @@
 	    and with a confidence of <value expr="q5$.confidence"/>
 	    <break time ="2s"/>
 	  </prompt>
-	  <goto next="#medium_questions"/>
 	</filled>
     </form>
 </vxml>
