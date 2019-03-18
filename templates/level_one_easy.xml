@@ -17,7 +17,6 @@
             and with a confidence of <value expr="say$.confidence"/>
         <break time ="2s"/>
         </prompt>
-      <goto next="#commands"/>
     </filled>
     </form>
 </vxml>
