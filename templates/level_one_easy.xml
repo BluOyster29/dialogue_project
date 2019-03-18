@@ -9,8 +9,15 @@
                 Repeat after me.
                 She sells sea shells on the sea shore.
             </prompt>
-            <filled>
-            </filled>
         </field>
+        <filled>
+        <prompt>
+            You said: <value expr="1_a.utterance"/>,
+            with the interpretation <value expr="say$.interpretation"/>
+            and with a confidence of <value expr="say$.confidence"/>
+        <break time ="2s"/>
+        </prompt>
+      <goto next="#commands"/>
+    </filled>
     </form>
 </vxml>
