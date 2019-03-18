@@ -8,9 +8,9 @@ def game():
     response.headers["Content-Type"] = "application/xml"
     return response
 
-@app.route('/level_one_easy')
-def level_one_easy():
-    vxml = render_template('level_one_easy.xml')
+@app.route('/easy')
+def easy():
+    vxml = render_template('easy.xml')
     response = make_response(vxml)
     response.headers["Content-Type"] = "application/xml"
     return response

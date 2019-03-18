@@ -28,10 +28,10 @@
     <form id ="questionTwo">
         <field name = "q2">
             <grammar src="grammars/easy_grammar.xml"/>
+            <block> ok here is the second one</block>
             <prompt>
                 <grammar src="grammars/easy_grammar.xml#q2"/>
-                Ok here is the second one. 
-                Unique New York.
+                Unique, New, York.
             </prompt>
         </field>
         <filled>
@@ -44,7 +44,7 @@
 	  <goto next="#question_three"/>
 	</filled>
     </form>
-    <!--
+    
     <form id ="question_three">
         <field name = "q3">
             <grammar src="grammars/easy_grammar.xml"/>
@@ -103,5 +103,5 @@
 	  </prompt>
 	</filled>
     </form>
-    -->
+    
 </vxml>

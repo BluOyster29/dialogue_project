@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<grammar version="1.0" tag-format="semantics/1.0" root="q1">
+<grammar version="1.0" tag-format="semantics/1.0" root="root">
   
+  <rule id="root">
+    <one-of>
+      <item>
+	      <ruleref uri="#q1"/><tag>out=rules.q1;</tag> 
+      </item>
+
+      <item>
+        <ruleref uri ="#q2"/><tag>out=rules.q2;</tag>
+      </item>
+
+      <item>
+	      <ruleref uri="#q3"/><tag>out=rules.q3;</tag> 
+      </item>
+
+      <item>
+        <ruleref uri ="#q4"/><tag>out=rules.q4;</tag>
+      </item>
+
+      <item>
+        <ruleref uri ="#q5"/><tag>out=rules.q5;</tag>
+      </item>
+
+    </one-of>
+  </rule>
+
   <rule id="q1">
       <item>
         Greek grapes
@@ -13,7 +38,7 @@
     </item>
   </rule>
   
-  <!--
+  
   <rule id="q3">
     <item>
       Red lorry yellow lorry
@@ -31,5 +56,5 @@
       Fred fed Ted bread and Ted fed Fred Bread
     </item>
   </rule>
-  -->
+  
 </grammar>
