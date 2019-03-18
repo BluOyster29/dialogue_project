@@ -11,8 +11,8 @@
                 This will start getting harder now. Here, let's test your Spanish.
                 Repeat after me.
                 <phoneme alphabet="ipa" ph="t&#x259;mei&#x325;&#x27E;ou&#x325;"> tomato </phoneme>
-                
-                <lang xml:lang="es">Pancha </lang>
+
+                <lang xml:lang="fr">bonjour </lang>
 
             </prompt>
         </field>
