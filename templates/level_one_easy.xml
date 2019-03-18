@@ -14,9 +14,9 @@
         </field>
         <filled>
           <prompt>
-	    You said: <value expr="level_one$.utterance"/>,
-	    with the interpretation <value expr="level_one$.interpretation"/>
-	    and with a confidence of <value expr="level_one$.confidence"/>
+	    You said: <value expr="q1$.utterance"/>,
+	    with the interpretation <value expr="q1$.interpretation"/>
+	    and with a confidence of <value expr="q1$.confidence"/>
 	    <break time ="2s"/>
 	  </prompt>
 	  <goto next="#question_two"/>
