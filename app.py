@@ -15,6 +15,13 @@ def easy():
     response.headers["Content-Type"] = "application/xml"
     return response
 
+@app.route('/medium')
+def medium():
+    vxml = render_template('medium.xml')
+    response = make_response(vxml)
+    response.headers["Content-Type"] = "application/xml"
+    return response
+
 @app.route('/grammars/<path:path>')
 def send_grammar(path):
     return send_from_directory('grammars', path)
