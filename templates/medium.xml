@@ -11,8 +11,8 @@
                 This will start getting harder now. Here, let's test your Spanish.
                 Repeat after me.
 
-                Pancha plancha con cuatro planchas.
-                
+                <lang xml:lang="es">Pancha </lang>
+
             </prompt>
         </field>
         <filled>
