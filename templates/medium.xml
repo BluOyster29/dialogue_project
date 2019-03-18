@@ -5,7 +5,9 @@
 
     <form id="questionOne">
         <field name="q1">
+            <!--
 	  <grammar src="grammars/medium_grammar.xml"/>
+      -->
             <block>
                 This will start getting harder now. Here, let's test your Spanish.
                 Repeat after me.
