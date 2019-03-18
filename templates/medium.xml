@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <vxml version="2.1" xmlns="http://www.w3.org/2001/vxml"
-      xmlns:voxeo="http://community.voxeo.com/xmlns/vxml">
+      xmlns:voxeo="http://community.voxeo.com/xmlns/vxml"
+      xml:lang="en-us">
 
     <form id="questionOne">
         <field name="q1">
