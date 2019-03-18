@@ -5,7 +5,7 @@
 
     <form id="questionOne">
         <field name="q1">   
-            <grammar src="grammars/medium_grammar.xml/>   
+            <grammar src="grammars/medium_grammar.xml"/>   
         <prompt xml:lang="es-mx">
             <grammar src="grammars/medium_grammar.xml#q2"/>
 			Hola
