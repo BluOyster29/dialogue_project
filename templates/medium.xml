@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <vxml version="2.1" xmlns="http://www.w3.org/2001/vxml"
-      xmlns:voxeo="http://community.voxeo.com/xmlns/vxml"
-      xml:lang="en-us">
+      xmlns:voxeo="http://community.voxeo.com/xmlns/vxml">
 
     <form id="questionOne">
         <field name="q1">
@@ -22,6 +21,7 @@
         <prompt xml:lang="fr-fr">
 				n'aimez-vous pas ma voix française sexy? 
 			</prompt>
+            <!--
 			<grammar root="Y" xml:lang="fr-fr">
 				<rule id="Y">
 					<one-of>
@@ -31,6 +31,7 @@
 					</one-of>
 				</rule>
 			</grammar>
+            -->
         </field>
         <filled>
           <prompt>
