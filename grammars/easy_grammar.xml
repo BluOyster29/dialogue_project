@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<grammar version="1.0" tag-format="semantics/1.0" root="root">
+  
+  <rule id="q1">
+      <item>
+        Greek grapes
+      </item>
+  </rule>
+
+  <rule id="q2">
+    <item>
+        Unique New York
+    </item>
+  </rule>
+  
+  <rule id="q3">
+    <item>
+      Red lorry yellow lorry
+    </item>
+  </rule>
+
+  <rule id="q4">
+    <item>
+      She says cheese
+    </item>
+  </rule>
+
+  <rule id="q5">
+    <item>
+      Fred fed Ted bread and Ted fed Fred Bread
+    </item>
+  </rule>
+
+</grammar>

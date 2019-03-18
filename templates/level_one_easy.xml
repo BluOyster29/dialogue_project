@@ -5,9 +5,9 @@
 
     <form id="question_one">
         <field name="level_one">
-	  <grammar src="grammars/level_one_grammar.xml"/>
+	  <grammar src="grammars/easy_grammar.xml"/>
             <prompt>
-            <grammar src="grammars/level_one_grammar.xml#level_one"/>
+            <grammar src="grammars/easy_grammar.xml#q1"/>
                 Repeat after me.
                 She sells sea shells on the sea shore.
             </prompt>
@@ -19,7 +19,88 @@
 	    and with a confidence of <value expr="level_one$.confidence"/>
 	    <break time ="2s"/>
 	  </prompt>
-	  <goto next="#commands"/>
+	  <goto next="#question_two"/>
+	</filled>
+    </form>
+
+    <form id ="question_two">
+        <field name = "q2">
+            <grammar src="grammars/easy_grammar.xml"/>
+            <prompt>
+                <grammar src="grammars/easy_grammar.xml#q2"/>
+                Ok here is the second one. 
+                Unique New York.
+            </prompt>
+        </field>
+        <filled>
+          <prompt>
+	    You said: <value expr="q2$.utterance"/>,
+	    with the interpretation <value expr="q2$.interpretation"/>
+	    and with a confidence of <value expr="q2$.confidence"/>
+	    <break time ="2s"/>
+	  </prompt>
+	  <goto next="#question_three"/>
+	</filled>
+    </form>
+
+    <form id ="question_three">
+        <field name = "q3">
+            <grammar src="grammars/easy_grammar.xml"/>
+            <prompt>
+                <grammar src="grammars/easy_grammar.xml#q3"/>
+                Getting better, nice! Here comes another.
+                Red lorry yellow lorry
+            </prompt>
+        </field>
+        <filled>
+          <prompt>
+	    You said: <value expr="q3$.utterance"/>,
+	    with the interpretation <value expr="q3$.interpretation"/>
+	    and with a confidence of <value expr="q3$.confidence"/>
+	    <break time ="2s"/>
+	  </prompt>
+	  <goto next="#question_four"/>
+	</filled>
+    </form>
+
+    <form id ="question_four">
+        <field name = "q4">
+            <grammar src="grammars/easy_grammar.xml"/>
+            <prompt>
+                <grammar src="grammars/easy_grammar.xml#q4"/>
+                Well done. Now here is another, repeat after me.
+                She says cheese
+            </prompt>
+        </field>
+        <filled>
+          <prompt>
+	    You said: <value expr="q4$.utterance"/>,
+	    with the interpretation <value expr="q4$.interpretation"/>
+	    and with a confidence of <value expr="q4$.confidence"/>
+	    <break time ="2s"/>
+	  </prompt>
+	  <goto next="#question_five"/>
+	</filled>
+    </form>
+
+    <form id ="question_five">
+        <field name = "q5">
+            <grammar src="grammars/easy_grammar.xml"/>
+            <prompt>
+                <grammar src="grammars/easy_grammar.xml#q5"/>
+                Here is the final easy twister. It's a bit tougher than the last.
+                Fred fed Ted bread and Ted fed Fred Bread
+                
+            </prompt>
+        </field>
+        <filled>
+          <prompt>
+	    You said: <value expr="q5$.utterance"/>,
+	    with the interpretation <value expr="q5$.interpretation"/>
+	    and with a confidence of <value expr="q5$.confidence"/>
+	    <break time ="2s"/>
+	  </prompt>
+	  <goto next="#medium_questions"/>
 	</filled>
     </form>
 </vxml>
