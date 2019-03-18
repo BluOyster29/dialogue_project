@@ -3,17 +3,19 @@
 <vxml version="2.1" xmlns="http://www.w3.org/2001/vxml"
       xmlns:voxeo="http://community.voxeo.com/xmlns/vxml">
 
-    <form id="question_one">
+    <form id="questionOne">
         <field name="q1">
-	  <grammar src="grammars/easy_grammar.xml"/>
+	  <grammar src="grammars/medium_grammar.xml"/>
             <prompt>
-            <grammar src="grammars/easy_grammar.xml#q1"/>
+            <grammar src="grammars/medium_grammar.xml#q1"/>
+                This will start getting harder now. Here, let's test your Spanish.
                 Repeat after me.
-                Greek, grapes
+
+                Pancha plancha con cuatro planchas.
+                
             </prompt>
         </field>
         <filled>
-            <goto next="#questionTwo"/>
           <prompt>
 	    You said: <value expr="q1$.utterance"/>,
 	    with the interpretation <value expr="q1$.interpretation"/>
@@ -24,14 +26,13 @@
 	</filled>
     </form>
 
-    
-    <form id ="questionTwo">
-        <field name = "q2">
-            <grammar src="grammars/easy_grammar.xml"/>
-            <block> ok here is the second one</block>
+    <form id="questionTwo">
+        <field name="q2">
+	  <grammar src="grammars/medium_grammar.xml"/>
             <prompt>
-                <grammar src="grammars/easy_grammar.xml#q2"/>
-                Unique, New, York.
+            <grammar src="grammars/medium_grammar.xml#q2"/>
+
+
             </prompt>
         </field>
         <filled>
@@ -41,17 +42,17 @@
 	    and with a confidence of <value expr="q2$.confidence"/>
 	    <break time ="2s"/>
 	  </prompt>
-	  <goto next="#question_three"/>
+	  <goto next="#questionThree"/>
 	</filled>
     </form>
-    
-    <form id ="question_three">
-        <field name = "q3">
-            <grammar src="grammars/easy_grammar.xml"/>
+
+    <form id="questionThree">
+        <field name="q3">
+	  <grammar src="grammars/medium_grammar.xml"/>
             <prompt>
-                <grammar src="grammars/easy_grammar.xml#q3"/>
-                Getting better, nice! Here comes another.
-                Red, lorry, yellow, lorry
+            <grammar src="grammars/medium_grammar.xml#q3"/>
+
+
             </prompt>
         </field>
         <filled>
@@ -61,37 +62,36 @@
 	    and with a confidence of <value expr="q3$.confidence"/>
 	    <break time ="2s"/>
 	  </prompt>
-	  <goto next="#question_four"/>
+	  <goto next="#questionFour"/>
 	</filled>
     </form>
 
-    <form id ="question_four">
-        <field name = "q4">
-            <grammar src="grammars/easy_grammar.xml"/>
+    <form id="questionFour">
+        <field name="q4">
+	  <grammar src="grammars/medium_grammar.xml"/>
             <prompt>
-                <grammar src="grammars/easy_grammar.xml#q4"/>
-                Well done. Now here is another, repeat after me.
-                She says cheese
+            <grammar src="grammars/medium_grammar.xml#q4"/>
+
             </prompt>
         </field>
         <filled>
+            <goto next="#questionFour"/>
           <prompt>
 	    You said: <value expr="q4$.utterance"/>,
 	    with the interpretation <value expr="q4$.interpretation"/>
 	    and with a confidence of <value expr="q4$.confidence"/>
 	    <break time ="2s"/>
 	  </prompt>
-	  <goto next="#question_five"/>
+	  <goto next="#questionFive"/>
 	</filled>
     </form>
 
-    <form id ="question_five">
-        <field name = "q5">
-            <grammar src="grammars/easy_grammar.xml"/>
+    <form id="questionFive">
+        <field name="q5">
+	  <grammar src="grammars/medium_grammar.xml"/>
             <prompt>
-                <grammar src="grammars/easy_grammar.xml#q5"/>
-                Here is the final easy twister. It's a bit tougher than the last.
-                Fred fed Ted bread and Ted fed Fred Bread 
+            <grammar src="grammars/medium_grammar.xml#q5"/>
+
             </prompt>
         </field>
         <filled>
@@ -101,7 +101,8 @@
 	    and with a confidence of <value expr="q5$.confidence"/>
 	    <break time ="2s"/>
 	  </prompt>
+	  <goto next="#questionTwo"/>
 	</filled>
     </form>
-    
+
 </vxml>
