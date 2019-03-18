@@ -7,7 +7,7 @@
         <field name="q1">   
             <grammar src="grammars/medium_grammar.xml"/>   
             <prompt>
-                <phoneme alphabet="ipa" ph="f&#102; a&#230; n&#110; ch&#643; a&#230;"> Fancha </phoneme>  
+                <phoneme alphabet="ipa" ph="f&#102; a&#230; n&#110; &#116;​&#865;​ a&#230;"> Fancha </phoneme>  
 
                 Pancha plancha con cuatro planchas.
             </prompt>
