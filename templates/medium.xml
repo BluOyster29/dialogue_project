@@ -8,6 +8,13 @@
         <prompt xml:lang="es-mx">
 			Hola
 			</prompt>
+            <grammar root="Y" xml:lang="es-mx">
+		    <rule id="Y">
+			<one-of>
+				<item>hola</item>
+			</one-of>
+		</rule>
+	</grammar>
             <!--
 			<grammar root="Y" xml:lang="fr-fr">
 				<rule id="Y">
