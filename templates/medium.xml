@@ -18,9 +18,9 @@
                 Pancha
             </prompt>
             -->
-        <prompt xml:lang="fr-fr">
+        <block xml:lang="fr-fr">
 				n'aimez-vous pas ma voix française sexy? 
-			</prompt>
+			</block>
             <!--
 			<grammar root="Y" xml:lang="fr-fr">
 				<rule id="Y">
