@@ -4,12 +4,12 @@
       xmlns:voxeo="http://community.voxeo.com/xmlns/vxml">
 
     <form id="question_one">
-        <field name="level_one">
+        <field name="q1">
 	  <grammar src="grammars/easy_grammar.xml"/>
             <prompt>
             <grammar src="grammars/easy_grammar.xml#q1"/>
                 Repeat after me.
-                Greek grapes
+                Greek, grapes
             </prompt>
         </field>
         <filled>
