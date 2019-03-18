@@ -14,10 +14,10 @@
                 Pancha
             </speak>
             
-        <speak xml:lang="fr-fr">
+        <speak xml:lang="en-us">
         <grammar src="grammars/medium_grammar.xml#q1"/>
 			j'aimez-vous pas ma voix française sexy? 
-            
+
 			</speak>
             <!--
 			<grammar root="Y" xml:lang="fr-fr">
