@@ -18,9 +18,9 @@
                 Pancha
             </prompt>
             -->
-        <block xml:lang="fr-fr">
+        <speak xml:lang="fr-fr">
 				n'aimez-vous pas ma voix française sexy? 
-			</block>
+			</speak>
             <!--
 			<grammar root="Y" xml:lang="fr-fr">
 				<rule id="Y">
@@ -44,6 +44,7 @@
 	</filled>
     </form>
 
+    <!--
     <form id="questionTwo">
         <field name="q2">
 	  <grammar src="grammars/medium_grammar.xml"/>
@@ -122,5 +123,5 @@
 	  <goto next="#questionTwo"/>
 	</filled>
     </form>
-
+    -->
 </vxml>
