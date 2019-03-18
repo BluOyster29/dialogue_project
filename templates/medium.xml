@@ -8,17 +8,11 @@
             
 	  <grammar src="grammars/medium_grammar.xml"/>
       
-            
-            <speak xml:lang="es-es">
-            <grammar src="grammars/medium_grammar.xml#q1"/>
-                Pancha
-            </speak>
-            
-        <speak xml:lang="en-us">
-        <grammar src="grammars/medium_grammar.xml#q1"/>
+        <prompt xml:lang="en-us">
+        <grammar src="grammars/medium_grammar.xml#q2"/>
 			j'aimez-vous pas ma voix française sexy? 
 
-			</speak>
+			</prompt>
             <!--
 			<grammar root="Y" xml:lang="fr-fr">
 				<rule id="Y">
