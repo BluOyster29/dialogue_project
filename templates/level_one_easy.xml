@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<vxml version="2.1" xmlns="http://www.w3.org/2001/vxml"
+      xmlns:voxeo="http://community.voxeo.com/xmlns/vxml">
+
+    <form id="question_one">
+        <field name="1_a">
+            <prompt>
+                Repeat after me.
+                She sells sea shells on the sea shore.
+            </prompt>
+            <filled>
+            </filled>
+        </field>
+    </form>
+</vxml>
