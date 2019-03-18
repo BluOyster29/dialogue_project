@@ -10,9 +10,8 @@
             <grammar src="grammars/medium_grammar.xml#q1"/>
                 This will start getting harder now. Here, let's test your Spanish.
                 Repeat after me.
-                <phoneme alphabet="ipa" ph="t&#x259;mei&#x325;&#x27E;ou&#x325;"> tomato </phoneme>
+                <phoneme alphabet="ipa" ph="ˈpãn̠.ʧa"> pancha </phoneme>
 
-                <lang xml:lang="fr">bonjour </lang>
 
             </prompt>
         </field>
