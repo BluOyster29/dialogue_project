@@ -7,7 +7,7 @@
         <field name="q1">   
             <grammar src="grammars/medium_grammar.xml"/>   
             <prompt>
-                <phoneme alphabet="ipa" ph="p&#112; mei&#x325;&#x27E;p&#112;ou&#x325;"> tomato </phoneme>
+                <phoneme alphabet="ipa" ph="p&#112; mei&#x325;&#x27E;p&#112;ou&#x325;"> pomapo </phoneme>
             </prompt>
         </field>
         <filled>
