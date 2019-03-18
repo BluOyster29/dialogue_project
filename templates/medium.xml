@@ -6,11 +6,14 @@
     <form id="questionOne">
         <field name="q1">
 	  <grammar src="grammars/medium_grammar.xml"/>
-            <prompt>
-            <grammar src="grammars/medium_grammar.xml#q1"/>
+            <block>
                 This will start getting harder now. Here, let's test your Spanish.
                 Repeat after me.
-                <phoneme alphabet="ipa" ph="ˈpãn̠.ʧa"> pancha </phoneme>
+            </block>
+            <prompt xml:lang="es-es">
+            <grammar src="grammars/medium_grammar.xml#q1"/>
+                Pancha
+                
 
 
             </prompt>
