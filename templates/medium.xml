@@ -6,10 +6,9 @@
     <form id="questionOne">
         <field name="q1">   
             <grammar src="grammars/medium_grammar.xml"/>   
-        <prompt>
-            <grammar src="grammars/medium_grammar.xml#q1"/>
-			Hola
-			</prompt>
+            <prompt>
+                <phoneme alphabet="ipa" ph="p&#112; mei&#x325;&#x27E;p&#112;ou&#x325;"> tomato </phoneme>
+            </prompt>
         </field>
         <filled>
           <prompt>
