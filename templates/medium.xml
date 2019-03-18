@@ -5,21 +5,19 @@
 
     <form id="questionOne">
         <field name="q1">
-            <!--
+            
 	  <grammar src="grammars/medium_grammar.xml"/>
-      -->
-            <block>
-                This will start getting harder now. Here, let's test your Spanish.
-                Repeat after me.
-            </block>
-            <!--
-            <prompt xml:lang="es-es">
+      
+            
+            <speak xml:lang="es-es">
             <grammar src="grammars/medium_grammar.xml#q1"/>
                 Pancha
-            </prompt>
-            -->
+            </speak>
+            
         <speak xml:lang="fr-fr">
-				n'aimez-vous pas ma voix française sexy? 
+        <grammar src="grammars/medium_grammar.xml#q1"/>
+			j'aimez-vous pas ma voix française sexy? 
+            
 			</speak>
             <!--
 			<grammar root="Y" xml:lang="fr-fr">
