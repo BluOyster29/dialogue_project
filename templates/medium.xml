@@ -8,7 +8,7 @@
             
 	  <grammar src="grammars/medium_grammar.xml"/>
       
-        <prompt xml:lang="en-us">
+        <prompt xml:lang="fr-fr">
         <grammar src="grammars/medium_grammar.xml#q2"/>
 			j'aimez-vous pas ma voix française sexy? 
 
