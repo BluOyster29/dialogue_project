@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.0" xml:lang="es-es">
+
+
+	<nomatch>
+		No Match! Could you please try that again? 
+		<reprompt />
+	</nomatch>
+	<noinput>
+		No Input! Could you please try that again? 
+		<reprompt />
+	</noinput>
+	<form id="Form">
+
+<field name="de">
+	<prompt xml:lang="de-de">
+		<audio expr="'http://hotelofon.voicedriven.com/hotelofon/vxml/audio/de/p_choosecountrylocation.wav'">
+			In welchem Ort möchten Sie übernachten?
+		</audio>
+		Sagen etwas jetzt.  Sie vergeuden meine Zeit. 
+	</prompt>
+	<grammar root="Y" xml:lang="de-de">
+		<rule id="Y">
+			<one-of>
+				<item>ja</item>
+				<item>nein</item>
+				<item>anschlag</item>
+			</one-of>
+		</rule>
+	</grammar>
+	<filled>
+		<prompt bargein="false" xml:lang="de-de">
+			Looks like you said 
+			<value expr="de" />.
+			<break/>
+			Sie nahmen viel zu lang 
+		</prompt>
+	</filled>
+</field>
+
+
+		<field name="foo">
+			<prompt>
+por favor señor Roberto de la opinión hola 
+			</prompt>
+			<grammar root="Y">
+				<rule id="Y">
+					<one-of>
+						<item>si</item>
+						<item>no</item>
+						<item>hola</item>
+						<item>hola señor</item> 
+					</one-of>
+				</rule>
+			</grammar>
+			<filled>
+				<prompt bargein="false">
+					Looks like you said 
+					<value expr="foo" />.
+					<break/>
+					¿cómo sobre ese tipo? 
+				</prompt>
+			</filled>
+		</field>
+
+		<field name="bar">
+					<prompt xml:lang="en-gb">
+		Mister RJ, are you interested in taking advantage of an ISO9000 certified company? 
+					</prompt>
+					<grammar root="Y" xml:lang="en-us">
+						<rule id="Y">
+							<one-of>
+								<item>yes</item>
+								<item>no</item>
+								<item>go away</item>
+							</one-of>
+						</rule>
+					</grammar>
+					<filled>
+						<prompt bargein="false" xml:lang="en-gb">
+							Looks like you said 
+							<value expr="bar" />.
+							<break/>
+							how about that dude?
+						</prompt>
+					</filled>
+				</field>
+
+		<field name="fr">
+			<prompt xml:lang="fr-fr">
+				n'aimez-vous pas ma voix française sexy? 
+			</prompt>
+			
+			<grammar root="Y" xml:lang="fr-fr">
+				<rule id="Y">
+					<one-of>
+						<item>oui</item>
+						<item>non</item>
+						<item>bonjour</item>
+					</one-of>
+				</rule>
+			</grammar>
+			<filled>
+				<prompt bargein="false" xml:lang="fr-fr">
+					Looks like you said 
+					<value expr="fr" />.
+					<break/>
+					que diriez-vous de de ce type? 
+				</prompt>
+			</filled>
+		</field>
+
+		<field name="it">
+			<prompt xml:lang="it-it">
+				È questo non una voce italiana sexy?  Ritenete la passione? 
+			</prompt>
+			<grammar root="Y" xml:lang="it-it">
+				<rule id="Y">
+					<one-of>
+						<item>sì</item>
+						<item>no</item>
+						<item>forse</item>
+					</one-of>
+				</rule>
+			</grammar>
+			<filled>
+				<prompt bargein="false" xml:lang="it-it">
+					Looks like you said 
+					<value expr="it" />.
+					<break/>
+					lascia il movimento su argilla friabile noi? 
+				</prompt>
+			</filled>
+		</field>
+
+
+		<field name="nl">
+			<prompt xml:lang="nl-nl">
+				Zeg alstublieft ja, geen of hulp. 
+			</prompt>
+			<grammar root="Y" xml:lang="nl-nl">
+				<rule id="Y">
+					<one-of>
+						<item>ja</item>
+						<item>geen</item>
+						<item>hulp</item>
+					</one-of>
+				</rule>
+			</grammar>
+			<filled>
+				<prompt bargein="false" xml:lang="nl-nl">
+					Looks like you said 
+					<value expr="nl" />.
+					<break/>
+					Dank u voor het roepen. goed tot ziens. 
+				</prompt>
+			</filled>
+		</field>
+
+
+	</form>
+</vxml>
