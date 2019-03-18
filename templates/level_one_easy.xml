@@ -13,18 +13,19 @@
             </prompt>
         </field>
         <filled>
+            <goto next="#questionTwo"/>
           <prompt>
 	    You said: <value expr="q1$.utterance"/>,
 	    with the interpretation <value expr="q1$.interpretation"/>
 	    and with a confidence of <value expr="q1$.confidence"/>
 	    <break time ="2s"/>
 	  </prompt>
-	  <goto next="#question_two"/>
+	  <goto next="#questionTwo"/>
 	</filled>
     </form>
 
     
-    <form id ="question_two">
+    <form id ="questionTwo">
         <field name = "q2">
             <grammar src="grammars/easy_grammar.xml"/>
             <prompt>
