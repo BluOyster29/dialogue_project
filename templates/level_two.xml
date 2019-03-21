@@ -8,11 +8,11 @@
     <form id="question_one">
         <field name="Announcement">
             <block>
-                <prompt>
+                <speak>
                 Now it's time for spelling! Of course English makes no 
                 sense spelling wise so this should be quite difficult.
                 Spell out the following word!
-                </prompt>
+                </speak>
             </block>
         </field>
         <field name="letter1">
