@@ -6,15 +6,13 @@
     
 
     <form id="question_one">
-        <field name="Announcement">
-            <block>
-                <speak>
-                Now it's time for spelling! Of course English makes no 
-                sense spelling wise so this should be quite difficult.
-                Spell out the following word!
-                </speak>
-            </block>
-        </field>
+        
+        <prompt>
+        Now it's time for spelling! Of course English makes no 
+        sense spelling wise so this should be quite difficult.
+        Spell out the following word!
+        </prompt>
+            
         <field name="letter1">
             <grammar src="grammars/level_two_grammar.xml"/>
             <prompt>
