@@ -6,13 +6,14 @@
     
 
     <form id="question_one">
-        
-        <prompt>
-        Now it's time for spelling! Of course English makes no 
-        sense spelling wise so this should be quite difficult.
-        Spell out the following word!
-        </prompt>
-            
+        <field name="Announcement">
+            <grammar src="grammars/level_two_grammar.xml#l2"/>
+                <prompt>
+                Now it's time for spelling! Of course English makes no 
+                sense spelling wise so this should be quite difficult.
+                Spell out the following word!
+                </prompt>
+        </field>
         <field name="letter1">
             <grammar src="grammars/level_two_grammar.xml"/>
             <prompt>
@@ -26,7 +27,7 @@
                     Sorry you got it wrong, try again
                 </prompt>
                 <goto next="#letter1"/>
-            </nomatch>
+            </nomatch>>
         </field>
          <field name="letter3">
              <grammar src="grammars/level_two_grammar.xml#l3"/>
