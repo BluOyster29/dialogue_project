@@ -5,17 +5,14 @@
 
     
 
-    <form id="question_one">
-        <field name="Announcement">
-            <grammar src="grammars/level_two_grammar.xml#l2"/>
-                <prompt>
+    <form id="question_one">   
+        <field name="letter1">
+            <grammar src="grammars/level_two_grammar.xml"/>
+            <prompt>
                 Now it's time for spelling! Of course English makes no 
                 sense spelling wise so this should be quite difficult.
                 Spell out the following word!
-                </prompt>
-        </field>
-        <field name="letter1">
-            <grammar src="grammars/level_two_grammar.xml"/>
+            </prompt>
             <prompt>
                 Edinburgh
             </prompt>
@@ -26,36 +23,70 @@
                 <prompt bargein="false">
                     Sorry you got it wrong, try again
                 </prompt>
-                <goto next="#letter1"/>
-            </nomatch>>
+            </nomatch>
         </field>
          <field name="letter3">
              <grammar src="grammars/level_two_grammar.xml#l3"/>
             <prompt></prompt>
+            <nomatch>
+                <prompt bargein="false">
+                    Sorry you got it wrong, try again
+                </prompt>
+            </nomatch>
         </field>
          <field name="letter4">
              <grammar src="grammars/level_two_grammar.xml#l4"/>
             <prompt></prompt>
+            <nomatch>
+                <prompt bargein="false">
+                    Sorry you got it wrong, try again
+                </prompt>
+            </nomatch>
         </field>
          <field name="letter5">
              <grammar src="grammars/level_two_grammar.xml#l5"/>
             <prompt></prompt>
+            <nomatch>
+                <prompt bargein="false">
+                    Sorry you got it wrong, try again
+                </prompt>
+            </nomatch>
         </field>
          <field name="letter6">
              <grammar src="grammars/level_two_grammar.xml#l6"/>
             <prompt></prompt>
+            <nomatch>
+                <prompt bargein="false">
+                    Sorry you got it wrong, try again
+                </prompt>
+            </nomatch>
         </field>
          <field name="letter7">
              <grammar src="grammars/level_two_grammar.xml#l7"/>
             <prompt></prompt>
+            <nomatch>
+                <prompt bargein="false">
+                    Sorry you got it wrong, try again
+                </prompt>
+            </nomatch>
         </field>
          <field name="letter8">
              <grammar src="grammars/level_two_grammar.xml#l8"/>
             <prompt></prompt>
+            <nomatch>
+                <prompt bargein="false">
+                    Sorry you got it wrong, try again
+                </prompt>
+            </nomatch>
         </field>
          <field name="letter9">
              <grammar src="grammars/level_two_grammar.xml#l9"/>
             <prompt></prompt>
+            <nomatch>
+                <prompt bargein="false">
+                    Sorry you got it wrong, try again
+                </prompt>
+            </nomatch>
         </field>
         <filled>
             <prompt>
