@@ -6,18 +6,29 @@
     
 
     <form id="question_one">
-        <field name="letter1">
-            <grammar src="grammars/level_two_grammar.xml"/>
-            <prompt>
+        <field name="Announcement">
+            <block>
+                <prompt>
                 Now it's time for spelling! Of course English makes no 
                 sense spelling wise so this should be quite difficult.
                 Spell out the following word!
+                </prompt>
+            </block>
+        </field>
+        <field name="letter1">
+            <grammar src="grammars/level_two_grammar.xml"/>
+            <prompt>
                 Edinburgh
             </prompt>
         </field>
          <field name="letter2">
-             <grammar src="grammars/level_two_grammar.xml#l2"/>
-            <prompt></prompt>
+            <grammar src="grammars/level_two_grammar.xml#l2"/>
+            <nomatch>
+                <prompt bargein="false">
+                    Sorry you got it wrong, try again
+                </prompt>
+                <goto next="#letter1"/>
+            </nomatch>
         </field>
          <field name="letter3">
              <grammar src="grammars/level_two_grammar.xml#l3"/>
