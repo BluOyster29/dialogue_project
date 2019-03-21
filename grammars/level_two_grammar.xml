@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<grammar version="1.0" tag-format="semantics/1.0" root="q1">
+
+    <rule id="q1">
+        <one-of>
+            <item>E</item>
+            <item>D</item>
+            <item>I</item>
+            <item>N</item>
+            <item>B</item>
+            <item>U</item>
+            <item>R</item>
+            <item>G</item>
+            <item>H</item>
+        </one-of>
+    </rule>
+
+    
+</grammar>

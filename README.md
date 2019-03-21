@@ -3,18 +3,18 @@
 list of tongue twisters
 
 
-##easy ones
+## easy ones
 * Unique new york
 * Red Lorry yellow lorry
 
-##medium
+## medium
 * she sells sea shells on the sea shore
 * Peter picked a peck of pickled peppers 
 
 * A skunk sat on a stump and thunk the stump stunk,
 but the stump thunk the skunk stunk.
 
-<h2>hard ones</h2>
+## hard ones
  * English
 
     * I washed my Irish wrist watch
@@ -24,4 +24,4 @@ but the stump thunk the skunk stunk.
 
 * Spanish 
 
-    *Pancha plancha con cuatro planchas.
+    * Pancha plancha con cuatro planchas.

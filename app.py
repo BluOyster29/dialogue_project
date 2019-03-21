@@ -1,16 +1,16 @@
 from flask import Flask, render_template, make_response, send_from_directory
 app = Flask(__name__)
 
-@app.route('/game')
+@app.route('/altered_beast')
 def game():
-    vxml = render_template('game.xml')
+    vxml = render_template('altered_beast.xml')
     response = make_response(vxml)
     response.headers["Content-Type"] = "application/xml"
     return response
 
-@app.route('/easy')
+@app.route('/level_one')
 def easy():
-    vxml = render_template('easy.xml')
+    vxml = render_template('level_one.xml')
     response = make_response(vxml)
     response.headers["Content-Type"] = "application/xml"
     return response
@@ -22,9 +22,9 @@ def test():
     response.headers["Content-Type"] = "application/xml"
     return response    
 
-@app.route('/medium')
+@app.route('/level_two')
 def medium():
-    vxml = render_template('medium.xml')
+    vxml = render_template('level_two.xml')
     response = make_response(vxml)
     response.headers["Content-Type"] = "application/xml"
     return response

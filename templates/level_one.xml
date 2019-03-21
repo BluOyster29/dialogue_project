@@ -24,7 +24,6 @@
 	</filled>
     </form>
 
-    
     <form id ="questionTwo">
         <field name = "q2">
             <grammar src="grammars/easy_grammar.xml"/>
