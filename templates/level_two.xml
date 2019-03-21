@@ -8,12 +8,12 @@
     <form id="question_one">
         <field name="q1">
 	        <grammar src="grammars/level_two_grammar.xml"/>
-            <block>
+            <prompt>
                 Now it's time for spelling! Of course English makes no 
                 sense spelling wise so this should be quite difficult.
                 Spell out the following word!
                 Edinburgh
-            </block>
+            </prompt>
         </field>
         <field name="letter1">
             <grammar src="grammars/level_two_grammar.xml#q1"/>
