@@ -7,7 +7,6 @@
 
     <form id="question_one">
         <field name="q1">
-	        <grammar src="grammars/level_two_grammar.xml"/>
             <prompt>
                 Now it's time for spelling! Of course English makes no 
                 sense spelling wise so this should be quite difficult.
@@ -20,7 +19,7 @@
             <prompt></prompt>
         </field>
          <field name="letter2">
-             <grammar src="grammars/level_two_grammar.xm#l2"/>
+             <grammar src="grammars/level_two_grammar.xml#l2"/>
             <prompt></prompt>
         </field>
          <field name="letter3">
