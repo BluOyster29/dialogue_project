@@ -7,13 +7,14 @@
     
     var name = [];
 
-    function add_letter(letter){
+    function add_letter("letter"){
       name.push("letter");
       
     }
 
-    function read_name(){
-      return name.toString();
+    function read_name(name){
+      name = name.join('');
+      return name.toString()
 
   }
     ]]></script> 
@@ -41,7 +42,7 @@
       <else/>
         <value expr="addLetter"/>
 
-        <assign expr="add_letter(addLetter)"/>
+        <assign name="name" expr="add_letter(addLetter)"/>
         <goto next="#spelling"/>
       </if>
     </filled>
