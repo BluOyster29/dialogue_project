@@ -2,7 +2,7 @@
 
 <vxml version="2.1" xmlns="http://www.w3.org/2001/vxml"
       xmlns:voxeo="http://community.voxeo.com/xmlns/vxml">
-
+  <!--
   <script> <![CDATA[ 
     
     var name = [];
@@ -26,12 +26,15 @@
 
     ]]></script> 
 
+  -->
 
+  <script src="/javascript/game_script.js"></script>
+  
   <!-- State machine -->
   <form id="welcome">
     <block>
     <prompt bargein ="false">
-      Welcome, please spell out your name letter by letter. When you are done say, finished. 
+      Welcome to Rob's trivia game first let's get your name. please spell out your name letter by letter. When you are done say, finished. 
       I will repeat the words after you, if I get it wrong just say, start over.
     </prompt>
     <goto next="#spelling"/>
@@ -82,7 +85,7 @@
         Your name is now
         <value expr="playerName"/>
         .
-        <goto next="#mainMenu"/>
+        <goto next="level_one"/>
       <else/>
         Awesome.
         <goto next="level_one"/>
