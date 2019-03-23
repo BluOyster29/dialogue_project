@@ -295,27 +295,27 @@
       <prompt></prompt>
     </field>
     <filled>
-      <if cond="question_1='Sweet child of mine'">
-        <prompt>
-          Great job that's correct
-        </prompt>
-        <assign name="score" expr="add_point(score)"/>
-        <goto next="#question_2"/>
+      <nomatch>
+        <if cond="lives=='1'">
+          <goto next="#fail"/>
       
-      <elseif cond="tries == '1'"/>
-        <prompt>
-          You are out of tries, you lose a life. Next question!
-          <goto next="#question_2"/>
-        </prompt>
-      <else/>
-        <assign name="tries" expr="minus_point(tries)"/>
-        <prompt>
-          That is wrong. You have <value expr="tries"/> tries remaining.
-          
-        </prompt>
-        <reprompt/>
-
-      </if>       
+        <elseif cond="tries == '1'"/>
+          <prompt>
+            You are out of tries, you lose a life. Next question!
+            <goto next="#question_2"/>
+          </prompt>
+        <else/>
+          <assign name="tries" expr="minus_point(tries)"/>
+          <prompt>
+            That is wrong. You have <value expr="tries"/> tries remaining.
+          </prompt>
+          <reprompt/>
+        </if>  
+      </nomatch> 
+      <prompt>
+            Great job that's correct
+          </prompt>
+          <assign name="score" expr="add_point(score)"/>    
     </filled>
   </form>
 </vxml>

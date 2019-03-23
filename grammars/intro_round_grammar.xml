@@ -4,9 +4,6 @@
     <rule id="q1">
         <one-of>
             <item>Sweet Child of mine</item>
-            <item>Free Bird</item>
-            <item>Another one bites the dust</item>
-            <item>Without me</item>
         </one-of>
     </rule>
 
