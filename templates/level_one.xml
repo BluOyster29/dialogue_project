@@ -13,7 +13,7 @@
     
 
     <form id="testing">
-        <var name="score" expr="0"/>
+        <var name="score" expr="'0'"/>
         <field name="tryOne">
             <prompt>
                 Your score equals <var expr="score"/> .         
