@@ -2,6 +2,7 @@ var name = [];
 var score = 0;
 var tries = 3;
 var lives = 10;
+var playerName = "Robby Bob Socks";
 
 function add_letter(letter){
   name.push(letter);

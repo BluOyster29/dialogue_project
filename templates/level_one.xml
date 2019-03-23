@@ -23,12 +23,15 @@
         
   ]]> </script> 
     -->
-  
+    
+    <script src="{{url_for('static', filename='game_script.js')}}"></script>
+
     <form id="question_one">
         <field name="q1">
 	  <grammar src="grammars/easy_grammar.xml"/>
             <prompt bargein ="false">
             <grammar src="grammars/easy_grammar.xml#q1"/>
+                Hello <value expr="playerName"/>,
                 Repeat after me.
                 Greek, grapes
             </prompt>
