@@ -20,7 +20,7 @@
   <form id="welcome">
     <assign name="start" expr="start()"/>
     <block>
-    <prompt bargein ="false">
+    <prompt bargein ="true">
       
       Welcome to Rob's trivia game. first let's get your name. please spell out your name using the nato alphabet. When you are done say, finished. 
       I will repeat the words after you, if I get it wrong just say start over.
@@ -500,7 +500,7 @@
           your score!
         </prompt>
       <else/>
-        <var name="end" expr="end()"/>
+        <assign name="end" expr="end()"/>
         <prompt>
           Fair enough this session cost 2 crowns a second. Your bill is <value expr="get_price(start,end)"/> crowns.
           Please pay immediately.
