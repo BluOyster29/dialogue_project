@@ -4,6 +4,10 @@ app = Flask(__name__)
 
 song = ["audio/metal.wav", "audio/metal.wav"]
 
+def song_list(song):
+    for i in song:
+        yield i
+
 @app.route('/main_menu')
 def main_menu():
     vxml = render_template('main_menu.xml')
