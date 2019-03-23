@@ -3,32 +3,32 @@
 
     <rule id="name">
         <one-of>
-            <item>A<tag>out= "a";</tag></item>
-            <item>B<tag>out= "b";</tag></item>
-            <item>C<tag>out= "c";</tag></item>
-            <item>D<tag>out= "d";</tag></item>
-            <item>E<tag>out= "e";</tag></item>
-            <item>F<tag>out= "f";</tag></item>
-            <item>G<tag>out= "g";</tag></item>
-            <item>H<tag>out= "h";</tag></item>
-            <item>I<tag>out= "i";</tag></item>
-            <item>J<tag>out= "j";</tag></item>
-            <item>K<tag>out= "k";</tag></item>
-            <item>L<tag>out= "l";</tag></item>
-            <item>M<tag>out= "m";</tag></item>
-            <item>N<tag>out= "n";</tag></item>
-            <item>O<tag>out= "o";</tag></item>
-            <item>P<tag>out= "p";</tag></item>
-            <item>Q<tag>out= "q";</tag></item>
-            <item>R<tag>out= "r";</tag></item>
-            <item>S<tag>out= "s";</tag></item>
-            <item>T<tag>out= "t";</tag></item>
-            <item>U<tag>out= "u";</tag></item>
-            <item>V<tag>out= "v";</tag></item>
-            <item>W<tag>out= "w";</tag></item>
-            <item>X<tag>out= "x";</tag></item>
-            <item>Y<tag>out= "y";</tag></item>
-            <item>Z<tag>out= "z";</tag></item>
+            <item>alpha<tag>out= "a";</tag></item>
+            <item>bravo<tag>out= "b";</tag></item>
+            <item>charlie<tag>out= "c";</tag></item>
+            <item>delta<tag>out= "d";</tag></item>
+            <item>echo<tag>out= "e";</tag></item>
+            <item>foxtrot<tag>out= "f";</tag></item>
+            <item>golf<tag>out= "g";</tag></item>
+            <item>hotel<tag>out= "h";</tag></item>
+            <item>india<tag>out= "i";</tag></item>
+            <item>Juliette<tag>out= "j";</tag></item>
+            <item>kilo<tag>out= "k";</tag></item>
+            <item>lima<tag>out= "l";</tag></item>
+            <item>mike<tag>out= "m";</tag></item>
+            <item>november<tag>out= "n";</tag></item>
+            <item>oscar<tag>out= "o";</tag></item>
+            <item>papa<tag>out= "p";</tag></item>
+            <item>quebec<tag>out= "q";</tag></item>
+            <item>romeo<tag>out= "r";</tag></item>
+            <item>sierra<tag>out= "s";</tag></item>
+            <item>tango<tag>out= "t";</tag></item>
+            <item>uniform<tag>out= "u";</tag></item>
+            <item>victor<tag>out= "v";</tag></item>
+            <item>whiskey<tag>out= "w";</tag></item>
+            <item>x ray<tag>out= "x";</tag></item>
+            <item>yankee<tag>out= "y";</tag></item>
+            <item>zulu<tag>out= "z";</tag></item>
             <item>finished</item>
             <item>start over</item>
         </one-of>

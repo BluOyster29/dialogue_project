@@ -22,8 +22,8 @@
     <block>
     <prompt bargein ="false">
       
-      Welcome to Rob's trivia game first let's get your name. please spell out your name letter by letter. When you are done say, finished. 
-      I will repeat the words after you, if I get it wrong just say, start over.
+      Welcome to Rob's trivia game first let's get your name. please spell out your name using the nato alphabet. When you are done say, finished. 
+      I will repeat the words after you, if I get it wrong just say start over.
       
     </prompt>
     <goto next="#spelling"/>
