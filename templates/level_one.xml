@@ -181,7 +181,7 @@
             <grammar src="grammars/easy_grammar.xml"/>
             <prompt>
                 <grammar src="grammars/easy_grammar.xml#q5"/>
-                Here is the final easy twister. You currently have <value expr="points"/> It's a bit tougher than the last.
+                Here is the final easy twister. You currently have <value expr="score"/> points. It's a bit tougher than the last.
                 Fred fed Ted bread and Ted fed Fred Bread 
             </prompt>
         </field>
