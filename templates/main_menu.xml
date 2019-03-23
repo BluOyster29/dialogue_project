@@ -20,13 +20,13 @@
   <form id="welcome">
     <assign name="start" expr="start(start)"/>
     <block>
-    <prompt bargein ="true">
+    <prompt bargein ="false">
       
       Welcome to Rob's trivia game. first let's get your name. please spell out your name using the nato alphabet. When you are done say, finished. 
       I will repeat the words after you, if I get it wrong just say start over.
       
     </prompt>
-    <goto next="#completion"/>
+    <goto next="#spelling"/>
     </block>
   </form>
         
