@@ -1,8 +1,9 @@
 var name = [];
 var score = 0;
-var tries = 3;
-var lives = 5;
+var tries = 1;
+var lives = 2;
 var startTime, endTime;
+var price = 0;
 
 var playerName = "Robby Bob Socks";
 
@@ -45,7 +46,7 @@ function start() {
   startTime = new Date();
 };
 
-function end() {
+function end(price) {
   endTime = new Date();
   var timeDiff = endTime - startTime; //in ms
   // strip the ms
@@ -58,6 +59,6 @@ function end() {
 
   //get price
 
-  var minutes = Math.round(minutes) * 20
-  return minutes;
+  price = Math.round(minutes) * 20
+  return price;
 }
