@@ -488,7 +488,7 @@
       
       <prompt>
         Well done <value expr="playerName"/> you have made it to the end of the game!
-        You have <value expr="score"/> points and <value expr="lives"/> left. Not bad, we will
+        You have <value expr="score"/> points and <value expr="lives"/> lives left. Not bad, we will
         add you to the leader board! I hope you have fun playing, please play again. Would 
         you like to play again?
       </prompt>
@@ -502,9 +502,9 @@
           your score!
         </prompt>
       <else/>
-        <assign name="price" expr="end(lives)"/>
+        <assign name="price" expr="end(price)"/>
         <prompt>
-          Fair enough this session cost 20 crowns a minute. Your bill is <value expr="price"/> crowns.
+          Fair enough this session cost 2 crowns a second. Your bill is <value expr="price"/> crowns.
           Please pay immediately.
         </prompt>
       </if>
@@ -532,7 +532,7 @@
             </if>
             <else/>
             <assign name="price" expr="end(lives)"/>
-            <prompt>Thanks for playin. The game costs twenty crownd a minute. Your bill is <value expr="price"/> crowns
+            <prompt>Thanks for playin. The game costs 2 crowns a minute. Your bill is <value expr="price"/> crowns
             . pay Now or prepare to be attacked by robots.</prompt>
         </filled>
     </form>

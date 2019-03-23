@@ -55,10 +55,8 @@ function end(price) {
   // get seconds 
   var seconds = Math.round(timeDiff);
 
-  var minutes = seconds / 60
-
   //get price
 
-  price = Math.round(minutes) * 20
+  price = seconds * 2
   return price;
 }
