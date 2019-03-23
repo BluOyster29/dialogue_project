@@ -181,18 +181,36 @@
             <grammar src="grammars/easy_grammar.xml"/>
             <prompt>
                 <grammar src="grammars/easy_grammar.xml#q5"/>
-                Here is the final easy twister. It's a bit tougher than the last.
+                Here is the final easy twister. You currently have <value expr="points"/> It's a bit tougher than the last.
                 Fred fed Ted bread and Ted fed Fred Bread 
             </prompt>
         </field>
+        <nomatch>
+                <if cond="lives == '0'">
+                        <goto next="fail"/>
+                
+                <elseif cond="tries == '0'"/>
+                    <assign name="lives" expr="minus_point(lives)"/>
+                    <prompt bargein ="false">
+                        sorry you have run out of tries, you lose a life, next question.
+                    </prompt>
+                    <goto next="#question_five"/>
+                
+                <else/>
+                    <assign name="tries" expr="minus_point(tries)"/>
+                    <prompt>
+                        you have <value expr="tries"/> tries remaining. 
+                    </prompt>
+                </if>
+            </nomatch>
         <filled>
           <prompt>
-	    You said: <value expr="q5$.utterance"/>,
-	    with the interpretation <value expr="q5$.interpretation"/>
-	    and with a confidence of <value expr="q5$.confidence"/>
-	    <break time ="2s"/>
-	  </prompt>
-	</filled>
+	        Well done! You said: <value expr="q4$.utterance"/>,
+	        <break time ="2s"/>
+	        </prompt>
+        <assign name="score" expr="add_point(score)"/>
+	    <goto next="#question_five"/>
+	    </filled>  
     </form>
 
     
