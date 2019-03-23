@@ -78,34 +78,16 @@
           Sorry but we don't have enough time to try again. I will give you a default name. 
           
         </prompt>
-        <assign name="playerName" expr="'Player One'"/>
+        <assign name="playerName" expr="'Robby Bob Socks'"/>
+        Your name is now
         <value expr="playerName"/>
+        .
         <goto next="#mainMenu"/>
       <else/>
         Awesome.
-        <goto next="#mainMenu"/>
+        <goto next="level_one"/>
       </if>
     </filled>
   </form>
       
-            
-  
-
-<menu id="mainMenu">
-  <prompt>
-    This is the main menu where you will make some choices. Please say whether you would 
-    like to play in easy mode, medium mode, or hard mode. 
-  </prompt>
-  <choice next="easy">
-    Easy mode
-  </choice>
-  <choice next="medium">
-    medium mode
-  </choice>
-  <choice next="hard">
-    hard mode
-  </choice>
-  
-</menu>
-
 </vxml>
