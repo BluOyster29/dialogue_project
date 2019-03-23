@@ -1,7 +1,7 @@
 var name = [];
 var score = 0;
-var tries = 1;
-var lives = 3;
+var tries = 3;
+var lives = 5;
 var start; 
 var end;
 var price;
