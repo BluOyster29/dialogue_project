@@ -34,11 +34,11 @@
                 Greek, grapes
             </prompt>
             <nomatch>
-                <if cond="tries == '0'">
+                <if cond="tries == '1'">
                     <prompt bargein ="false">
                         sorry you have run out of tries, next question.
                     </prompt>
-                    <goto next="questionTwo"/>
+                    <goto next="#questionTwo"/>
                 </if>
                 <else/>
                     <assign name="tries" expr="minus_point(tries)"/>
