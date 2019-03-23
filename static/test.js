@@ -1,6 +1,3 @@
-
-
 function play_audio();
-
-    var song = new Audio("/home/gusroberth@GU.GU.SE/repos/dialogue_project/audio/metal.mp3");
-    return song.play();
+    var song = new Audio("https://instaud.io/_/3hLZ.wav");
+    return song.play()
