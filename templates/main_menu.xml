@@ -31,6 +31,15 @@
   <script src="{{url_for('static', filename='game_script.js')}}"></script>
 
   <!-- State machine -->
+
+  <link next="level_one">
+  <grammar mode="voice" version="1.0" root="root">
+    <rule id="root" scope="public">
+       <item>skip</item>>
+    </rule>
+  </grammar>
+</link>
+
   <form id="welcome">
     <block>
     <prompt bargein ="false">

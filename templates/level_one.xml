@@ -2,6 +2,7 @@
 <vxml version="2.1" xmlns="http://www.w3.org/2001/vxml"
       xmlns:voxeo="http://community.voxeo.com/xmlns/vxml">
 
+    <!-- 
     <script> <![CDATA[ 
     
     var score = 0;
@@ -21,7 +22,7 @@
     }
         
   ]]> </script> 
-
+    -->
   
     <form id="question_one">
         <field name="q1">
