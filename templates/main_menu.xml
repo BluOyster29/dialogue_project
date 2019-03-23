@@ -26,7 +26,7 @@
       I will repeat the words after you, if I get it wrong just say start over.
       
     </prompt>
-    <goto next="#spelling"/>
+    <goto next="#completion"/>
     </block>
   </form>
         
@@ -134,7 +134,7 @@
                 Unique, New, York.
             </prompt>
             <nomatch>
-                <if cond="lives == '0'">
+                <if cond="lives == '1'">
                         <goto next="fail"/>
                 
                 <elseif cond="tries == '1'"/>
@@ -485,7 +485,7 @@
   <form id="completion">
     
     <field name="congrats">
-      <assign name="price" expr="end()"/>
+      
       <prompt>
         Well done <value expr="playerName"/> you have made it to the end of the game!
         You have <value expr="score"/> points and <value expr="lives"/> left. Not bad, we will
@@ -502,6 +502,7 @@
           your score!
         </prompt>
       <else/>
+        <assign name="price" expr="end(lives)"/>
         <prompt>
           Fair enough this session cost 20 crowns a minute. Your bill is <value expr="price"/> crowns.
           Please pay immediately.
@@ -530,6 +531,7 @@
                 <assign name="lives" expr="reset_lives"/>
             </if>
             <else/>
+            <assign name="price" expr="end(lives)"/>
             <prompt>Thanks for playin. The game costs twenty crownd a minute. Your bill is <value expr="price"/> crowns
             . pay Now or prepare to be attacked by robots.</prompt>
         </filled>
