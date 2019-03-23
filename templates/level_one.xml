@@ -37,7 +37,7 @@
             <nomatch>
                 <assign name="lives" expr="minus_point(lives)"/>
                 <if cond="lives = '0'">
-                        <goto next="#fail"/>
+                        <goto next="fail"/>
                 
 
                 <elseif cond="tries == '0'">
