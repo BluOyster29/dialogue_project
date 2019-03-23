@@ -41,26 +41,20 @@ function minus_point(score) {
     return score - 1;
 }
 
-function sleep(miliseconds) {
-    var currentTime = new Date().getTime();
- 
-    while (currentTime + miliseconds >= new Date().getTime()) {
-    }
- }
 
 function start() {
     startTime = new Date();
-    return startTime
+    return start
   };
   
 
 function end(){
    var endTime = new Date();
-  return endTime
+  return end
 }
 
-function get_price(startTime, endTime) {
-  var currentResult = ((endTime - startTime) / 1000);
+function get_price(start, end) {
+  var currentResult = ((end - start) / 1000);
   var seconds = Math.round(currentResult);
   return seconds * 2
 
