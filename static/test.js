@@ -1,4 +1,4 @@
-var song = new Audio("metal.wav");
+var song = new Audio("audio/metal.mp3");
 
-function play_audio(song);
+function play_audio();
     return song.play();

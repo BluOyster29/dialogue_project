@@ -1,4 +1,5 @@
 from flask import Flask, render_template, make_response, send_from_directory
+
 app = Flask(__name__)
 
 song = 'audio/metal.mp3'
@@ -9,7 +10,6 @@ def main_menu():
     response = make_response(vxml)
     response.headers["Content-Type"] = "application/xml"
     return response
-
 
 @app.route('/fail')
 def fail():
