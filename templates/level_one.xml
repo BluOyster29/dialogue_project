@@ -5,10 +5,10 @@
     <script> <![CDATA[ 
     
     var score = 0;
-    var tries = 0;
+    var tries = 3;
 
     function reset_tries(tries){
-        return tries * 0;
+        return tries = 3;
     }
 
     function add_point(score) {
@@ -33,22 +33,23 @@
                 Repeat after me.
                 Greek, grapes
             </prompt>
-            <assign name="tries" expr="add_one(tries)"/>
+            <assign name="tries" expr="minus_point(tries)"/>
             <prompt count="2" bargein ="false">
-                you have lost a life! 
-                Try again.
+                you have <value expr="tries"/> remaining. 
             </prompt>
             <prompt count="3" bargein ="false">
                 you have one more chance,
                 Greek, Grapes
             </prompt>
             <assign name="tries" expr="add_one(tries)"/>
-            <if cond="tries == '3'">
+            <if cond="tries == '0'">
                 <prompt bargein ="false">
                     sorry you have run out of tries, next question.
                 </prompt>
                 <goto next="questionTwo"/>
             </if>
+            <else/>
+
 
         </field>
         <filled>
