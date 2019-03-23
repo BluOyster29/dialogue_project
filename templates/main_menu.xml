@@ -311,8 +311,9 @@
         <assign name="tries" expr="minus_point(tries)"/>
         <prompt>
           That is wrong. You have <value expr="tries"/> tries remaining.
-          <reprompt/>
+          
         </prompt>
+        <reprompt/>
 
       </if>       
     </filled>
