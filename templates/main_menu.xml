@@ -19,15 +19,16 @@
   <form id="welcome">
     <block>
     <prompt bargein ="false">
+      <!--
       Welcome to Rob's trivia game first let's get your name. please spell out your name letter by letter. When you are done say, finished. 
       I will repeat the words after you, if I get it wrong just say, start over.
+      -->
     </prompt>
-    <goto next="#spelling"/>
+    <goto next="#level_two"/>
     </block>
   </form>
         
-     
-    
+
   <form id="spelling">
     <field name="addLetter">
       <grammar src="grammars/main_menu_grammar.xml#name"/>
@@ -274,10 +275,44 @@
 
   <form id="level_two">
     <field id="question_1">
+      <assign name="tries" expr="reset_tries(tries)"/>
+      <grammar src="/grammars/intro_round_grammar.xml"/>
       <prompt> Well done <value expr="playerName"/>, You have made it to level two!
       You have <value expr="score"/> points, and <value expr="lives"/> lives.
-      In this next round we shall do some spelling.
+      In this next round will be an intros round. Rob the creator will sing an 
+      intro and you have to guess what it is! Good luck.
+      </prompt>
+      <prompt>
+        Here is the first one. 
+      </prompt>
+      <audio src="{{song[0]}}"/>
+      <prompt>
+        Was it A, Free Bird,
+        Was it B, Sweet child of mine, 
+        Was it C, another one bites the dust,
+        Or was it D, Without me.
       </prompt>
     </field>
+    <filled>
+      <if cond="question_1='Sweet child of mine'">
+        <prompt>
+          Great job that's correct
+        </prompt>
+        <assign name="score" expr="add_point(score)"/>
+        <goto next="#question_2"/>
+      
+      <elseif cond="tries == '1'"/>
+        <prompt>
+          You are out of tries, you lose a life. Next question!
+          <goto next="#question_2"/>
+        </prompt>
+      <else/>
+        <assign name="tries" expr="minus_point(tries)"/>
+        <prompt>
+          That is wrong. You have <value expr="tries"/> tries remaining.
+        </prompt>
+
+      </if>       
+    </filled>
   </form>
 </vxml>

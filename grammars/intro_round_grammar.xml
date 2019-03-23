@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<grammar version="1.0" tag-format="semantics/1.0" root="q1">
+
+    <rule id="q1">
+        <one-of>
+            <item>Sweet Child of mine</item>
+            <item>Free Bird</item>
+            <item>Another one bites the dust</item>
+            <item>Without me</item>
+        </one-of>
+    </rule>
+
+</grammar>
