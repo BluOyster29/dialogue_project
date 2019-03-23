@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <vxml version="2.1" xmlns="http://www.w3.org/2001/vxml"
       xmlns:voxeo="http://community.voxeo.com/xmlns/vxml">
+
+    <script> <![CDATA[ 
+    
+    function add_point(score) {
+     return score + 1;
+    }
+        
+  ]]> </script> 
+
+    <var name="score" expr="0"/>
+
+    <form id="testing">
+        <field>
+            <prompt>
+                Your score equals <var expr="score"/> . 
+                If we add 1, it will be <var expr="add_point(score)"/>            
+            </prompt>
+        </field>
+    </form>
 
     <form id="question_one">
         <field name="q1">
