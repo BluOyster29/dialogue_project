@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<vxml version="2.1" xmlns="http://www.w3.org/2001/vxml"
+      xmlns:voxeo="http://community.voxeo.com/xmlns/vxml">
+    
+    <script src="{{url_for('static', filename='test.js')}}"></script>
+
+      <form id="testing">
+          <field name="moo">
+              <prompt>
+                  Let's play some music!
+              </prompt>
+              <value expr="music()"/>
+              <prompt>
+                  Did you like that?
+              </prompt>
+              <option>Yes</option>
+              <option>no</option>
+          </field>
+          <filled>
+              <if cond="moo == 'no'"/>
+                <prompt>
+                    Fuck off then
+                </prompt>
+                <else/>
+                <prompt>
+                    Super!
+                </prompt>
+          </filled>
+      </form>
+    
+</vxml>

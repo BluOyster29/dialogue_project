@@ -165,7 +165,7 @@
             <prompt>
                 <grammar src="grammars/easy_grammar.xml#q3"/>
                 Getting better, nice! Here comes another.
-                Red, lorry, yellow, lorry
+                Red lorry yellow lorry
             </prompt>
         <nomatch>
                 <if cond="lives == '1'">
@@ -274,8 +274,8 @@
 
   <form id="level_two">
     <field id="question_1">
-      <prompt> Well done <value expr="playerName"/> You have made it to level two
-      You have <value expr="score"/> points and <value expr="lives"/> lives.
+      <prompt> Well done <value expr="playerName"/>, You have made it to level two!
+      You have <value expr="score"/> points, and <value expr="lives"/> lives.
       In this next round we shall do some spelling.
       </prompt>
     </field>
