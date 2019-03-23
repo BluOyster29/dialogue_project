@@ -3,7 +3,7 @@ var score = 0;
 var tries = 1;
 var lives = 3;
 var startTime, endTime;
-var price = 0;
+var price;
 
 var playerName = "Robby Bob Socks";
 
