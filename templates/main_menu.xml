@@ -307,8 +307,8 @@
           <assign name="tries" expr="minus_point(tries)"/>
           <prompt>
             That is wrong. You have <value expr="tries"/> tries remaining.
+            Try again.
           </prompt>
-          <reprompt/>
         </if>  
       </nomatch>
     <filled>
