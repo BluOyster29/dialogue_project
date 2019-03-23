@@ -30,6 +30,7 @@
             <item>Y<tag>out= "y";</tag></item>
             <item>Z<tag>out= "z";</tag></item>
             <item>finished</item>
+            <item>start over</item>
         </one-of>
     </rule>
 
