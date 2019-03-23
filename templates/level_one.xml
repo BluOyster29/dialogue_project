@@ -12,14 +12,14 @@
         
   ]]> </script> 
 
-    <var name="points" expr="'Zero'"/>
+    
     
     
     <form id="testing">
-        
+        <var name="points" expr="'Zero'"/>
         <field name="tryOne">
             <prompt>
-                Your score equals <var name="points"/> .         
+                Your score equals <var expr="points"/> .         
             </prompt>
             <option> Nice</option>
         </field>
