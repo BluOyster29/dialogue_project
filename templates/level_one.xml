@@ -15,7 +15,7 @@
     <form id="testing">
         <field>
             <prompt>
-                Your score equals <var expr="score"/> . 
+                Your score equals <var expr="score.utterance"/> . 
                            
             </prompt>
             <option> Nice</option>
