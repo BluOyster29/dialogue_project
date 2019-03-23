@@ -532,7 +532,7 @@
             </if>
             <else/>
             <assign name="price" expr="end(lives)"/>
-            <prompt>Thanks for playin. The game costs 2 crowns a minute. Your bill is <value expr="price"/> crowns
+            <prompt>Thanks for playin. The game costs 2 crowns a second. Your bill is <value expr="price"/> crowns
             . pay Now or prepare to be attacked by robots.</prompt>
         </filled>
     </form>

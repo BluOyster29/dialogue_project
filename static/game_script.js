@@ -58,5 +58,6 @@ function end(price) {
   //get price
 
   price = seconds * 2
+  console.log(price)
   return price;
 }
