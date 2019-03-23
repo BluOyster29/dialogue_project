@@ -292,6 +292,7 @@
         Was it C, another one bites the dust,
         Or was it D, Without me.
       </prompt>
+      <prompt></prompt>
     </field>
     <filled>
       <if cond="question_1='Sweet child of mine'">
@@ -310,6 +311,7 @@
         <assign name="tries" expr="minus_point(tries)"/>
         <prompt>
           That is wrong. You have <value expr="tries"/> tries remaining.
+          <reprompt/>
         </prompt>
 
       </if>       
