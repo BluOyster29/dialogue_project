@@ -36,37 +36,13 @@
   <!-- State machine -->
   <form id="welcome">
     <field name="playerName">
+      <grammar src="grammars/main_menu.xml"/>
       <prompt>
-	
-	Welcome to The Altered Beast escape room game!
-    What is your name?
-
+        Welcome, please spell out your name letter by letter. When you are done say, finished.
       </prompt>
-      </field>
-      <filled>
-      <assign name="name" expr="playerName"/>
-      </filled>
       
-    <field name="readyPlay">
-        <prompt>
-        Welcome <var expr="playerName"/>,
-        Are you ready to play?
-        </prompt>
-    </field>
-        <filled>
-        <assign name="ready2Play" expr="readyPlay"/>
-        <if cond="ready2Play == 'no'">
-            <prompt> 
-            Tough titties mate.
-            </prompt>
-        <else/>
-	<prompt>
-            Ok then lets go!
-            <goto next="instructions"/>
-        </prompt>
-	</if>
-	</filled>
-    </form>
+
+      
             
   
 

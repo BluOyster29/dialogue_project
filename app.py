@@ -15,6 +15,13 @@ def easy():
     response.headers["Content-Type"] = "application/xml"
     return response
 
+@app.route('/fail')
+def fail():
+    vxml = render_template('fail.xml')
+    response = make_response(vxml)
+    response.headers["Content-Type"] = "application/xml"
+    return response
+
 @app.route('/test')
 def test():
     vxml = render_template('test.xml')

@@ -6,6 +6,7 @@
     
     var score = 0;
     var tries = 3;
+    var lives = 3;
 
     function reset_tries(tries){
         return tries = 3;
@@ -36,8 +37,13 @@
             <nomatch>
                 <if cond="tries == '1'">
                     <prompt bargein ="false">
-                        sorry you have run out of tries, next question.
+                        sorry you have run out of tries, you lose a life, next question.
                     </prompt>
+                    <assign name="lives" expr="minus_point(lives)"/>
+                    <if cond="lives = '0'">
+                        <goto next="#fail"/>
+                    </if>
+                    <else/>
                     <goto next="#questionTwo"/>
                 </if>
                 <else/>
@@ -138,6 +144,8 @@
 	  </prompt>
 	</filled>
     </form>
+
+    
     <!--
     <form id="testing">
        

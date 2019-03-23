@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vxml version="2.1" xmlns="http://www.w3.org/2001/vxml"
+      xmlns:voxeo="http://community.voxeo.com/xmlns/vxml">
+
+    <form id="failed">
+        <field name="failureMessage">
+            <prompt>
+                I am afraid you ahve run out of lives, but that is ok we have a few options.
+                If you have enough money you can bribe the government and try again, or accept your 
+                fate and exit. What would you like to do? Bribe or exit the game?
+            </prompt>
+            <option>Bribe</option>
+            <option>Exit game</option>
+        </field>
+        <filled>
+            <if cond="failureMessage='bribe'">
+                <prompt>You chose bribe! Very British of you, please try again</prompt>
+                <goto next="level_one.xml"/>
+            </if>
+            <else/>
+            <prompt>Thanks for playin.</prompt>
+        </filled>
+    </form>
+</vxml>
