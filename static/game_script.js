@@ -41,22 +41,30 @@ function minus_point(score) {
     return score - 1;
 }
 
+var startTime = start();
+
+function sleep(miliseconds) {
+    var currentTime = new Date().getTime();
+ 
+    while (currentTime + miliseconds >= new Date().getTime()) {
+    }
+ }
+
 function start() {
-  startTime = new Date();
-};
+    startTime = new Date();
+    return startTime
+  };
+  
+var endTime = end_time();
 
-function end() {
-  endTime = new Date();
-  var timeDiff = endTime - startTime; //in ms
-  // strip the ms
-  timeDiff /= 1000;
+function end_time(){
+   var endTime = new Date();
+  return endTime
+}
 
-  // get seconds 
-  var seconds = Math.round(timeDiff);
+function get_price(startTime, endTime) {
+  var currentResult = ((endTime - startTime) / 1000);
+  var seconds = Math.round(currentResult);
+  return seconds * 2
 
-  //get price
-
-  var price = seconds * 2
-
-  return price;
 }

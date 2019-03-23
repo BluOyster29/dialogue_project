@@ -18,7 +18,7 @@
 -->
 
   <form id="welcome">
-    <assign name="time_start" expr="start()"/>
+    <assign name="start" expr="start()"/>
     <block>
     <prompt bargein ="false">
       
@@ -483,9 +483,7 @@
   </form>
 
   <form id="completion">
-    
     <field name="congrats">
-      
       <prompt>
         Well done <value expr="playerName"/> you have made it to the end of the game!
         You have <value expr="score"/> points and <value expr="lives"/> lives left. Not bad, we will
@@ -502,9 +500,9 @@
           your score!
         </prompt>
       <else/>
-        <assign name="money" expr="end()"/>
+        <assign name="end" expr="end(end)"/>
         <prompt>
-          Fair enough this session cost 2 crowns a second. Your bill is <value expr="money"/> crowns.
+          Fair enough this session cost 2 crowns a second. Your bill is <value expr="get_price(start,end)"/> crowns.
           Please pay immediately.
         </prompt>
       </if>
