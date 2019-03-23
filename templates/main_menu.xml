@@ -501,8 +501,9 @@
         </prompt>
       <else/>
         <assign name="end" expr="end()"/>
+        <assign name="price" expr="get_price(start,end)"/>
         <prompt>
-          Fair enough this session cost 2 crowns a second. Your bill is <value expr="get_price(start,end)"/> crowns.
+          Fair enough this session cost 2 crowns a second. Your bill is <value expr="price"/> crowns.
           Please pay immediately.
         </prompt>
       </if>
