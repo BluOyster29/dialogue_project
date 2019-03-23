@@ -18,7 +18,7 @@
     
         <field name="tryOne">
             <prompt>
-                Your score equals <var expr="score"/> .         
+                Your score equals <var name="score"/> .         
             </prompt>
             <option> Nice</option>
         </field>
