@@ -294,8 +294,7 @@
       </prompt>
       <prompt></prompt>
     </field>
-    <filled>
-      <nomatch>
+    <nomatch>
         <if cond="lives=='1'">
           <goto next="#fail"/>
       
@@ -311,11 +310,12 @@
           </prompt>
           <reprompt/>
         </if>  
-      </nomatch> 
+      </nomatch>
+    <filled>
       <prompt>
-            Great job that's correct
-          </prompt>
-          <assign name="score" expr="add_point(score)"/>    
+        Great job that's correct
+      </prompt>
+      <assign name="score" expr="add_point(score)"/>    
     </filled>
   </form>
 </vxml>
