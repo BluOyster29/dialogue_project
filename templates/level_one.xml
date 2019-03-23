@@ -33,25 +33,21 @@
                 Repeat after me.
                 Greek, grapes
             </prompt>
-            <assign name="tries" expr="minus_point(tries)"/>
-            <prompt count="2" bargein ="false">
-                you have <value expr="tries"/> remaining. 
-            </prompt>
-            <prompt count="3" bargein ="false">
-                you have one more chance,
-                Greek, Grapes
-            </prompt>
-            <assign name="tries" expr="add_one(tries)"/>
-            <if cond="tries == '0'">
-                <prompt bargein ="false">
-                    sorry you have run out of tries, next question.
-                </prompt>
-                <goto next="questionTwo"/>
-            </if>
-            <else/>
-
-
+            <nomatch>
+                <if cond="tries == '0'">
+                    <prompt bargein ="false">
+                        sorry you have run out of tries, next question.
+                    </prompt>
+                    <goto next="questionTwo"/>
+                </if>
+                <else/>
+                    <assign name="tries" expr="minus_point(tries)"/>
+                    <prompt>
+                        you have <value expr="tries"/> remaining. 
+                    </prompt>
+            </nomatch>
         </field>
+        
         <filled>
             <goto next="#questionTwo"/>
           <prompt>
