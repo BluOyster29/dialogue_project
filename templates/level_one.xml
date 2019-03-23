@@ -43,18 +43,19 @@
                 <else/>
                     <assign name="tries" expr="minus_point(tries)"/>
                     <prompt>
-                        you have <value expr="tries"/> remaining. 
+                        you have <value expr="tries"/> tries remaining. 
                     </prompt>
             </nomatch>
         </field>
 
         <filled>
           <prompt>
-	        You said: <value expr="q1$.utterance"/>,
+	        Well done! You said: <value expr="q1$.utterance"/>,
 	        with the interpretation <value expr="q1$.interpretation"/>
 	        and with a confidence of <value expr="q1$.confidence"/>
 	        <break time ="2s"/>
 	    </prompt>
+        <assign name="score" expr="add_point(score)"/>
 	    <goto next="#questionTwo"/>
 	    </filled>
     </form>
@@ -62,7 +63,7 @@
     <form id ="questionTwo">
         <field name = "q2">
             <grammar src="grammars/easy_grammar.xml"/>
-            <block> ok here is the second one</block>
+            <prompt> Here Comes another! You currently have <value expr="score"/> points</prompt>>
             <prompt>
                 <grammar src="grammars/easy_grammar.xml#q2"/>
                 Unique, New, York.
