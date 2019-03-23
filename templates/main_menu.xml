@@ -8,7 +8,7 @@
     var name = [];
 
     function add_letter(letter){
-      name.push(letter);
+      name.push("letter");
       
     }
 
