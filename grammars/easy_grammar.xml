@@ -27,15 +27,14 @@
   </rule>
 
   <rule id="q1">
-      <item>
-        Greek grapes
-      </item>
+      <item>Greek</item>
+      <item>grapes</item>
   </rule>
   
   <rule id="q2">
-    <item>
-        Unique New York
-    </item>
+    <item>Unique</item>
+    <item>New</item>
+    <item>York</item>
   </rule>
   
   
