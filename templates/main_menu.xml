@@ -276,7 +276,7 @@
   <form id="level_two">
     <field id="question_1">
       <assign name="tries" expr="reset_tries(tries)"/>
-      <grammar src="/grammars/intro_round_grammar.xml"/>
+      <grammar src="/grammars/intro_round_grammar.xml#q1"/>
       <prompt> Well done <value expr="playerName"/>, You have made it to level two!
       You have <value expr="score"/> points, and <value expr="lives"/> lives.
       In this next round will be an intros round. Rob the creator will sing an 
@@ -318,4 +318,46 @@
       <assign name="score" expr="add_point(score)"/>    
     </filled>
   </form>
+
+  <form id="question_2">
+    <field id="question_2">
+      <assign name="tries" expr="reset_tries(tries)"/>
+      <grammar src="/grammars/intro_round_grammar.xml#q2"/>
+      <prompt> Here comes another.
+      </prompt>
+      <audio src="audio/generation.wav"/>
+      <prompt>
+        Was it A, Highway to Hell,
+        Was it B, My Generation, 
+        Was it C, Bohemian Rhapsody,
+        Or was it D, Run to the hills.
+      </prompt>
+      <audio src="audio/generation.wav"/>
+    </field>
+    <nomatch>
+        <if cond="lives=='1'">
+          <goto next="#fail"/>
+      
+        <elseif cond="tries == '1'"/>
+          <prompt>
+            You are out of tries, you lose a life. Next question!
+            <goto next="#question_2"/>
+          </prompt>
+        <else/>
+          <assign name="tries" expr="minus_point(tries)"/>
+          <prompt>
+            That is wrong. You have <value expr="tries"/> tries remaining.
+            Try again.
+          </prompt>
+        </if>  
+      </nomatch>
+    <filled>
+      <prompt>
+        Great job that's correct
+      </prompt>
+      <assign name="score" expr="add_point(score)"/>    
+    </filled>
+  </form>
+
+
 </vxml>
