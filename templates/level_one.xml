@@ -19,7 +19,7 @@
         <assign name="points" expr="'Zero'"/>
         <field name="tryOne">
             <prompt>
-                Your score equals <var expr="points"/> .         
+                Your score equals <value expr="points"/> .         
             </prompt>
             <option> Nice</option>
         </field>
