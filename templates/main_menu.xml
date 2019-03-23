@@ -36,7 +36,7 @@
       <grammar src="grammars/main_menu_grammar.xml#name"/>
     </field>
     <filled>
-      <if cond="playerName == 'finished'">
+      <if cond="addLetter == 'finished'">
         <prompt>Hello <value expr="read_name()"/></prompt>
       <else/>
         <value expr="addLetter"/>
