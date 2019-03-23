@@ -29,7 +29,7 @@
             <item>X</item>
             <item>Y</item>
             <item>Z</item>
-            <item>Finished</item>
+            <item>finished</item>
         </one-of>
     </rule>
 
