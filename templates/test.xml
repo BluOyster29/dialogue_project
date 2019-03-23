@@ -10,7 +10,7 @@
               <prompt>
                   Let's play some music!
               </prompt>
-              <value expr="music()"/>
+              <value expr="play_audio()"/>
               <prompt>
                   Did you like that?
               </prompt>
