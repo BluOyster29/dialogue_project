@@ -18,6 +18,7 @@
 -->
 
   <form id="welcome">
+    <assign name="time_start" expr="start()"/>
     <block>
     <prompt bargein ="false">
       
@@ -204,7 +205,7 @@
             <grammar src="grammars/easy_grammar.xml"/>
             <prompt>
                 <grammar src="grammars/easy_grammar.xml#q4"/>
-                Well done. Now here is another, repeat after me.
+                Now here is another, repeat after me.
                 She says cheese
             </prompt>
         <nomatch>
@@ -302,8 +303,8 @@
         <elseif cond="tries == '1'"/>
           <prompt>
             You are out of tries, you lose a life. Next question!
-            <goto next="#question_2"/>
           </prompt>
+          <goto next="#question_2"/>
         <else/>
           <assign name="tries" expr="minus_point(tries)"/>
           <prompt>
@@ -482,21 +483,38 @@
   </form>
 
   <form id="completion">
-    <!--
+    
     <field name="congrats">
-      -->
+      <assign name="price" expr="end()"/>
       <prompt>
         Well done <value expr="playerName"/> you have made it to the end of the game!
         You have <value expr="score"/> points and <value expr="lives"/> left. Not bad, we will
-        add you to the leader board! I hope you have fun playing, please play again. 
+        add you to the leader board! I hope you have fun playing, please play again. Would 
+        you like to play again?
       </prompt>
-      <!--
+      <option>Yes</option>
+      <option>no</option>
+      
     </field>
-    -->
+    <filled>
+      <if cond="congrats='yes'">
+        <prompt>Awesome we can play again, if you play again you get to keep
+          your score!
+        </prompt>
+      <else/>
+        <prompt>
+          Fair enough this session cost 20 crowns a minute. Your bill is <value expr="price"/> crowns.
+          Please pay immediately.
+        </prompt>
+      </if>
+    </filled>
   </form>
 
   <form id="failed">
+
         <field name="failureMessage">
+          <assign name="price" expr="end()"/>
+
             <prompt>
                 I am afraid you ahve run out of lives and you only managed to get <value expr="score"/> points, hash tag loser, but that is ok we have a few options.
                 If you have enough money you can bribe the government and try again, or accept your 
@@ -512,7 +530,8 @@
                 <assign name="lives" expr="reset_lives"/>
             </if>
             <else/>
-            <prompt>Thanks for playin.</prompt>
+            <prompt>Thanks for playin. The game costs twenty crownd a minute. Your bill is <value expr="price"/> crowns
+            . pay Now or prepare to be attacked by robots.</prompt>
         </filled>
     </form>
 </vxml>

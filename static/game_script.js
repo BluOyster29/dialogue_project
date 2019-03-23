@@ -2,6 +2,7 @@ var name = [];
 var score = 0;
 var tries = 3;
 var lives = 5;
+var startTime, endTime;
 
 var playerName = "Robby Bob Socks";
 
@@ -38,4 +39,25 @@ function add_point(score) {
 
 function minus_point(score) {
     return score - 1;
+}
+
+function start() {
+  startTime = new Date();
+};
+
+function end() {
+  endTime = new Date();
+  var timeDiff = endTime - startTime; //in ms
+  // strip the ms
+  timeDiff /= 1000;
+
+  // get seconds 
+  var seconds = Math.round(timeDiff);
+
+  var minutes = seconds / 60
+
+  //get price
+
+  var minutes = Math.round(minutes) * 20
+  return minutes;
 }
