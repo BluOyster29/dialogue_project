@@ -23,23 +23,8 @@
 
   
     
-    <!--
-    <form id="testing">
-       
-        <field name="tryOne">
-            <prompt>
-                Your score equals <value expr="score"/> .         
-            </prompt>
-            <option> Nice</option>
-        </field>
-        <filled>
-            If we add 1, it will be <var name="score" expr="add_point(score)"/> 
-            <value expr="score"/>. However if you lose a point, we will take away 1. 
-            <var name="score" expr="minus_point(score)"/> which will make your score 
-            <value expr="score"/> again. lol
-        </filled>
-    </form>
-    -->
+    
+
     <form id="question_one">
         <field name="q1">
 	  <grammar src="grammars/easy_grammar.xml"/>
@@ -156,5 +141,21 @@
 	  </prompt>
 	</filled>
     </form>
-    
+    <!--
+    <form id="testing">
+       
+        <field name="tryOne">
+            <prompt>
+                Your score equals <value expr="score"/> .         
+            </prompt>
+            <option> Nice</option>
+        </field>
+        <filled>
+            If we add 1, it will be <var name="score" expr="add_point(score)"/> 
+            <value expr="score"/>. However if you lose a point, we will take away 1. 
+            <var name="score" expr="minus_point(score)"/> which will make your score 
+            <value expr="score"/> again. lol
+        </filled>
+    </form>
+    -->
 </vxml>
