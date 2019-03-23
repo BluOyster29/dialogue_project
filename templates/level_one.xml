@@ -36,7 +36,7 @@
             </prompt>
             <nomatch>
                 <assign name="lives" expr="minus_point(lives)"/>
-                <if cond="lives = '0'">
+                <if cond="lives = '2'">
                         <goto next="fail"/>
                 
 
