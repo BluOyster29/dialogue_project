@@ -2,43 +2,19 @@
 
 <vxml version="2.1" xmlns="http://www.w3.org/2001/vxml"
       xmlns:voxeo="http://community.voxeo.com/xmlns/vxml">
-  <!--
-  <script> <![CDATA[ 
-    
-    var name = [];
 
-    function add_letter(letter){
-      name.push(letter);
-      return name
-      
-    }
-
-    function read_name(){
-      name = name.join('');
-      return name.toString()
-
-  }
-
-  function reset_name(name){
-    name = [];
-    return name
-  }
-
-    ]]></script> 
-
-  -->
 
   <script src="{{url_for('static', filename='game_script.js')}}"></script>
 
   <!-- State machine -->
 
-  <link next="level_one">
+  <linknext>
   <grammar mode="voice" version="1.0" root="root">
     <rule id="root" scope="public">
        <item>skip</item>>
     </rule>
   </grammar>
-</link>
+</linknext>
 
   <form id="welcome">
     <block>
@@ -107,16 +83,19 @@
 	  <grammar src="grammars/easy_grammar.xml"/>
             <prompt bargein ="false">
             <grammar src="grammars/easy_grammar.xml#q1"/>
-                Hello <value expr="playerName"/>,
+                Hello <value expr="playerName"/>, let's get started. I will ask you to repeat after me 
+                some English tongue twisters, you have three tries for this round and ten lives in total.
+                If you use all your tries you lose a life. Tries reset at the end of every round. Good luck! 
+                Here comes the first tongue twister.
                 Repeat after me.
                 Greek, grapes
             </prompt>
             <nomatch>
-                <if cond="lives == '0'">
+                <if cond="lives == '1'">
                         <goto next="fail"/>
                 
 
-                <elseif cond="tries == '0'"/>
+                <elseif cond="tries == '1'"/>
                     <assign name="lives" expr="minus_point(lives)"/>
                     <prompt bargein ="false">
                         sorry you have run out of tries, you lose a life, next question.
@@ -126,7 +105,7 @@
                 <else/>
                     <assign name="tries" expr="minus_point(tries)"/>
                     <prompt>
-                        you have <value expr="tries"/> tries remaining. 
+                        That's not quite it, you have <value expr="tries"/> tries remaining. 
                     </prompt>
                 </if>
             </nomatch>
@@ -146,7 +125,7 @@
         <field name = "q2">
             <assign name="tries" expr="reset(tries)"/>"
             <grammar src="grammars/easy_grammar.xml"/>
-            <prompt> Here Comes another! You currently have <value expr="score"/> points. Now try,</prompt>>
+            <prompt> Here is the second one. Now try,</prompt>>
             <prompt>
                 <grammar src="grammars/easy_grammar.xml#q2"/>
                 Unique, New, York.
@@ -155,7 +134,7 @@
                 <if cond="lives == '0'">
                         <goto next="fail"/>
                 
-                <elseif cond="tries == '0'"/>
+                <elseif cond="tries == '1'"/>
                     <assign name="lives" expr="minus_point(lives)"/>
                     <prompt bargein ="false">
                         sorry you have run out of tries, you lose a life, next question.
@@ -189,10 +168,10 @@
                 Red, lorry, yellow, lorry
             </prompt>
         <nomatch>
-                <if cond="lives == '0'">
+                <if cond="lives == '1'">
                         <goto next="fail"/>
                 
-                <elseif cond="tries == '0'"/>
+                <elseif cond="tries == '1'"/>
                     <assign name="lives" expr="minus_point(lives)"/>
                     <prompt bargein ="false">
                         sorry you have run out of tries, you lose a life, next question.
@@ -227,10 +206,10 @@
                 She says cheese
             </prompt>
         <nomatch>
-                <if cond="lives == '0'">
+                <if cond="lives == '1'">
                         <goto next="fail"/>
                 
-                <elseif cond="tries == '0'"/>
+                <elseif cond="tries == '1'"/>
                     <assign name="lives" expr="minus_point(lives)"/>
                     <prompt bargein ="false">
                         sorry you have run out of tries, you lose a life, next question.
@@ -266,15 +245,15 @@
             </prompt>
         </field>
         <nomatch>
-                <if cond="lives == '0'">
+                <if cond="lives == '1'">
                         <goto next="fail"/>
                 
-                <elseif cond="tries == '0'"/>
+                <elseif cond="tries == '1'"/>
                     <assign name="lives" expr="minus_point(lives)"/>
                     <prompt bargein ="false">
                         sorry you have run out of tries, you lose a life, next question.
                     </prompt>
-                    <goto next="#question_five"/>
+                    <goto next="#level_two"/>
                 
                 <else/>
                     <assign name="tries" expr="minus_point(tries)"/>
@@ -289,8 +268,16 @@
 	        <break time ="2s"/>
 	        </prompt>
         <assign name="score" expr="add_point(score)"/>
-	    <goto next="level_two"/>
+	    <goto next="#level_two"/>
 	    </filled>  
     </form>
 
+  <form id="level_two">
+    <field id="question_1">
+      <prompt> Well done <value expr="playerName"/> You have made it to level two
+      You have <value expr="score"/> points and <value expr="lives"/> lives.
+      In this next round we shall do some spelling.
+      </prompt>
+    </field>
+  </form>
 </vxml>
