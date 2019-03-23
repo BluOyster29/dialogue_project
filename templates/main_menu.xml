@@ -22,7 +22,7 @@
   <!-- State machine -->
   <form id="welcome">
     <block>
-    <prompt>
+    <prompt bargein ="false">
       Welcome, please spell out your name letter by letter. When you are done say, finished.
     </prompt>
     <goto next="#spelling"/>
