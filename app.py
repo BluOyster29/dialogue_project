@@ -2,7 +2,7 @@ from flask import Flask, render_template, make_response, send_from_directory
 
 app = Flask(__name__)
 
-song = "audio/at.pcm"
+song = "audio/metal.mp3"
 
 @app.route('/main_menu')
 def main_menu():
@@ -20,7 +20,7 @@ def fail():
 
 @app.route('/test')
 def test():
-    vxml = render_template('test.xml')
+    vxml = render_template('test.xml', song='song')
     response = make_response(vxml)
     response.headers["Content-Type"] = "application/xml"
     return response    
