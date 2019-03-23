@@ -10,7 +10,7 @@
               <prompt baregin="false">
                   Let's play some music!
               </prompt>
-                <audio src="audio/metal.mp3"/>
+                <audio src="{{song}}"/>
               <prompt>
                   Did you like that?
               </prompt>

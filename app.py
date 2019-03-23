@@ -20,7 +20,7 @@ def fail():
 
 @app.route('/test')
 def test():
-    vxml = render_template('test.xml', song=song)
+    vxml = render_template('test.xml', song="audio/metal.mp3")
     response = make_response(vxml)
     response.headers["Content-Type"] = "application/xml"
     return response    
