@@ -5,6 +5,11 @@
     <script> <![CDATA[ 
     
     var score = 0;
+    var tries = 0;
+
+    function reset_tries(tries){
+        return tries * 0;
+    }
 
     function add_point(score) {
         return score + 1;
@@ -18,7 +23,7 @@
 
   
     
-    
+    <!--
     <form id="testing">
        
         <field name="tryOne">
@@ -34,7 +39,7 @@
             <value expr="score"/> again. lol
         </filled>
     </form>
-
+    -->
     <form id="question_one">
         <field name="q1">
 	  <grammar src="grammars/easy_grammar.xml"/>
@@ -43,6 +48,23 @@
                 Repeat after me.
                 Greek, grapes
             </prompt>
+            <assign name="tries" expr="add_one(tries)"/>
+            <prompt count="2">
+                you have lost a life! 
+                Try again.
+            </prompt>
+            <prompt count="3">
+                you have one more chance,
+                Greek, Grapes
+            </prompt>
+            <assign name="tries" expr="add_one(tries)"/>
+            <if cond="tries == '3'">
+                <prompt>
+                    sorry you have run out of tries, next question.
+                </prompt>
+                <goto next="questionTwo"/>
+            </if>
+
         </field>
         <filled>
             <goto next="#questionTwo"/>
