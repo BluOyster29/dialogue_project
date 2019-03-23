@@ -2,7 +2,8 @@ var name = [];
 var score = 0;
 var tries = 1;
 var lives = 3;
-var start, end;
+var start; 
+var end;
 
 var playerName = "Robby Bob Socks";
 
@@ -42,13 +43,13 @@ function minus_point(score) {
 }
 
 
-function start() {
+function start(start) {
     var start = new Date();
     return start
   };
   
 
-function end(){
+function end(end){
   var end = new Date();
   return end
 }
