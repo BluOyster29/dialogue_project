@@ -9,7 +9,7 @@
 
     function add_letter(letter){
       name.push(letter);
-      return name;
+      
     }
 
     function read_name(){
@@ -36,11 +36,11 @@
       <grammar src="grammars/main_menu_grammar.xml#name"/>
     </field>
     <filled>
-      <if cond="playerName='finished'">
-        <prompt>Hello <value expr="name"/></prompt>
+      <if cond="playerName == 'finished'">
+        <prompt>Hello <value expr="read_name()"/></prompt>
       <else/>
         <value expr="addLetter"/>
-        
+
         <!--<assign expr="add_letter(addLetter)"/>-->
         <goto next="#spelling"/>
       </if>
