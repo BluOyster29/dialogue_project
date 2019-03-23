@@ -29,9 +29,9 @@ def test():
 def send_grammar(path):
     return send_from_directory('grammars', path)
 
-@app.route('/audio/<path:path>')
+@app.route('/audio/metal.mp3')
 def send_audio(path):
-    return send_from_directory('audio/', path)
+    return send_from_directory('audio/metal.mp3', path)
 
 if __name__ == "__main__":
     app.run(debug=True)
