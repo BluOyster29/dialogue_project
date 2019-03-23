@@ -7,7 +7,7 @@
 
       <form id="testing">
           <field name="moo">
-              <prompt baregin="false">
+              <prompt bargein="false">
                   Let's play some music!
               </prompt>
                 <audio src="{{song}}"/>
