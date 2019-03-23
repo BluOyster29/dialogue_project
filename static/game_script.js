@@ -57,7 +57,7 @@ function start() {
   
 var endTime = end_time();
 
-function end_time(){
+function end(){
    var endTime = new Date();
   return endTime
 }
