@@ -2,6 +2,7 @@ var name = [];
 var score = 0;
 var tries = 1;
 var lives = 3;
+var start, end;
 
 var playerName = "Robby Bob Socks";
 
