@@ -39,7 +39,9 @@
     </field>
     <filled>
       <if cond="addLetter == 'finished'">
-        <prompt>Hello <value expr="read_name()"/></prompt>
+        <assign name="playerName" expr="read_name()"/> 
+        <goto next="#nameConfirmation"/>
+      
       <else/>
         <value expr="addLetter"/>
         <assign name="name" expr="add_letter(addLetter)"/>
@@ -48,11 +50,30 @@
     </filled>
   </form>
 
+  <form id="nameConfirmation">
+    <field name="isCorrect">
+      <prompt>
+        I got <value expr="playerName"/>, is this correct?
+      </prompt>
+      <option>Yes</option> 
+      <option>no</option>
+    </field>
+    <filled>
+      <if cond="isCorrect == 'no'">
+        <prompt>
+          Sorry but we don't have enough time to try again. 
+        </prompt>
+      <else/>
+        Awesome.
+        <goto next="#mainMenu"/>
+      </if>
+    </filled>
+  </form>
       
             
   
 
-<menu id="instructions">
+<menu id="mainMenu">
   <prompt>
     This is the main menu where you will make some choices. Please say whether you would 
     like to play in easy mode, medium mode, or hard mode. 
