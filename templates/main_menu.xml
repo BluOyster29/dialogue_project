@@ -28,8 +28,8 @@
 
   -->
 
-  <script src="/javascript/game_script.js"></script>
-  
+  <script src="{{url_for('static', filename='game_script.js')}}"></script>
+
   <!-- State machine -->
   <form id="welcome">
     <block>
