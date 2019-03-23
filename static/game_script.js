@@ -44,13 +44,13 @@ function minus_point(score) {
 
 
 function start(start) {
-    var start = new Date();
+    start = new Date();
     return start
   };
   
 
 function end(end){
-  var end = new Date();
+  end = new Date();
   return end
 }
 
