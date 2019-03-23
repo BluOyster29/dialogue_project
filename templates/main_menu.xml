@@ -502,9 +502,9 @@
           your score!
         </prompt>
       <else/>
-        <assign name="price" expr="end(price)"/>
+        <assign name="money" expr="end()"/>
         <prompt>
-          Fair enough this session cost 2 crowns a second. Your bill is <value expr="price"/> crowns.
+          Fair enough this session cost 2 crowns a second. Your bill is <value expr="money"/> crowns.
           Please pay immediately.
         </prompt>
       </if>

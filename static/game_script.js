@@ -3,7 +3,6 @@ var score = 0;
 var tries = 1;
 var lives = 3;
 var startTime, endTime;
-var price;
 
 var playerName = "Robby Bob Socks";
 
@@ -46,7 +45,7 @@ function start() {
   startTime = new Date();
 };
 
-function end(price) {
+function end() {
   endTime = new Date();
   var timeDiff = endTime - startTime; //in ms
   // strip the ms
@@ -57,7 +56,7 @@ function end(price) {
 
   //get price
 
-  price = seconds * 2
+  var price = seconds * 2
 
   return price;
 }
