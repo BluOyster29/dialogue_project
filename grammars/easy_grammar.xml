@@ -38,21 +38,29 @@
   </rule>
   
   <rule id="q3">
-    <item>
-      Red lorry yellow lorry
-    </item>
+    <item>Red</item>
+    <item>lorry</item>
+    <item>yellow</item>
+    <item>lorry</item>
   </rule>
 
   <rule id="q4">
-    <item>
-      She says cheese
-    </item>
+    <item>She</item>
+    <item>says</item>
+    <item>Cheese</item>
   </rule>
 
   <rule id="q5">
-    <item>
-      Fred fed Ted bread and Ted fed Fred Bread
-    </item>
+    <item>Fred</item>
+    <item>fed</item>
+    <item>Ted</item>
+    <item>bread</item>
+    <item>and</item>
+    <item>Ted</item>
+    <item>fed</item>
+    <item>Fred</item>
+    <item>Bread</item>
+    
   </rule>
   
 </grammar>
