@@ -4,6 +4,7 @@ var tries = 1;
 var lives = 3;
 var start; 
 var end;
+var price;
 
 var playerName = "Robby Bob Socks";
 
@@ -54,9 +55,10 @@ function end(end){
   return end
 }
 
-function get_price(start, end) {
+function get_price(start, end, price) {
   var currentResult = ((end - start) / 1000);
   var seconds = Math.round(currentResult);
-  return seconds * 2
+  price = seconds * 2
+  return price
 
 }
