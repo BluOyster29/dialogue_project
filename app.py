@@ -2,7 +2,7 @@ from flask import Flask, render_template, make_response, send_from_directory
 
 app = Flask(__name__)
 
-song = "audio/metal.pcm"
+song = "audio/metal.wav"
 
 @app.route('/main_menu')
 def main_menu():
