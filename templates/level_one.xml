@@ -12,7 +12,7 @@
         
   ]]> </script> 
 
-    <assign name="score" expr="0"/>
+    <assign name="score" expr="score"/>
 
     <form id="testing">
         <field name="tryOne">
