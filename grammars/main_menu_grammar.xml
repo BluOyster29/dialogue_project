@@ -3,32 +3,32 @@
 
     <rule id="name">
         <one-of>
-            <item>a</item>
-            <item>b</item>
-            <item>c</item>
-            <item>d</item>
-            <item>e</item>
-            <item>F</item>
-            <item>G</item>
-            <item>H</item>
-            <item>I</item>
-            <item>J</item>
-            <item>K</item>
-            <item>L</item>
-            <item>M</item>
-            <item>N</item>
-            <item>O</item>
-            <item>P</item>
-            <item>Q</item>
-            <item>R</item>
-            <item>S</item>
-            <item>T</item>
-            <item>U</item>
-            <item>V</item>
-            <item>W</item>
-            <item>X</item>
-            <item>Y</item>
-            <item>Z</item>
+            <item>A<tag>out= "a";</tag></item>
+            <item>B<tag>out= "b";</tag></item>
+            <item>C<tag>out= "c";</tag></item>
+            <item>D<tag>out= "d";</tag></item>
+            <item>E<tag>out= "e";</tag></item>
+            <item>F<tag>out= "f";</tag></item>
+            <item>G<tag>out= "g";</tag></item>
+            <item>H<tag>out= "h";</tag></item>
+            <item>I<tag>out= "i";</tag></item>
+            <item>J<tag>out= "j";</tag></item>
+            <item>K<tag>out= "k";</tag></item>
+            <item>L<tag>out= "l";</tag></item>
+            <item>M<tag>out= "m";</tag></item>
+            <item>N<tag>out= "n";</tag></item>
+            <item>O<tag>out= "o";</tag></item>
+            <item>P<tag>out= "p";</tag></item>
+            <item>Q<tag>out= "q";</tag></item>
+            <item>R<tag>out= "r";</tag></item>
+            <item>S<tag>out= "s";</tag></item>
+            <item>T<tag>out= "t";</tag></item>
+            <item>U<tag>out= "u";</tag></item>
+            <item>V<tag>out= "v";</tag></item>
+            <item>W<tag>out= "w";</tag></item>
+            <item>X<tag>out= "x";</tag></item>
+            <item>Y<tag>out= "y";</tag></item>
+            <item>Z<tag>out= "z";</tag></item>
             <item>finished</item>
         </one-of>
     </rule>
