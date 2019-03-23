@@ -8,6 +8,13 @@ def game():
     response.headers["Content-Type"] = "application/xml"
     return response
 
+@app.route('/main_menu')
+def main_menu():
+    vxml = render_template('main_menu.xml')
+    response = make_response(vxml)
+    response.headers["Content-Type"] = "application/xml"
+    return response
+
 @app.route('/level_one')
 def easy():
     vxml = render_template('level_one.xml')

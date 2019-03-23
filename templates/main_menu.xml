@@ -3,44 +3,44 @@
 <vxml version="2.1" xmlns="http://www.w3.org/2001/vxml"
       xmlns:voxeo="http://community.voxeo.com/xmlns/vxml">
 
-  <link next="lab1">
-  <grammar mode="voice" version="1.0" root="root">
-    <rule id="root" scope="public">
-       <one-of>
-         <item>main menu</item>
-	 <item> start over</item>
-       </one-of>
-    </rule>
-  </grammar>
-</link>
+  <script> <![CDATA[ 
+    
+    var name = [];
 
-  <nomatch>
-    no match needs something
-    <reprompt/>
-  </nomatch>
-  
-  <noinput>
-    no input needs something
-    <reprompt/>
-  </noinput>
+    function add_letter(letter){
+      name.push(letter);
+      return name;
+    }
 
-  <!-- Data model -->
-  <var name="name" />
-  <var name="ready2Play" />
-  <var name="when"/>
-  <var name="isRetrun"/>
-  <var name="correct"/>
-  <var name="returnDay"/>
+    function read_name(){
+      return name.toString();
+
+  }
+    ]]></script> 
 
 
   <!-- State machine -->
   <form id="welcome">
-    <field name="playerName">
-      <grammar src="grammars/main_menu.xml"/>
-      <prompt>
-        Welcome, please spell out your name letter by letter. When you are done say, finished.
-      </prompt>
-      
+    <prompt>
+      Welcome, please spell out your name letter by letter. When you are done say, finished.
+    </prompt>
+    <goto next="#spelling"/>
+  </form>
+        
+     
+    
+  <form id="spelling">
+    <field name="addLetter">
+      <grammar src="grammars/main_menu_grammar.xml#name"/>
+    </field>
+    <filled><if cond="playerName='finished'">
+        <prompt>Hello <value expr="name"/></prompt>
+      <else/>
+        <assign expr="add_letter(playerName)"/>
+        <goto next="#spelling"/>
+      </if>
+    </filled>
+  </form>
 
       
             
