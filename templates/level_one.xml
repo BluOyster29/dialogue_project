@@ -40,14 +40,13 @@
                         <goto next="fail"/>
                 
 
-                <elseif cond="tries == '0'">
+                <elseif cond="tries == '0'"/>
                     <assign name="lives" expr="minus_point(lives)"/>
                     <prompt bargein ="false">
                         sorry you have run out of tries, you lose a life, next question.
                     </prompt>
-                    <else/>
                     <goto next="#questionTwo"/>
-                </elseif>
+                
 
                 <else/>
                     <assign name="tries" expr="minus_point(tries)"/>
