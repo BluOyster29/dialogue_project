@@ -2,9 +2,9 @@
 <grammar version="1.0" tag-format="semantics/1.0" root="q1">
 
     <rule id="q1">
-        <one-of>
-            <item>Sweet Child of mine</item>
-        </one-of>
+
+        <item>Sweet Child of mine</item>
+  
     </rule>
 
 </grammar>
