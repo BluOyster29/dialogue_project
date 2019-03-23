@@ -4,10 +4,6 @@ app = Flask(__name__)
 
 song = ["audio/metal.wav", "audio/metal.wav"]
 
-def song_list(song):
-    for i in song:
-        yield i
-
 @app.route('/main_menu')
 def main_menu():
     vxml = render_template('main_menu.xml')
@@ -24,7 +20,7 @@ def fail():
 
 @app.route('/test')
 def test():
-    vxml = render_template('test.xml', song=song)
+    vxml = render_template('test.xml', song=song[0])
     response = make_response(vxml)
     response.headers["Content-Type"] = "application/xml"
     return response    
