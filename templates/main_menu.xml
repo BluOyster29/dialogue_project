@@ -285,7 +285,7 @@
       <prompt>
         Here is the first one. 
       </prompt>
-      <audio src="{{song}}"/>
+      <audio src="/audio/metal.wav"/>
       <prompt>
         Was it A, Free Bird,
         Was it B, Sweet child of mine, 
