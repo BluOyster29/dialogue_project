@@ -15,10 +15,10 @@
     
 
     <form id="testing">
-    
+        <var name="points" expr="score"/>
         <field name="tryOne">
             <prompt>
-                Your score equals <var name="score"/> .         
+                Your score equals <var name="points"/> .         
             </prompt>
             <option> Nice</option>
         </field>
