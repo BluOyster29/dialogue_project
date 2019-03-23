@@ -21,10 +21,12 @@
 
   <!-- State machine -->
   <form id="welcome">
+    <block>
     <prompt>
       Welcome, please spell out your name letter by letter. When you are done say, finished.
     </prompt>
     <goto next="#spelling"/>
+    </block>
   </form>
         
      
