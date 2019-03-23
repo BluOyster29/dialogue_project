@@ -1,7 +1,8 @@
 var name = [];
 var score = 0;
 var tries = 3;
-var lives = 10;
+var lives = 5;
+
 var playerName = "Robby Bob Socks";
 
 function add_letter(letter){
@@ -26,6 +27,10 @@ function reset_tries(tries){
   return tries
 }
 
+function reset_lives(lives){
+  lives = 10
+  return lives
+}
 function add_point(score) {
     return score + 1;
 

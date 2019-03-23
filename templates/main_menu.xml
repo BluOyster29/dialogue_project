@@ -7,24 +7,25 @@
   <script src="{{url_for('static', filename='game_script.js')}}"></script>
 
   <!-- State machine -->
-
-  <linknext>
+  <!--
+  <link next="">
   <grammar mode="voice" version="1.0" root="root">
     <rule id="root" scope="public">
        <item>skip</item>>
     </rule>
   </grammar>
-</linknext>
+</link>
+-->
 
   <form id="welcome">
     <block>
     <prompt bargein ="false">
-      <!--
+      
       Welcome to Rob's trivia game first let's get your name. please spell out your name letter by letter. When you are done say, finished. 
       I will repeat the words after you, if I get it wrong just say, start over.
-      -->
+      
     </prompt>
-    <goto next="#level_two"/>
+    <goto next="#spelling"/>
     </block>
   </form>
         
@@ -333,7 +334,86 @@
         Was it C, Bohemian Rhapsody,
         Or was it D, Run to the hills.
       </prompt>
+    </field>
+    <nomatch>
+        <if cond="lives=='1'">
+          <goto next="#fail"/>
+      
+        <elseif cond="tries == '1'"/>
+          <prompt>
+            You are out of tries, you lose a life. Next question!
+            <goto next="#question_3"/>
+          </prompt>
+        <else/>
+          <assign name="tries" expr="minus_point(tries)"/>
+          <prompt>
+            That is wrong. You have <value expr="tries"/> tries remaining.
+            Try again.
+          </prompt>
+        </if>  
+      </nomatch>
+    <filled>
+      <prompt>
+        Great job that's correct
+      </prompt>
+      <assign name="score" expr="add_point(score)"/>    
+      <goto next="#completion"/>
+    </filled>
+  </form>
+
+  <form id="question_3">
+    <field id="question_3">
+      <assign name="tries" expr="reset_tries(tries)"/>
+      <grammar src="/grammars/intro_round_grammar.xml#q3"/>
+      <prompt> Here comes another.
+      </prompt>
       <audio src="audio/generation.wav"/>
+      <prompt>
+        Was it A, ,
+        Was it B, , 
+        Was it C, ,
+        Or was it D, .
+      </prompt>
+    </field>
+    <nomatch>
+        <if cond="lives=='1'">
+          <goto next="#fail"/>
+      
+        <elseif cond="tries == '1'"/>
+          <prompt>
+            You are out of tries, you lose a life. Next question!
+            <goto next="#question_4"/>
+          </prompt>
+        <else/>
+          <assign name="tries" expr="minus_point(tries)"/>
+          <prompt>
+            That is wrong. You have <value expr="tries"/> tries remaining.
+            Try again.
+          </prompt>
+        </if>  
+      </nomatch>
+    <filled>
+      <prompt>
+        Great job that's correct
+      </prompt>
+      <assign name="score" expr="add_point(score)"/>    
+      <goto next="#question_4"/>
+    </filled>
+  </form>
+
+  <form id="question_4">
+    <field id="question_4">
+      <assign name="tries" expr="reset_tries(tries)"/>
+      <grammar src="/grammars/intro_round_grammar.xml#q4"/>
+      <prompt> Here comes another.
+      </prompt>
+      <audio src="audio/generation.wav"/>
+      <prompt>
+        Was it A, ,
+        Was it B, , 
+        Was it C, .
+        Or was it D, .
+      </prompt>
     </field>
     <nomatch>
         <if cond="lives=='1'">
@@ -361,5 +441,78 @@
     </filled>
   </form>
 
+  <form id="question_5">
+    <field id="question_5">
+      <assign name="tries" expr="reset_tries(tries)"/>
+      <grammar src="/grammars/intro_round_grammar.xml#q5"/>
+      <prompt> Here comes another.
+      </prompt>
+      <audio src="audio/generation.wav"/>
+      <prompt>
+        Was it A, H,
+        Was it B, , 
+        Was it C, ,
+        Or was it D, .
+      </prompt>
+    </field>
+    <nomatch>
+        <if cond="lives=='1'">
+          <goto next="#fail"/>
+      
+        <elseif cond="tries == '1'"/>
+          <prompt>
+            You are out of tries, you lose a life. Next question!
+            <goto next="#question_2"/>
+          </prompt>
+        <else/>
+          <assign name="tries" expr="minus_point(tries)"/>
+          <prompt>
+            That is wrong. You have <value expr="tries"/> tries remaining.
+            Try again.
+          </prompt>
+        </if>  
+      </nomatch>
+    <filled>
+      <prompt>
+        Great job that's correct
+      </prompt>
+      <assign name="score" expr="add_point(score)"/>    
+      <goto next="#level_three"/>
+    </filled>
+  </form>
 
+  <form id="completion">
+    <!--
+    <field name="congrats">
+      -->
+      <prompt>
+        Well done <value expr="playerName"/> you have made it to the end of the game!
+        You have <value expr="score"/> points and <value expr="lives"/> left. Not bad, we will
+        add you to the leader board! I hope you have fun playing, please play again. 
+      </prompt>
+      <!--
+    </field>
+    -->
+  </form>
+
+  <form id="failed">
+        <field name="failureMessage">
+            <prompt>
+                I am afraid you ahve run out of lives and you only managed to get <value expr="score"/> points, hash tag loser, but that is ok we have a few options.
+                If you have enough money you can bribe the government and try again, or accept your 
+                fate and exit. What would you like to do? Bribe or exit the game?
+            </prompt>
+            <option>Bribe</option>
+            <option>Exit game</option>
+        </field>
+        <filled>
+            <if cond="failureMessage='bribe'">
+                <prompt>You chose bribe! Very British of you, please try again</prompt>
+                <goto next="#question_one"/>
+                <assign name="lives" expr="reset_lives"/>
+            </if>
+            <else/>
+            <prompt>Thanks for playin.</prompt>
+        </filled>
+    </form>
 </vxml>
