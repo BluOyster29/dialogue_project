@@ -35,17 +35,20 @@
                 Greek, grapes
             </prompt>
             <nomatch>
-                <if cond="tries == '1'">
+                <assign name="lives" expr="minus_point(lives)"/>
+                <if cond="lives = '0'">
+                        <goto next="#fail"/>
+                </if>
+
+                <elseif cond="tries == '0'">
+                    <assign name="lives" expr="minus_point(lives)"/>
                     <prompt bargein ="false">
                         sorry you have run out of tries, you lose a life, next question.
                     </prompt>
-                    <assign name="lives" expr="minus_point(lives)"/>
-                    <if cond="lives = '0'">
-                        <goto next="#fail"/>
-                    </if>
                     <else/>
                     <goto next="#questionTwo"/>
-                </if>
+                </elseif>
+
                 <else/>
                     <assign name="tries" expr="minus_point(tries)"/>
                     <prompt>
