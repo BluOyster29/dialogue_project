@@ -18,6 +18,12 @@
       return name.toString()
 
   }
+
+  function reset_name(name){
+    name = [];
+    return name
+  }
+
     ]]></script> 
 
 
@@ -25,7 +31,8 @@
   <form id="welcome">
     <block>
     <prompt bargein ="false">
-      Welcome, please spell out your name letter by letter. When you are done say, finished.
+      Welcome, please spell out your name letter by letter. When you are done say, finished. 
+      I will repeat the words after you, if I get it wrong just say, start over.
     </prompt>
     <goto next="#spelling"/>
     </block>
@@ -41,7 +48,14 @@
       <if cond="addLetter == 'finished'">
         <assign name="playerName" expr="read_name()"/> 
         <goto next="#nameConfirmation"/>
-      
+        
+      <elseif cond="addLetter == 'start over'"/>
+        <assign name="name" expr="reset_name(name)"/>
+        <prompt>
+          Starting over
+        </prompt>
+        <goto next="#spelling"/>
+
       <else/>
         <value expr="addLetter"/>
         <assign name="name" expr="add_letter(addLetter)"/>
