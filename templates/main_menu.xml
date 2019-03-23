@@ -94,12 +94,203 @@
         Your name is now
         <value expr="playerName"/>
         .
-        <goto next="level_one"/>
+        <goto next="#question_one"/>
       <else/>
         Awesome.
-        <goto next="level_one"/>
+        <goto next="#question_one"/>
       </if>
     </filled>
   </form>
-      
+  
+    <form id="question_one">
+        <field name="q1">
+	  <grammar src="grammars/easy_grammar.xml"/>
+            <prompt bargein ="false">
+            <grammar src="grammars/easy_grammar.xml#q1"/>
+                Hello <value expr="playerName"/>,
+                Repeat after me.
+                Greek, grapes
+            </prompt>
+            <nomatch>
+                <if cond="lives == '0'">
+                        <goto next="fail"/>
+                
+
+                <elseif cond="tries == '0'"/>
+                    <assign name="lives" expr="minus_point(lives)"/>
+                    <prompt bargein ="false">
+                        sorry you have run out of tries, you lose a life, next question.
+                    </prompt>
+                    <goto next="#questionTwo"/>
+                
+                <else/>
+                    <assign name="tries" expr="minus_point(tries)"/>
+                    <prompt>
+                        you have <value expr="tries"/> tries remaining. 
+                    </prompt>
+                </if>
+            </nomatch>
+        </field>
+
+        <filled>
+          <prompt>
+	        Well done! You said: <value expr="q1$.utterance"/>,
+	        <break time ="2s"/>
+	    </prompt>
+        <assign name="score" expr="add_point(score)"/>
+	    <goto next="#questionTwo"/>
+	    </filled>
+    </form>
+
+    <form id ="questionTwo">
+        <field name = "q2">
+            <assign name="tries" expr="reset(tries)"/>"
+            <grammar src="grammars/easy_grammar.xml"/>
+            <prompt> Here Comes another! You currently have <value expr="score"/> points. Now try,</prompt>>
+            <prompt>
+                <grammar src="grammars/easy_grammar.xml#q2"/>
+                Unique, New, York.
+            </prompt>
+            <nomatch>
+                <if cond="lives == '0'">
+                        <goto next="fail"/>
+                
+                <elseif cond="tries == '0'"/>
+                    <assign name="lives" expr="minus_point(lives)"/>
+                    <prompt bargein ="false">
+                        sorry you have run out of tries, you lose a life, next question.
+                    </prompt>
+                    <goto next="#question_three"/>
+                
+                <else/>
+                    <assign name="tries" expr="minus_point(tries)"/>
+                    <prompt>
+                        you have <value expr="tries"/> tries remaining. 
+                    </prompt>
+                </if>
+            </nomatch>
+        </field>
+        <filled>
+          <prompt>
+	        Well done! You said: <value expr="q2$.utterance"/>,
+	        <break time ="2s"/>
+	        </prompt>
+        <assign name="score" expr="add_point(score)"/>
+	    <goto next="#question_three"/>
+	    </filled>  
+    </form>
+    
+    <form id ="question_three">
+        <field name = "q3">
+            <grammar src="grammars/easy_grammar.xml"/>
+            <prompt>
+                <grammar src="grammars/easy_grammar.xml#q3"/>
+                Getting better, nice! Here comes another.
+                Red, lorry, yellow, lorry
+            </prompt>
+        <nomatch>
+                <if cond="lives == '0'">
+                        <goto next="fail"/>
+                
+                <elseif cond="tries == '0'"/>
+                    <assign name="lives" expr="minus_point(lives)"/>
+                    <prompt bargein ="false">
+                        sorry you have run out of tries, you lose a life, next question.
+                    </prompt>
+                    <goto next="#question_four"/>
+                
+                <else/>
+                    <assign name="tries" expr="minus_point(tries)"/>
+                    <prompt>
+                        you have <value expr="tries"/> tries remaining. 
+                    </prompt>
+                </if>
+            </nomatch>
+        </field>
+
+        <filled>
+          <prompt>
+	        Well done! You said: <value expr="q3$.utterance"/>,
+	        <break time ="2s"/>
+	        </prompt>
+        <assign name="score" expr="add_point(score)"/>
+	    <goto next="#question_four"/>
+	    </filled>  
+    </form>
+
+    <form id ="question_four">
+        <field name = "q4">
+            <grammar src="grammars/easy_grammar.xml"/>
+            <prompt>
+                <grammar src="grammars/easy_grammar.xml#q4"/>
+                Well done. Now here is another, repeat after me.
+                She says cheese
+            </prompt>
+        <nomatch>
+                <if cond="lives == '0'">
+                        <goto next="fail"/>
+                
+                <elseif cond="tries == '0'"/>
+                    <assign name="lives" expr="minus_point(lives)"/>
+                    <prompt bargein ="false">
+                        sorry you have run out of tries, you lose a life, next question.
+                    </prompt>
+                    <goto next="#question_five"/>
+                
+                <else/>
+                    <assign name="tries" expr="minus_point(tries)"/>
+                    <prompt>
+                        you have <value expr="tries"/> tries remaining. 
+                    </prompt>
+                </if>
+            </nomatch>
+        </field>
+
+        <filled>
+          <prompt>
+	        Well done! You said: <value expr="q4$.utterance"/>,
+	        <break time ="2s"/>
+	        </prompt>
+        <assign name="score" expr="add_point(score)"/>
+	    <goto next="#question_five"/>
+	    </filled>  
+    </form>
+
+    <form id ="question_five">
+        <field name = "q5">
+            <grammar src="grammars/easy_grammar.xml"/>
+            <prompt>
+                <grammar src="grammars/easy_grammar.xml#q5"/>
+                Here is the final easy twister. You currently have <value expr="score"/> points. It's a bit tougher than the last.
+                Fred fed Ted bread and Ted fed Fred Bread 
+            </prompt>
+        </field>
+        <nomatch>
+                <if cond="lives == '0'">
+                        <goto next="fail"/>
+                
+                <elseif cond="tries == '0'"/>
+                    <assign name="lives" expr="minus_point(lives)"/>
+                    <prompt bargein ="false">
+                        sorry you have run out of tries, you lose a life, next question.
+                    </prompt>
+                    <goto next="#question_five"/>
+                
+                <else/>
+                    <assign name="tries" expr="minus_point(tries)"/>
+                    <prompt>
+                        you have <value expr="tries"/> tries remaining. 
+                    </prompt>
+                </if>
+            </nomatch>
+        <filled>
+          <prompt>
+	        Well done! You said: <value expr="q5$.utterance"/>,
+	        <break time ="2s"/>
+	        </prompt>
+        <assign name="score" expr="add_point(score)"/>
+	    <goto next="level_two"/>
+	    </filled>  
+    </form>
+
 </vxml>

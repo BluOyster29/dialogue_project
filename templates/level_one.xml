@@ -2,29 +2,6 @@
 <vxml version="2.1" xmlns="http://www.w3.org/2001/vxml"
       xmlns:voxeo="http://community.voxeo.com/xmlns/vxml">
 
-    <!-- 
-    <script> <![CDATA[ 
-    
-    var score = 0;
-    var tries = 3;
-    var lives = 10;
-
-    function reset_tries(tries){
-        return tries = 3;
-    }
-
-    function add_point(score) {
-        return score + 1;
-    }
-
-    function minus_point(score) {
-        return score - 1;
-    }
-        
-  ]]> </script> 
-    -->
-    
-    <script src="{{url_for('static', filename='game_script.js')}}"></script>
 
     <form id="question_one">
         <field name="q1">
@@ -216,23 +193,4 @@
 	    <goto next="level_two"/>
 	    </filled>  
     </form>
-
-    
-    <!--
-    <form id="testing">
-       
-        <field name="tryOne">
-            <prompt>
-                Your score equals <value expr="score"/> .         
-            </prompt>
-            <option> Nice</option>
-        </field>
-        <filled>
-            If we add 1, it will be <var name="score" expr="add_point(score)"/> 
-            <value expr="score"/>. However if you lose a point, we will take away 1. 
-            <var name="score" expr="minus_point(score)"/> which will make your score 
-            <value expr="score"/> again. lol
-        </filled>
-    </form>
-    -->
 </vxml>
