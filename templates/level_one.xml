@@ -10,9 +10,7 @@
         return score + 1;
     }
 
-    function minus_point(score) {
-        return score - 1;
-    }
+   
         
   ]]> </script> 
 
