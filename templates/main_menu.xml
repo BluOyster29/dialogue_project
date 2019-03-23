@@ -316,6 +316,7 @@
         Great job that's correct
       </prompt>
       <assign name="score" expr="add_point(score)"/>    
+      <goto next="#question_2"/>
     </filled>
   </form>
 
@@ -356,7 +357,7 @@
         Great job that's correct
       </prompt>
       <assign name="score" expr="add_point(score)"/>    
-      <goto next="#question_2"/>
+      <goto next="#question_3"/>
     </filled>
   </form>
 
