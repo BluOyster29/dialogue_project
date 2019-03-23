@@ -41,8 +41,6 @@ function minus_point(score) {
     return score - 1;
 }
 
-var startTime = start();
-
 function sleep(miliseconds) {
     var currentTime = new Date().getTime();
  
@@ -55,7 +53,6 @@ function start() {
     return startTime
   };
   
-var endTime = end_time();
 
 function end(){
    var endTime = new Date();
