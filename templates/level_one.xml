@@ -3,22 +3,17 @@
       xmlns:voxeo="http://community.voxeo.com/xmlns/vxml">
 
     <script> <![CDATA[ 
-    
-    function score() {
-        score = "0";
-        return score;    
-    }
-        
-
+     
     function add_point(score) {
      return score + 1;
     }
         
   ]]> </script> 
 
-    <var name="score" expr="0"/>
+    
 
     <form id="testing">
+        <var name="score" expr="0"/>
         <field name="tryOne">
             <prompt>
                 Your score equals <var expr="score"/> .         
