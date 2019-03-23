@@ -24,7 +24,7 @@
             <option> Nice</option>
         </field>
         <filled>
-            If we add 1, it will be <var expr="add_point(score)"/> 
+            If we add 1, it will be <value expr="add_point(score)"/> 
         </filled>
     </form>
 
