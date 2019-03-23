@@ -4,7 +4,11 @@
 
     <script> <![CDATA[ 
     
-    var score = 0;
+    function score() {
+        score = 0;
+        return score;    
+    }
+        
 
     function add_point(score) {
      return score + 1;
@@ -12,13 +16,12 @@
         
   ]]> </script> 
 
-    <assign name="score" expr="score()"/>
+    <var name="score" expr="score()"/>
 
     <form id="testing">
         <field name="tryOne">
             <prompt>
-                Your score equals <var expr="score"/> . 
-                           
+                Your score equals <var expr="score()"/> .         
             </prompt>
             <option> Nice</option>
         </field>
