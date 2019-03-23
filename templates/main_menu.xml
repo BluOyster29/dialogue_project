@@ -39,7 +39,9 @@
       <if cond="playerName='finished'">
         <prompt>Hello <value expr="name"/></prompt>
       <else/>
-        <assign expr="add_letter(addLetter)"/>
+        <value expr="addLetter"/>
+        
+        <!--<assign expr="add_letter(addLetter)"/>-->
         <goto next="#spelling"/>
       </if>
     </filled>
