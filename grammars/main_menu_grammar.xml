@@ -3,11 +3,11 @@
 
     <rule id="name">
         <one-of>
-            <item>A</item>
-            <item>B</item>
-            <item>C</item>
-            <item>D</item>
-            <item>E</item>
+            <item>a</item>
+            <item>b</item>
+            <item>c</item>
+            <item>d</item>
+            <item>e</item>
             <item>F</item>
             <item>G</item>
             <item>H</item>
