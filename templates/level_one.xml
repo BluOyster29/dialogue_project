@@ -36,7 +36,8 @@
             </prompt>
             <nomatch>
                 <assign name="lives" expr="minus_point(lives)"/>
-                <if cond="lives = '2'">
+                
+                <if cond="lives == '2'">
                         <goto next="fail"/>
                 
 
@@ -47,7 +48,6 @@
                     </prompt>
                     <goto next="#questionTwo"/>
                 
-
                 <else/>
                     <assign name="tries" expr="minus_point(tries)"/>
                     <prompt>
