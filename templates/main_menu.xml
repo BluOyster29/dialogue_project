@@ -9,6 +9,7 @@
 
     function add_letter(letter){
       name.push(letter);
+      return name
       
     }
 
@@ -41,7 +42,6 @@
         <prompt>Hello <value expr="read_name()"/></prompt>
       <else/>
         <value expr="addLetter"/>
-
         <assign name="name" expr="add_letter(addLetter)"/>
         <goto next="#spelling"/>
       </if>
