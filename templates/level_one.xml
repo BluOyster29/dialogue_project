@@ -38,7 +38,7 @@
                 <assign name="lives" expr="minus_point(lives)"/>
                 <if cond="lives = '0'">
                         <goto next="#fail"/>
-                </if>
+                
 
                 <elseif cond="tries == '0'">
                     <assign name="lives" expr="minus_point(lives)"/>
@@ -54,6 +54,7 @@
                     <prompt>
                         you have <value expr="tries"/> tries remaining. 
                     </prompt>
+                </if>
             </nomatch>
         </field>
 
