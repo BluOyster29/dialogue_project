@@ -135,7 +135,7 @@
     </nomatch>
   </field>
   <filled>
-    <prompt>
+    <prompt bargein ="false">
       Well done! You said: <value expr="q1$.utterance"/>,
       <break time ="2s"/>
     </prompt>
@@ -148,7 +148,7 @@
       <field name = "q2">
         <assign name="tries" expr="reset(tries)"/>"
         <grammar src="grammars/easy_grammar.xml"/>
-        <prompt> Here is the second one. Now try,</prompt>>
+        <prompt bargein ="false"> Here is the second one. Now try,</prompt>>
         <prompt>
             <grammar src="grammars/easy_grammar.xml#q2"/>
             Unique, New, York.
@@ -164,14 +164,14 @@
               <goto next="#question_three"/>
           <else/>
               <assign name="tries" expr="minus_point(tries)"/>
-              <prompt>
+              <prompt bargein ="false">
                   you have <value expr="tries"/> tries remaining. 
               </prompt>
           </if>
         </nomatch>
       </field>
       <filled>
-        <prompt>
+        <prompt bargein ="false"> 
         Well done! You said: <value expr="q2$.utterance"/>,
         <break time ="2s"/>
         </prompt>
@@ -183,7 +183,7 @@
   <form id ="question_three">
     <field name = "q3">
         <grammar src="grammars/easy_grammar.xml"/>
-        <prompt>
+        <prompt bargein ="false">
             <grammar src="grammars/easy_grammar.xml#q3"/>
             Getting better, nice! Here comes another.
             Red lorry yellow lorry
@@ -201,7 +201,7 @@
       
       <else/>
           <assign name="tries" expr="minus_point(tries)"/>
-          <prompt>
+          <prompt bargein ="false">
               you have <value expr="tries"/> tries remaining. 
           </prompt>
       </if>
@@ -209,7 +209,7 @@
     </field>
 
     <filled>
-      <prompt>
+      <prompt bargein ="false">
         Well done! You said: <value expr="q3$.utterance"/>,
       <break time ="2s"/>
       </prompt>
@@ -221,7 +221,7 @@
   <form id ="question_four">
     <field name = "q4">
         <grammar src="grammars/easy_grammar.xml"/>
-        <prompt>
+        <prompt bargein ="false">
             <grammar src="grammars/easy_grammar.xml#q4"/>
             Now here is another, repeat after me.
             She says cheese
@@ -239,7 +239,7 @@
         
         <else/>
             <assign name="tries" expr="minus_point(tries)"/>
-            <prompt>
+            <prompt bargein ="false">
                 you have <value expr="tries"/> tries remaining. 
             </prompt>
         </if>
@@ -247,7 +247,7 @@
     </field>
 
     <filled>
-      <prompt>
+      <prompt bargein ="false">
       Well done! You said: <value expr="q4$.utterance"/>,
       <break time ="2s"/>
       </prompt>
@@ -259,7 +259,7 @@
   <form id ="question_five">
     <field name = "q5">
         <grammar src="grammars/easy_grammar.xml"/>
-        <prompt>
+        <prompt bargein ="false">
             <grammar src="grammars/easy_grammar.xml#q5"/>
             Here is the final easy twister. You currently have <value expr="score"/> points. It's a bit tougher than the last.
             Fred fed Ted bread and Ted fed Fred Bread 
@@ -278,13 +278,13 @@
       
       <else/>
           <assign name="tries" expr="minus_point(tries)"/>
-          <prompt>
+          <prompt bargein ="false">
               you have <value expr="tries"/> tries remaining. 
           </prompt>
       </if>
     </nomatch>
       <filled>
-        <prompt>
+        <prompt bargein ="false">
           Well done! You said: <value expr="q5$.utterance"/>,
           <break time ="2s"/>
         </prompt>
@@ -298,7 +298,7 @@
     <field id="question_1">
       <assign name="tries" expr="reset_tries(tries)"/>
       <grammar src="/grammars/intro_round_grammar.xml#q1"/>
-      <prompt> 
+      <prompt bargein ="false"> 
         Well done <value expr="playerName"/>, You have made it to level two!
         You have <value expr="score"/> points, and <value expr="lives"/> lives.
         In this next round will be an intros round. Rob the creator will sing an 
@@ -327,14 +327,14 @@
         <goto next="#question_2"/>
       <else/>
         <assign name="tries" expr="minus_point(tries)"/>
-        <prompt>
+        <prompt bargein ="false">
           That is wrong. You have <value expr="tries"/> tries remaining.
           Try again.
         </prompt>
       </if>  
     </nomatch>
     <filled>
-      <prompt>
+      <prompt bargein ="false">
         Great job that's correct
       </prompt>
       <assign name="score" expr="add_point(score)"/>    
@@ -350,7 +350,7 @@
         Here comes another.
       </prompt>
       <audio src="audio/generation.wav"/>
-      <prompt>
+      <prompt bargein ="false">
         Was it A, Highway to Hell,
         Was it B, My Generation, 
         Was it C, Bohemian Rhapsody,
@@ -361,20 +361,20 @@
       <if cond="lives=='1'">
         <goto next="#fail"/>
       <elseif cond="tries == '1'"/>
-        <prompt>
+        <prompt bargein ="false">
           You are out of tries, you lose a life. Next question!
           <goto next="#question_3"/>
         </prompt>
       <else/>
         <assign name="tries" expr="minus_point(tries)"/>
-        <prompt>
+        <prompt bargein ="false">
           That is wrong. You have <value expr="tries"/> tries remaining.
           Try again.
         </prompt>
       </if>  
     </nomatch>
     <filled>
-      <prompt>
+      <prompt bargein ="false">
         Great job that's correct
       </prompt>
       <assign name="score" expr="add_point(score)"/>    
@@ -386,11 +386,11 @@
     <field id="question_3">
       <assign name="tries" expr="reset_tries(tries)"/>
       <grammar src="/grammars/intro_round_grammar.xml#q3"/>
-      <prompt> 
+      <prompt bargein ="false"> 
         Here comes another.
       </prompt>
       <audio src="audio/generation.wav"/>
-      <prompt>
+      <prompt bargein ="false">
         Was it A, ,
         Was it B, , 
         Was it C, ,
@@ -401,20 +401,20 @@
       <if cond="lives=='1'">
         <goto next="#fail"/>
       <elseif cond="tries == '1'"/>
-        <prompt>
+        <prompt bargein ="false">
           You are out of tries, you lose a life. Next question!
           <goto next="#question_4"/>
         </prompt>
       <else/>
         <assign name="tries" expr="minus_point(tries)"/>
-        <prompt>
+        <prompt bargein ="false">
           That is wrong. You have <value expr="tries"/> tries remaining.
           Try again.
         </prompt>
       </if>  
     </nomatch>
     <filled>
-      <prompt>
+      <prompt bargein ="false">
         Great job that's correct
       </prompt>
       <assign name="score" expr="add_point(score)"/>    
@@ -426,11 +426,11 @@
     <field id="question_4">
       <assign name="tries" expr="reset_tries(tries)"/>
       <grammar src="/grammars/intro_round_grammar.xml#q4"/>
-      <prompt> 
+      <prompt bargein ="false"> 
         Here comes another.
       </prompt>
       <audio src="audio/generation.wav"/>
-      <prompt>
+      <prompt bargein ="false">
         Was it A, ,
         Was it B, , 
         Was it C, .
@@ -441,20 +441,20 @@
       <if cond="lives=='1'">
         <goto next="#fail"/>
       <elseif cond="tries == '1'"/>
-        <prompt>
+        <prompt bargein ="false">
           You are out of tries, you lose a life. Next question!
           <goto next="#question_2"/>
         </prompt>
       <else/>
         <assign name="tries" expr="minus_point(tries)"/>
-        <prompt>
+        <prompt bargein ="false">
           That is wrong. You have <value expr="tries"/> tries remaining.
           Try again.
         </prompt>
       </if>  
     </nomatch>
     <filled>
-      <prompt>
+      <prompt bargein ="false">
         Great job that's correct
       </prompt>
       <assign name="score" expr="add_point(score)"/>    
@@ -466,11 +466,11 @@
     <field id="question_5">
       <assign name="tries" expr="reset_tries(tries)"/>
       <grammar src="/grammars/intro_round_grammar.xml#q5"/>
-      <prompt> 
+      <prompt bargein ="false"> 
         Here comes another.
       </prompt>
       <audio src="audio/generation.wav"/>
-      <prompt>
+      <prompt bargein ="false">
         Was it A, H,
         Was it B, , 
         Was it C, ,
@@ -482,20 +482,20 @@
         <goto next="#fail"/>
     
       <elseif cond="tries == '1'"/>
-        <prompt>
+        <prompt bargein ="false">
           You are out of tries, you lose a life. Next question!
           <goto next="#question_2"/>
         </prompt>
       <else/>
         <assign name="tries" expr="minus_point(tries)"/>
-        <prompt>
+        <prompt bargein ="false">
           That is wrong. You have <value expr="tries"/> tries remaining.
           Try again.
         </prompt>
       </if>  
     </nomatch>
     <filled>
-      <prompt>
+      <prompt bargein ="false">
         Great job that's correct
       </prompt>
       <assign name="score" expr="add_point(score)"/>    
@@ -511,7 +511,7 @@
   <!-- finish game -->
   <form id="completion">
     <field name="congrats">
-      <prompt>
+      <prompt bargein ="false">
         Well done <value expr="playerName"/> you have made it to the end of the game!
         You have <value expr="score"/> points and <value expr="lives"/> lives left. Not bad, we will
         add you to the leader board! I hope you have fun playing, please play again. Would 
@@ -522,13 +522,13 @@
     </field>
     <filled>
       <if cond="congrats='yes'">
-        <prompt>Awesome we can play again, if you play again you get to keep
+        <prompt bargein ="false">Awesome we can play again, if you play again you get to keep
           your score!
         </prompt>
       <else/>
         <assign name="end" expr="end(end)"/>
         <assign name="price" expr="get_price(start,end, price)"/>
-        <prompt>
+        <prompt bargein ="false">
           Fair enough this session cost 2 crowns a second. Your bill is <value expr="price"/> crowns.
           Please pay immediately.
         </prompt>
@@ -541,7 +541,7 @@
 
     <field name="failureMessage">
       <assign name="price" expr="end()"/>
-        <prompt>
+        <prompt bargein ="false">
             I am afraid you ahve run out of lives and you only managed to get <value expr="score"/> points, hash tag loser, but that is ok we have a few options.
             If you have enough money you can bribe the government and try again, or accept your 
             fate and exit. What would you like to do? Bribe or exit the game?
@@ -551,12 +551,12 @@
     </field>
     <filled>
       <if cond="failureMessage='bribe'">
-        <prompt>You chose bribe! Very British of you, please try again</prompt>
+        <prompt bargein ="false">You chose bribe! Very British of you, please try again</prompt>
         <goto next="#question_one"/>
         <assign name="lives" expr="reset_lives"/>
       <else/>
         <assign name="price" expr="end(lives)"/>
-        <prompt>
+        <prompt bargein ="false">
           Thanks for playin. The game costs 2 crowns a second. Your bill is <value expr="price"/> crowns
           . pay Now or prepare to be attacked by robots.
         </prompt>
