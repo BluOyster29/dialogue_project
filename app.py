@@ -71,6 +71,7 @@ def add_leaderboard(output):
         lines = l.readlines()
         print(word_tokenize(lines))
         print(output)
+        close(l)
         
         
 if __name__ == "__main__":
