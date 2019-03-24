@@ -68,19 +68,21 @@ def background_process():
 def add_leaderboard(output):
     if output == int:
         f = open("leaderboard.md", "a+")
-        f.write("\nPlayer Score: " + str(output) + "\n")
+        #f.write("\nPlayer Score: " + str(output) + "\n")
         f.close()
 
     else:
         f = open("leaderboard.md", "a+")
-        f.write("\nPlayer Name: " + output +'\n')
+        lines = f.lines
+        print(lines)
+        #f.write("\nPlayer Name: " + output +'\n')
         f.close()
 
 @app.route('/leaderboard')
 def leaderboard():
 	# serve index template
     try:
-	    return render_template('/templates/leaderboard.html')
+	    return render_template('leaderboard.html')
     except Exception as e:
         return (str(e))
         
