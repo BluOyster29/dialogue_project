@@ -80,9 +80,10 @@ def add_leaderboard(output):
 def leaderboard():
 	# serve index template
     try:
-	    return render_template('/templates/leaderboard.html')
+	    return render_template('/templates/leaderboard.md')
     except Exception as e:
         return (str(e))
         
 if __name__ == "__main__":
     app.run(debug=True)
+
