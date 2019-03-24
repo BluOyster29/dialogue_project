@@ -38,7 +38,7 @@ def interactive():
 	# serve index template
     try:
 	    return render_template('interactive.html')
-    except Exception, e:
+    except Exception as e:
         return (str(e))
 
 if __name__ == "__main__":
