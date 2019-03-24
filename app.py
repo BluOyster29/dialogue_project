@@ -47,7 +47,6 @@ def interactive():
 def background_process():
     try:
         name = request.args.get('playerName', 0, type=str)
-
         score = request.args.get('playerScore', 0, type=str)
       
         if name:
@@ -71,7 +70,6 @@ def add_leaderboard(output):
         lines = l.readlines()
         print(word_tokenize(lines))
         print(output)
-        close(l)
         
         
 if __name__ == "__main__":
