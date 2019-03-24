@@ -53,7 +53,7 @@ def background_process():
             add_leaderboard(name)
             return jsonify(result=name)
         elif score:
-            add_leaderboard(score)
+            add_leaderboard(int(score))
             return jsonify(result=score)
         '''
 		if lang.lower() == 'python':
@@ -66,7 +66,13 @@ def background_process():
 
 
 def add_leaderboard(output):
-    print(output)
+    if output == int:
+        f = open("leaderboard.md", "a+")
+        f.write("Player Score: " + str(output))
+
+    else:
+        f = open("leaderboard.md", "a+")
+        f.write("Player Name: " + output)
         
         
 if __name__ == "__main__":
