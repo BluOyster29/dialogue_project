@@ -16,7 +16,7 @@ function casual(points){
 
 //function resets lives to 0 for hard mode
 function hard(lives){
-  lives = 0;
+  lives = 1;
   return lives
 }
 
