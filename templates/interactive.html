@@ -16,7 +16,7 @@
 			$(function() {
 			  $('a#process_input').bind('click', function() {
 				$.getJSON('/background_process', {
-				  proglang: $('input[name="proglang"]').val(),
+				  proglang: $('input[name="playerName"]' or 'input[name="playerScore"]').val(),
 				}, function(data) {
 				  $("#result").text(data.result);
 				});
