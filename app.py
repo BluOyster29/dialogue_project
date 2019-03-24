@@ -1,4 +1,5 @@
 from flask import Flask, render_template, make_response, send_from_directory, jsonify, request
+from nltk import word_tokenize
 
 
 app = Flask(__name__)
@@ -66,12 +67,10 @@ def background_process():
 
 
 def add_leaderboard(output):
-    if output == int:
-        with open('leaderboard.md', 'wb') as l:
-            
-
-    else:
-        print(output)
-
+    with open('leaderboard.md', 'rb') as l:
+        lines = word_tokenize(l.readlines())
+        print(lines)
+        
+        
 if __name__ == "__main__":
     app.run(debug=True)
