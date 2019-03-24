@@ -50,10 +50,10 @@ def background_process():
         score = request.args.get('playerScore', 0, type=str)
       
         if name:
-            add_leaderboard(name)
+            #add_leaderboard(name)
             return jsonify(result=name)
         elif score:
-            add_leaderboard(score)
+            #add_leaderboard(score)
             return jsonify(result=score)
         '''
 		if lang.lower() == 'python':
