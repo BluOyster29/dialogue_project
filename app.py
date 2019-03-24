@@ -69,11 +69,20 @@ def add_leaderboard(output):
     if output == int:
         f = open("leaderboard.md", "a+")
         f.write("\nPlayer Score: " + str(output) + "\n")
+        f.close()
 
     else:
         f = open("leaderboard.md", "a+")
         f.write("\nPlayer Name: " + output +'\n')
-        
+        f.close()
+
+@app.route('/leaderboard')
+def leaderboard():
+	# serve index template
+    try:
+	    return render_template('leaderboard.md')
+    except Exception as e:
+        return (str(e))
         
 if __name__ == "__main__":
     app.run(debug=True)
