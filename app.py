@@ -1,4 +1,4 @@
-from flask import Flask, render_template, make_response, send_from_directory
+from flask import Flask, render_template, make_response, send_from_directory, jsonify
 
 app = Flask(__name__)
 
@@ -33,10 +33,13 @@ def send_grammar(path):
 def send_audio(path):
     return send_from_directory('audio', path)
 
-@app.route('/')
-def output():
+@app.route('/interactive/')
+def interactive():
 	# serve index template
-	return render_template('t_twisters.html', name='Rob')
+    try:
+	    return render_template('interactive.html')
+    except Exception, e:
+        return (str(e))
 
 if __name__ == "__main__":
     app.run(debug=True)
