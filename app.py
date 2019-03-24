@@ -1,13 +1,10 @@
 from flask import Flask, render_template, make_response, send_from_directory, jsonify, request
-import function
 
 app = Flask(__name__)
 
-song = ["audio/metal.wav", "audio/metal.wav"]
-
-@app.route('/main_menu')
+@app.route('/rob_trivia')
 def main_menu():
-    vxml = render_template('main_menu.xml')
+    vxml = render_template('rob_trivia.xml')
     response = make_response(vxml)
     response.headers["Content-Type"] = "application/xml"
     return response
@@ -34,6 +31,7 @@ def send_grammar(path):
 def send_audio(path):
     return send_from_directory('audio', path)
 
+'''
 @app.route('/interactive/')
 def interactive():
 	# serve index template
@@ -41,7 +39,7 @@ def interactive():
 	    return render_template('interactive.html')
     except Exception as e:
         return (str(e))
-'''
+
 @app.route('/background_process')
 def background_process():
     try:
