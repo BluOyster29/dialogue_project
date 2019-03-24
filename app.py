@@ -68,8 +68,9 @@ def background_process():
 
 def add_leaderboard(output):
     with open('leaderboard.md', 'rb') as l:
-        lines = word_tokenize(l.readlines())
-        print(lines)
+        lines = l.readlines()
+        print(word_tokenize(lines))
+        print(output)
         
         
 if __name__ == "__main__":
