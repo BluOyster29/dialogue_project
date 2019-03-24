@@ -45,7 +45,7 @@ def interactive():
 @app.route('/background_process')
 def background_process():
     try:
-        lang = request.args.get('proglang', 0, type=str)
+        lang = request.args.get('playerScore' or 'playerScore', 0, type=str)
         return jsonify(result=lang)
         '''
 		if lang.lower() == 'python':
