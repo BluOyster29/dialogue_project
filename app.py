@@ -1,6 +1,5 @@
 from flask import Flask, render_template, make_response, send_from_directory, jsonify, request
-from nltk import word_tokenize
-
+import function
 
 app = Flask(__name__)
 
@@ -42,7 +41,7 @@ def interactive():
 	    return render_template('interactive.html')
     except Exception as e:
         return (str(e))
-
+'''
 @app.route('/background_process')
 def background_process():
     try:
@@ -53,17 +52,14 @@ def background_process():
             return jsonify(result=name)
         elif score:
             return jsonify(result=score)
-        '''
+        
 		if lang.lower() == 'python':
 			return jsonify(result='You are wise')
 		else:
 			return jsonify(result='Try again.')
-        '''
+        
     except Exception as e:
         return str(e)
-
-
-        
 
 @app.route('/leaderboard')
 def leaderboard():
@@ -72,7 +68,8 @@ def leaderboard():
 	    return render_template('leaderboard.html')
     except Exception as e:
         return (str(e))
-        
+
+''' 
 if __name__ == "__main__":
     app.run(debug=True)
 
