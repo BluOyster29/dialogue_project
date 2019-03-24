@@ -19,7 +19,7 @@
 				  playerName: $('input[name="playerName"]').val(),
 				}, 
         function(data) {
-				  $("#result").text(data.result);
+				  $("#name_result").text(data.result);
 				});
 				return false;
 			  });
@@ -30,7 +30,7 @@
           playerScore: $('input[name="playerScore"]').val(),
 				}, 
         function(data) {
-				  $("#result").text(data.result);
+				  $("#score_result").text(data.result);
 				});
 				return false;
 			  });
@@ -58,7 +58,7 @@
       <h2>What is your score</h2>
           <form>
             <input type=text size=5 name=playerScore>
-            <a href='#' id=process_input><button class='btn btn-default'>Submit</button></a>
+            <a href='#' id=score_input><button class='btn btn-default'>Submit</button></a>
             
             <p id=result>Player Score: </p>
         </form>
