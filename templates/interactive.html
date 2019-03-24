@@ -26,10 +26,24 @@
     </script>
     
   <body class="body">
-    <div>
-      <h1>Rob's Trivia Game Leaderboard!</h1>
+    <div id="header">
+      <h1>Rob's Trivia Game</h1>
+    </div>
+
+    <div id="playerName">
     
-      <h2>What is the best programming Language?</h2>
+      <h2>What is your name</h2>
+          <form>
+          <input type=text size=5 name=proglang>
+          <a href='#' id=process_input><button class='btn btn-default'>Submit</button></a>
+          
+          <p id=result></p>
+        </form>
+    </div>
+
+    <div id="score">
+      
+      <h2>What is your score</h2>
           <form>
           <input type=text size=5 name=proglang>
           <a href='#' id=process_input><button class='btn btn-default'>Submit</button></a>

@@ -44,14 +44,17 @@ def interactive():
 
 @app.route('/background_process')
 def background_process():
-	try:
-		lang = request.args.get('proglang', 0, type=str)
+    try:
+        lang = request.args.get('proglang', 0, type=str)
+        return jsonify(result=lang)
+        '''
 		if lang.lower() == 'python':
 			return jsonify(result='You are wise')
 		else:
 			return jsonify(result='Try again.')
-	except Exception as e:
-		return str(e)
+        '''
+    except Exception as e:
+        return str(e)
 
 
 if __name__ == "__main__":
