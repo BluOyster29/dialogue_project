@@ -50,10 +50,8 @@ def background_process():
         score = request.args.get('playerScore', 0, type=str)
       
         if name:
-            add_leaderboard(name)
             return jsonify(result=name)
         elif score:
-            add_leaderboard(int(score))
             return jsonify(result=score)
         '''
 		if lang.lower() == 'python':
@@ -65,18 +63,7 @@ def background_process():
         return str(e)
 
 
-def add_leaderboard(output):
-    if output == int:
-        f = open("leaderboard.md", "a+")
-        #f.write("\nPlayer Score: " + str(output) + "\n")
-        f.close()
-
-    else:
-        f = open("leaderboard.md", "a+")
-        lines = f.lines
-        print(lines)
-        #f.write("\nPlayer Name: " + output +'\n')
-        f.close()
+        
 
 @app.route('/leaderboard')
 def leaderboard():
