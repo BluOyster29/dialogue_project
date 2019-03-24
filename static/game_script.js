@@ -8,6 +8,16 @@ var price;
 
 var playerName = "Robby Bob Socks";
 
+function casual(points){
+  points = points + 100;
+  return points
+}
+
+function hard(lives){
+  lives = 0;
+  return lives
+}
+
 function add_letter(letter){
   name.push(letter);
   return name

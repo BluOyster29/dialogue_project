@@ -6,31 +6,18 @@
 
   <script src="{{url_for('static', filename='game_script.js')}}"></script>
 
-  <!-- State machine -->
-  <!--
-  <link next="">
-  <grammar mode="voice" version="1.0" root="root">
-    <rule id="root" scope="public">
-       <item>skip</item>>
-    </rule>
-  </grammar>
-</link>
--->
+  <!-- welcome screen for game-->
 
   <form id="welcome">
     <assign name="start" expr="start(start)"/>
-    <block>
     <prompt bargein ="false">
-      
       Welcome to Rob's trivia game. first let's get your name. please spell out your name using the nato alphabet. When you are done say, finished. 
       I will repeat the words after you, if I get it wrong just say start over.
-      
     </prompt>
     <goto next="#spelling"/>
-    </block>
   </form>
         
-
+  <!-- form so user can spell out name using Nato alphabet -->
   <form id="spelling">
     <field name="addLetter">
       <grammar src="grammars/main_menu_grammar.xml#name"/>
@@ -39,14 +26,12 @@
       <if cond="addLetter == 'finished'">
         <assign name="playerName" expr="read_name()"/> 
         <goto next="#nameConfirmation"/>
-
       <elseif cond="addLetter == 'start over'"/>
         <assign name="name" expr="reset_name(name)"/>
         <prompt>
           Starting over
         </prompt>
         <goto next="#spelling"/>
-
       <else/>
         <value expr="addLetter"/>
         <assign name="name" expr="add_letter(addLetter)"/>
@@ -55,6 +40,7 @@
     </filled>
   </form>
 
+  <!-- confirming name, default name if there is error-->
   <form id="nameConfirmation">
     <field name="isCorrect">
       <prompt>
@@ -67,222 +53,254 @@
       <if cond="isCorrect == 'no'">
         <prompt>
           Sorry but we don't have enough time to try again. I will give you a default name. 
-          
         </prompt>
         <assign name="playerName" expr="'Robby Bob Socks'"/>
         Your name is now
         <value expr="playerName"/>
         .
-        <goto next="#question_one"/>
+        <goto next="#difficulty"/>
       <else/>
         Awesome.
-        <goto next="#question_one"/>
+        <goto next="#difficulty"/>
       </if>
     </filled>
   </form>
   
-    <form id="question_one">
-        <field name="q1">
-	  <grammar src="grammars/easy_grammar.xml"/>
-            <prompt bargein ="false">
-            <grammar src="grammars/easy_grammar.xml#q1"/>
-                Hello <value expr="playerName"/>, let's get started. I will ask you to repeat after me 
-                some English tongue twisters, you have three tries for this round and ten lives in total.
-                If you use all your tries you lose a life. Tries reset at the end of every round. Good luck! 
-                Here comes the first tongue twister.
-                Repeat after me.
-                Greek, grapes
-            </prompt>
-            <nomatch>
-                <if cond="lives == '1'">
-                        <goto next="fail"/>
-                
+  <form id="difficulty">
+    <field name="chooseDiff">
+      <prompt>
+        Would you like to play Casual, Medium or Hard mode?
+      </prompt>
+      <option>Casual</option>
+      <option>Medium</option>
+      <option>Hard</option>
+    </field>
+    <filled>
+      <if cond="chooseDiff == ' Casual'">
+        <prompt>You chose Casual mode, your tries and lives are unlimited, just have fun.</prompt>
+        <assign name="lives" expr="casual(lives)"/>
+        <assign name="tries" expr="casual(tries)"/>
+        <goto next="#question_one"/>
+      <elseif cond="chooseDiff == 'Medium'"/>
+        <prompt>
+          You have chosen Medium, this is the default setting, you have five lives and three tries per round before
+          losing a life.
+        </prompt>
+        <goto next="#question_one"/>
+      <elseif cond="chooseDiff == 'Hard'"/>
+        <prompt>
+          You have chosen hard, you have three tries that will reset per round but no lives. Good luck
+        </prompt>
+        <assign name="lives" expr="hard(lives)"/>
+        <goto next="#question_one"/>
+      <else/>
+        <prompt>
+          I didn't quite get that I will just give you the default difficulty of three tries and five lives. Good luck
+        </prompt>
+        <goto next="#question_one"/>
+      </if>
+    </filled>
+  </form>
 
-                <elseif cond="tries == '1'"/>
-                    <assign name="lives" expr="minus_point(lives)"/>
-                    <prompt bargein ="false">
-                        sorry you have run out of tries, you lose a life, next question.
-                    </prompt>
-                    <goto next="#questionTwo"/>
-                
-                <else/>
-                    <assign name="tries" expr="minus_point(tries)"/>
-                    <prompt>
-                        That's not quite it, you have <value expr="tries"/> tries remaining. 
-                    </prompt>
-                </if>
-            </nomatch>
-        </field>
+  <!-- round one tongue twister game -->
+  <form id="question_one">
+    <field name="q1">
+    <grammar src="grammars/easy_grammar.xml"/>
+    <prompt bargein ="false">
+      <grammar src="grammars/easy_grammar.xml#q1"/>
+        Hello <value expr="playerName"/>, let's get started. You have <value expr="lives"/> lives and <value expr="tries"/> remaining. I will ask you to repeat after me 
+        some English tongue twisters, you have three tries for this round and ten lives in total.
+        If you use all your tries you lose a life. Tries reset at the end of every round. Good luck! 
+        Here comes the first tongue twister.
+        Repeat after me.
+        Greek, grapes
+    </prompt>
+    <nomatch>
+      <if cond="lives == '1'">
+        <goto next="fail"/>
+      <elseif cond="tries == '1'"/>
+        <assign name="lives" expr="minus_point(lives)"/>
+        <prompt bargein ="false">
+            sorry you have run out of tries, you lose a life, next question.
+        </prompt>
+        <goto next="#questionTwo"/>
+      <else/>
+        <assign name="tries" expr="minus_point(tries)"/>
+        <prompt>
+            That's not quite it, you have <value expr="tries"/> tries remaining. 
+        </prompt>
+      </if>
+    </nomatch>
+  </field>
+  <filled>
+    <prompt>
+      Well done! You said: <value expr="q1$.utterance"/>,
+      <break time ="2s"/>
+    </prompt>
+    <assign name="score" expr="add_point(score)"/>
+    <goto next="#questionTwo"/>
+  </filled>
+  </form>
 
-        <filled>
-          <prompt>
-	        Well done! You said: <value expr="q1$.utterance"/>,
-	        <break time ="2s"/>
-	    </prompt>
-        <assign name="score" expr="add_point(score)"/>
-	    <goto next="#questionTwo"/>
-	    </filled>
-    </form>
-
-    <form id ="questionTwo">
-        <field name = "q2">
-            <assign name="tries" expr="reset(tries)"/>"
-            <grammar src="grammars/easy_grammar.xml"/>
-            <prompt> Here is the second one. Now try,</prompt>>
-            <prompt>
-                <grammar src="grammars/easy_grammar.xml#q2"/>
-                Unique, New, York.
-            </prompt>
-            <nomatch>
-                <if cond="lives == '1'">
-                        <goto next="fail"/>
-                
-                <elseif cond="tries == '1'"/>
-                    <assign name="lives" expr="minus_point(lives)"/>
-                    <prompt bargein ="false">
-                        sorry you have run out of tries, you lose a life, next question.
-                    </prompt>
-                    <goto next="#question_three"/>
-                
-                <else/>
-                    <assign name="tries" expr="minus_point(tries)"/>
-                    <prompt>
-                        you have <value expr="tries"/> tries remaining. 
-                    </prompt>
-                </if>
-            </nomatch>
-        </field>
-        <filled>
-          <prompt>
-	        Well done! You said: <value expr="q2$.utterance"/>,
-	        <break time ="2s"/>
-	        </prompt>
-        <assign name="score" expr="add_point(score)"/>
-	    <goto next="#question_three"/>
-	    </filled>  
-    </form>
+  <form id ="questionTwo">
+      <field name = "q2">
+        <assign name="tries" expr="reset(tries)"/>"
+        <grammar src="grammars/easy_grammar.xml"/>
+        <prompt> Here is the second one. Now try,</prompt>>
+        <prompt>
+            <grammar src="grammars/easy_grammar.xml#q2"/>
+            Unique, New, York.
+        </prompt>
+        <nomatch>
+          <if cond="lives == '1'">
+                  <goto next="fail"/>
+          <elseif cond="tries == '1'"/>
+              <assign name="lives" expr="minus_point(lives)"/>
+              <prompt bargein ="false">
+                  sorry you have run out of tries, you lose a life, next question.
+              </prompt>
+              <goto next="#question_three"/>
+          <else/>
+              <assign name="tries" expr="minus_point(tries)"/>
+              <prompt>
+                  you have <value expr="tries"/> tries remaining. 
+              </prompt>
+          </if>
+        </nomatch>
+      </field>
+      <filled>
+        <prompt>
+        Well done! You said: <value expr="q2$.utterance"/>,
+        <break time ="2s"/>
+        </prompt>
+      <assign name="score" expr="add_point(score)"/>
+    <goto next="#question_three"/>
+    </filled>  
+  </form>
     
-    <form id ="question_three">
-        <field name = "q3">
-            <grammar src="grammars/easy_grammar.xml"/>
-            <prompt>
-                <grammar src="grammars/easy_grammar.xml#q3"/>
-                Getting better, nice! Here comes another.
-                Red lorry yellow lorry
-            </prompt>
-        <nomatch>
-                <if cond="lives == '1'">
-                        <goto next="fail"/>
-                
-                <elseif cond="tries == '1'"/>
-                    <assign name="lives" expr="minus_point(lives)"/>
-                    <prompt bargein ="false">
-                        sorry you have run out of tries, you lose a life, next question.
-                    </prompt>
-                    <goto next="#question_four"/>
-                
-                <else/>
-                    <assign name="tries" expr="minus_point(tries)"/>
-                    <prompt>
-                        you have <value expr="tries"/> tries remaining. 
-                    </prompt>
-                </if>
-            </nomatch>
-        </field>
-
-        <filled>
+  <form id ="question_three">
+    <field name = "q3">
+        <grammar src="grammars/easy_grammar.xml"/>
+        <prompt>
+            <grammar src="grammars/easy_grammar.xml#q3"/>
+            Getting better, nice! Here comes another.
+            Red lorry yellow lorry
+        </prompt>
+    <nomatch>
+      <if cond="lives == '1'">
+              <goto next="fail"/>
+      
+      <elseif cond="tries == '1'"/>
+          <assign name="lives" expr="minus_point(lives)"/>
+          <prompt bargein ="false">
+              sorry you have run out of tries, you lose a life, next question.
+          </prompt>
+          <goto next="#question_four"/>
+      
+      <else/>
+          <assign name="tries" expr="minus_point(tries)"/>
           <prompt>
-	        Well done! You said: <value expr="q3$.utterance"/>,
-	        <break time ="2s"/>
-	        </prompt>
-        <assign name="score" expr="add_point(score)"/>
-	    <goto next="#question_four"/>
-	    </filled>  
-    </form>
+              you have <value expr="tries"/> tries remaining. 
+          </prompt>
+      </if>
+    </nomatch>
+    </field>
 
-    <form id ="question_four">
-        <field name = "q4">
-            <grammar src="grammars/easy_grammar.xml"/>
-            <prompt>
-                <grammar src="grammars/easy_grammar.xml#q4"/>
-                Now here is another, repeat after me.
-                She says cheese
+    <filled>
+      <prompt>
+        Well done! You said: <value expr="q3$.utterance"/>,
+      <break time ="2s"/>
+      </prompt>
+      <assign name="score" expr="add_point(score)"/>
+    <goto next="#question_four"/>
+  </filled>  
+  </form>
+
+  <form id ="question_four">
+    <field name = "q4">
+        <grammar src="grammars/easy_grammar.xml"/>
+        <prompt>
+            <grammar src="grammars/easy_grammar.xml#q4"/>
+            Now here is another, repeat after me.
+            She says cheese
+        </prompt>
+      <nomatch>
+        <if cond="lives == '1'">
+                <goto next="fail"/>
+        
+        <elseif cond="tries == '1'"/>
+            <assign name="lives" expr="minus_point(lives)"/>
+            <prompt bargein ="false">
+                sorry you have run out of tries, you lose a life, next question.
             </prompt>
-        <nomatch>
-                <if cond="lives == '1'">
-                        <goto next="fail"/>
-                
-                <elseif cond="tries == '1'"/>
-                    <assign name="lives" expr="minus_point(lives)"/>
-                    <prompt bargein ="false">
-                        sorry you have run out of tries, you lose a life, next question.
-                    </prompt>
-                    <goto next="#question_five"/>
-                
-                <else/>
-                    <assign name="tries" expr="minus_point(tries)"/>
-                    <prompt>
-                        you have <value expr="tries"/> tries remaining. 
-                    </prompt>
-                </if>
-            </nomatch>
-        </field>
-
-        <filled>
-          <prompt>
-	        Well done! You said: <value expr="q4$.utterance"/>,
-	        <break time ="2s"/>
-	        </prompt>
-        <assign name="score" expr="add_point(score)"/>
-	    <goto next="#question_five"/>
-	    </filled>  
-    </form>
-
-    <form id ="question_five">
-        <field name = "q5">
-            <grammar src="grammars/easy_grammar.xml"/>
+            <goto next="#question_five"/>
+        
+        <else/>
+            <assign name="tries" expr="minus_point(tries)"/>
             <prompt>
-                <grammar src="grammars/easy_grammar.xml#q5"/>
-                Here is the final easy twister. You currently have <value expr="score"/> points. It's a bit tougher than the last.
-                Fred fed Ted bread and Ted fed Fred Bread 
+                you have <value expr="tries"/> tries remaining. 
             </prompt>
-        </field>
-        <nomatch>
-                <if cond="lives == '1'">
-                        <goto next="fail"/>
-                
-                <elseif cond="tries == '1'"/>
-                    <assign name="lives" expr="minus_point(lives)"/>
-                    <prompt bargein ="false">
-                        sorry you have run out of tries, you lose a life, next question.
-                    </prompt>
-                    <goto next="#level_two"/>
-                
-                <else/>
-                    <assign name="tries" expr="minus_point(tries)"/>
-                    <prompt>
-                        you have <value expr="tries"/> tries remaining. 
-                    </prompt>
-                </if>
-            </nomatch>
-        <filled>
-          <prompt>
-	        Well done! You said: <value expr="q5$.utterance"/>,
-	        <break time ="2s"/>
-	        </prompt>
-        <assign name="score" expr="add_point(score)"/>
-	    <goto next="#level_two"/>
-	    </filled>  
-    </form>
+        </if>
+      </nomatch>
+    </field>
 
+    <filled>
+      <prompt>
+      Well done! You said: <value expr="q4$.utterance"/>,
+      <break time ="2s"/>
+      </prompt>
+      <assign name="score" expr="add_point(score)"/>
+      <goto next="#question_five"/>
+    </filled>  
+  </form>
+
+  <form id ="question_five">
+    <field name = "q5">
+        <grammar src="grammars/easy_grammar.xml"/>
+        <prompt>
+            <grammar src="grammars/easy_grammar.xml#q5"/>
+            Here is the final easy twister. You currently have <value expr="score"/> points. It's a bit tougher than the last.
+            Fred fed Ted bread and Ted fed Fred Bread 
+        </prompt>
+    </field>
+    <nomatch>
+      <if cond="lives == '1'">
+              <goto next="fail"/>
+      
+      <elseif cond="tries == '1'"/>
+          <assign name="lives" expr="minus_point(lives)"/>
+          <prompt bargein ="false">
+              sorry you have run out of tries, you lose a life, next question.
+          </prompt>
+          <goto next="#level_two"/>
+      
+      <else/>
+          <assign name="tries" expr="minus_point(tries)"/>
+          <prompt>
+              you have <value expr="tries"/> tries remaining. 
+          </prompt>
+      </if>
+    </nomatch>
+      <filled>
+        <prompt>
+          Well done! You said: <value expr="q5$.utterance"/>,
+          <break time ="2s"/>
+        </prompt>
+        <assign name="score" expr="add_point(score)"/>
+        <goto next="#level_two"/>
+    </filled>  
+  </form>
+
+  <!-- round two, intros round -->
   <form id="level_two">
     <field id="question_1">
       <assign name="tries" expr="reset_tries(tries)"/>
       <grammar src="/grammars/intro_round_grammar.xml#q1"/>
-      <prompt> Well done <value expr="playerName"/>, You have made it to level two!
-      You have <value expr="score"/> points, and <value expr="lives"/> lives.
-      In this next round will be an intros round. Rob the creator will sing an 
-      intro and you have to guess what it is! Good luck.
+      <prompt> 
+        Well done <value expr="playerName"/>, You have made it to level two!
+        You have <value expr="score"/> points, and <value expr="lives"/> lives.
+        In this next round will be an intros round. Rob the creator will sing an 
+        intro and you have to guess what it is! Good luck.
       </prompt>
       <prompt>
         Here is the first one. 
@@ -297,22 +315,22 @@
       <prompt></prompt>
     </field>
     <nomatch>
-        <if cond="lives=='1'">
-          <goto next="#fail"/>
-      
-        <elseif cond="tries == '1'"/>
-          <prompt>
-            You are out of tries, you lose a life. Next question!
-          </prompt>
-          <goto next="#question_2"/>
-        <else/>
-          <assign name="tries" expr="minus_point(tries)"/>
-          <prompt>
-            That is wrong. You have <value expr="tries"/> tries remaining.
-            Try again.
-          </prompt>
-        </if>  
-      </nomatch>
+      <if cond="lives=='1'">
+        <goto next="#fail"/>
+    
+      <elseif cond="tries == '1'"/>
+        <prompt>
+          You are out of tries, you lose a life. Next question!
+        </prompt>
+        <goto next="#question_2"/>
+      <else/>
+        <assign name="tries" expr="minus_point(tries)"/>
+        <prompt>
+          That is wrong. You have <value expr="tries"/> tries remaining.
+          Try again.
+        </prompt>
+      </if>  
+    </nomatch>
     <filled>
       <prompt>
         Great job that's correct
@@ -326,7 +344,8 @@
     <field id="question_2">
       <assign name="tries" expr="reset_tries(tries)"/>
       <grammar src="/grammars/intro_round_grammar.xml#q2"/>
-      <prompt> Here comes another.
+      <prompt> 
+        Here comes another.
       </prompt>
       <audio src="audio/generation.wav"/>
       <prompt>
@@ -337,22 +356,21 @@
       </prompt>
     </field>
     <nomatch>
-        <if cond="lives=='1'">
-          <goto next="#fail"/>
-      
-        <elseif cond="tries == '1'"/>
-          <prompt>
-            You are out of tries, you lose a life. Next question!
-            <goto next="#question_3"/>
-          </prompt>
-        <else/>
-          <assign name="tries" expr="minus_point(tries)"/>
-          <prompt>
-            That is wrong. You have <value expr="tries"/> tries remaining.
-            Try again.
-          </prompt>
-        </if>  
-      </nomatch>
+      <if cond="lives=='1'">
+        <goto next="#fail"/>
+      <elseif cond="tries == '1'"/>
+        <prompt>
+          You are out of tries, you lose a life. Next question!
+          <goto next="#question_3"/>
+        </prompt>
+      <else/>
+        <assign name="tries" expr="minus_point(tries)"/>
+        <prompt>
+          That is wrong. You have <value expr="tries"/> tries remaining.
+          Try again.
+        </prompt>
+      </if>  
+    </nomatch>
     <filled>
       <prompt>
         Great job that's correct
@@ -366,7 +384,8 @@
     <field id="question_3">
       <assign name="tries" expr="reset_tries(tries)"/>
       <grammar src="/grammars/intro_round_grammar.xml#q3"/>
-      <prompt> Here comes another.
+      <prompt> 
+        Here comes another.
       </prompt>
       <audio src="audio/generation.wav"/>
       <prompt>
@@ -377,22 +396,21 @@
       </prompt>
     </field>
     <nomatch>
-        <if cond="lives=='1'">
-          <goto next="#fail"/>
-      
-        <elseif cond="tries == '1'"/>
-          <prompt>
-            You are out of tries, you lose a life. Next question!
-            <goto next="#question_4"/>
-          </prompt>
-        <else/>
-          <assign name="tries" expr="minus_point(tries)"/>
-          <prompt>
-            That is wrong. You have <value expr="tries"/> tries remaining.
-            Try again.
-          </prompt>
-        </if>  
-      </nomatch>
+      <if cond="lives=='1'">
+        <goto next="#fail"/>
+      <elseif cond="tries == '1'"/>
+        <prompt>
+          You are out of tries, you lose a life. Next question!
+          <goto next="#question_4"/>
+        </prompt>
+      <else/>
+        <assign name="tries" expr="minus_point(tries)"/>
+        <prompt>
+          That is wrong. You have <value expr="tries"/> tries remaining.
+          Try again.
+        </prompt>
+      </if>  
+    </nomatch>
     <filled>
       <prompt>
         Great job that's correct
@@ -406,7 +424,8 @@
     <field id="question_4">
       <assign name="tries" expr="reset_tries(tries)"/>
       <grammar src="/grammars/intro_round_grammar.xml#q4"/>
-      <prompt> Here comes another.
+      <prompt> 
+        Here comes another.
       </prompt>
       <audio src="audio/generation.wav"/>
       <prompt>
@@ -417,22 +436,21 @@
       </prompt>
     </field>
     <nomatch>
-        <if cond="lives=='1'">
-          <goto next="#fail"/>
-      
-        <elseif cond="tries == '1'"/>
-          <prompt>
-            You are out of tries, you lose a life. Next question!
-            <goto next="#question_2"/>
-          </prompt>
-        <else/>
-          <assign name="tries" expr="minus_point(tries)"/>
-          <prompt>
-            That is wrong. You have <value expr="tries"/> tries remaining.
-            Try again.
-          </prompt>
-        </if>  
-      </nomatch>
+      <if cond="lives=='1'">
+        <goto next="#fail"/>
+      <elseif cond="tries == '1'"/>
+        <prompt>
+          You are out of tries, you lose a life. Next question!
+          <goto next="#question_2"/>
+        </prompt>
+      <else/>
+        <assign name="tries" expr="minus_point(tries)"/>
+        <prompt>
+          That is wrong. You have <value expr="tries"/> tries remaining.
+          Try again.
+        </prompt>
+      </if>  
+    </nomatch>
     <filled>
       <prompt>
         Great job that's correct
@@ -446,7 +464,8 @@
     <field id="question_5">
       <assign name="tries" expr="reset_tries(tries)"/>
       <grammar src="/grammars/intro_round_grammar.xml#q5"/>
-      <prompt> Here comes another.
+      <prompt> 
+        Here comes another.
       </prompt>
       <audio src="audio/generation.wav"/>
       <prompt>
@@ -457,22 +476,22 @@
       </prompt>
     </field>
     <nomatch>
-        <if cond="lives=='1'">
-          <goto next="#fail"/>
-      
-        <elseif cond="tries == '1'"/>
-          <prompt>
-            You are out of tries, you lose a life. Next question!
-            <goto next="#question_2"/>
-          </prompt>
-        <else/>
-          <assign name="tries" expr="minus_point(tries)"/>
-          <prompt>
-            That is wrong. You have <value expr="tries"/> tries remaining.
-            Try again.
-          </prompt>
-        </if>  
-      </nomatch>
+      <if cond="lives=='1'">
+        <goto next="#fail"/>
+    
+      <elseif cond="tries == '1'"/>
+        <prompt>
+          You are out of tries, you lose a life. Next question!
+          <goto next="#question_2"/>
+        </prompt>
+      <else/>
+        <assign name="tries" expr="minus_point(tries)"/>
+        <prompt>
+          That is wrong. You have <value expr="tries"/> tries remaining.
+          Try again.
+        </prompt>
+      </if>  
+    </nomatch>
     <filled>
       <prompt>
         Great job that's correct
@@ -482,6 +501,7 @@
     </filled>
   </form>
 
+  <!-- finish game -->
   <form id="completion">
     <field name="congrats">
       <prompt>
@@ -492,7 +512,6 @@
       </prompt>
       <option>Yes</option>
       <option>no</option>
-      
     </field>
     <filled>
       <if cond="congrats='yes'">
@@ -510,29 +529,32 @@
     </filled>
   </form>
 
+  <!-- if failed -->
   <form id="failed">
 
-        <field name="failureMessage">
-          <assign name="price" expr="end()"/>
+    <field name="failureMessage">
+      <assign name="price" expr="end()"/>
+        <prompt>
+            I am afraid you ahve run out of lives and you only managed to get <value expr="score"/> points, hash tag loser, but that is ok we have a few options.
+            If you have enough money you can bribe the government and try again, or accept your 
+            fate and exit. What would you like to do? Bribe or exit the game?
+        </prompt>
+        <option>Bribe</option>
+        <option>Exit game</option>
+    </field>
+    <filled>
+      <if cond="failureMessage='bribe'">
+        <prompt>You chose bribe! Very British of you, please try again</prompt>
+        <goto next="#question_one"/>
+        <assign name="lives" expr="reset_lives"/>
+      <else/>
+        <assign name="price" expr="end(lives)"/>
+        <prompt>
+          Thanks for playin. The game costs 2 crowns a second. Your bill is <value expr="price"/> crowns
+          . pay Now or prepare to be attacked by robots.
+        </prompt>
+      </if>
+    </filled>
+  </form>
 
-            <prompt>
-                I am afraid you ahve run out of lives and you only managed to get <value expr="score"/> points, hash tag loser, but that is ok we have a few options.
-                If you have enough money you can bribe the government and try again, or accept your 
-                fate and exit. What would you like to do? Bribe or exit the game?
-            </prompt>
-            <option>Bribe</option>
-            <option>Exit game</option>
-        </field>
-        <filled>
-            <if cond="failureMessage='bribe'">
-                <prompt>You chose bribe! Very British of you, please try again</prompt>
-                <goto next="#question_one"/>
-                <assign name="lives" expr="reset_lives"/>
-            </if>
-            <else/>
-            <assign name="price" expr="end(lives)"/>
-            <prompt>Thanks for playin. The game costs 2 crowns a second. Your bill is <value expr="price"/> crowns
-            . pay Now or prepare to be attacked by robots.</prompt>
-        </filled>
-    </form>
 </vxml>
