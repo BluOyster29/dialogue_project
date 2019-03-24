@@ -33,5 +33,10 @@ def send_grammar(path):
 def send_audio(path):
     return send_from_directory('audio', path)
 
+@app.route('/')
+def output():
+	# serve index template
+	return render_template('t_twisters.html', name='Rob')
+
 if __name__ == "__main__":
     app.run(debug=True)
