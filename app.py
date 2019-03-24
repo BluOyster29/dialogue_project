@@ -67,9 +67,11 @@ def background_process():
 
 def add_leaderboard(output):
     if output == int:
-        print(output)
+        with open('leaderboard.md', 'wb') as l:
+            
+
     else:
         print(output)
-        
+
 if __name__ == "__main__":
     app.run(debug=True)
