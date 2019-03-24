@@ -68,11 +68,11 @@ def background_process():
 def add_leaderboard(output):
     if output == int:
         f = open("leaderboard.md", "a+")
-        f.write("Player Score: " + str(output))
+        f.write("\nPlayer Score: " + str(output) + "\n")
 
     else:
         f = open("leaderboard.md", "a+")
-        f.write("Player Name: " + output)
+        f.write("\nPlayer Name: " + output +'\n')
         
         
 if __name__ == "__main__":
