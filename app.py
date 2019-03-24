@@ -46,10 +46,14 @@ def interactive():
 def background_process():
     try:
         name = request.args.get('playerName', 0, type=str)
+
         score = request.args.get('playerScore', 0, type=str)
+      
         if name:
+            add_leaderboard(name)
             return jsonify(result=name)
         elif score:
+            add_leaderboard(score)
             return jsonify(result=score)
         '''
 		if lang.lower() == 'python':
@@ -61,5 +65,11 @@ def background_process():
         return str(e)
 
 
+def add_leaderboard(output):
+    if output == int:
+        print(output)
+    else:
+        print(output)
+        
 if __name__ == "__main__":
     app.run(debug=True)
