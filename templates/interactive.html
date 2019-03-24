@@ -14,11 +14,22 @@
     
     <script type=text/javascript>
 			$(function() {
-			  $('a#process_input').bind('click', function() {
+			  $('a#name_input').bind('click', function() {
 				$.getJSON('/background_process', {
 				  playerName: $('input[name="playerName"]').val(),
+				}, 
+        function(data) {
+				  $("#result").text(data.result);
+				});
+				return false;
+			  });
+			});
+      $(function() {
+			  $('a#score_input').bind('click', function() {
+				$.getJSON('/background_process', {
           playerScore: $('input[name="playerScore"]').val(),
-				}, function(data) {
+				}, 
+        function(data) {
 				  $("#result").text(data.result);
 				});
 				return false;
@@ -36,7 +47,7 @@
       <h2>What is your name</h2>
         <form>
           <input type=text size=5 name=playerName>
-          <a href='#' id=process_input><button class='btn btn-default'>Submit</button></a>
+          <a href='#' id=name_input><button class='btn btn-default'>Submit</button></a>
           
           <p id=result>Player Name: </p>
         </form>
