@@ -2,15 +2,11 @@
 <grammar version="1.0" tag-format="semantics/1.0" root="q1">
 
     <rule id="q1">
-
         <item>Sweet Child of mine</item>
-  
     </rule>
 
     <rule id="q2">
-
         <item>My Generation</item>
-  
     </rule>
 
 </grammar>
