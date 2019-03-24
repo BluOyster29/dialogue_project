@@ -3,7 +3,7 @@ from flask import Flask, render_template, make_response, send_from_directory, js
 app = Flask(__name__)
 
 @app.route('/rob_trivia')
-def main_menu():
+def rob_trivia():
     vxml = render_template('rob_trivia.xml')
     response = make_response(vxml)
     response.headers["Content-Type"] = "application/xml"
