@@ -5,6 +5,7 @@ var tries = 3;
 var lives = 5;
 var start; 
 var end;
+var challenge;
 var price;
 var playerName = "Robby Bob Socks";
 var bugNums = [25,50,75,100];
