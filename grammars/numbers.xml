@@ -63,24 +63,6 @@
                 <ruleref uri="#oneTen"/>
                 <ruleref uri="#oneTen"/>
             </item>
-            <!--
-            <item>
-                <ruleref uri="#1119"/>
-            </item>
-            <item>
-                <ruleref uri="#biggies"/>
-            </item>
-            <item>
-                <ruleref uri="#biggies"/>
-                <ruleref uri="#oneTen"/>
-            </item>
-            <item>
-                <ruleref uri="#hundred"/>
-                <ruleref uri="#biggies"/>
-                <ruleref uri="#oneTen"/>
-            </item>
-            -->
-
         </one-of>
     </rule>
 
