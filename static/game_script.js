@@ -13,9 +13,9 @@ var bugNums = [25,50,75,100];
 
 
 //random integer from list
-function randint(listNums){
-  var item = listNums[Math.floor(Math.random()*listNums.length)];
-  return item
+function randint(listNums, num){
+  num = listNums[Math.floor(Math.random()*listNums.length)];
+  return num
 }
 
 function gen_num_list(start, end){
