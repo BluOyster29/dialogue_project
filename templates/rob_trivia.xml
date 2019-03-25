@@ -15,7 +15,7 @@
       Welcome to Rob's trivia game. first let's get your name. please spell out your name using the nato alphabet. When you are done say, finished. 
       I will repeat the words after you, if I get it wrong just say start over.
     </prompt>
-    <goto next="#q1"/>
+    <goto next="#level_two"/>
     </block>
   </form>
         
@@ -304,7 +304,8 @@
         intro and you have to guess what it is! Good luck.
       </prompt>
       <prompt>
-        Here is the first one. 
+        Here is the first one. There is a light pause before and after every song.
+        After the song plays there will be multiple choices.
       </prompt>
       <goto next="#q1"/>
     </block>
@@ -332,7 +333,7 @@
         <prompt>
           You are out of tries, you lose a life. Next question!
         </prompt>
-        <goto next="#question_2"/>
+        <goto next="#q_2_intro"/>
       <else/>
         <assign name="tries" expr="minus_point(tries)"/>
         <prompt bargein ="false">
@@ -346,16 +347,22 @@
         Great job that's correct
       </prompt>
       <assign name="score" expr="add_point(score)"/>    
-      <goto next="#question_2"/>
+      <goto next="#q_2_intro"/>
     </filled>
+  </form>
+
+  <form id="q_2_intro">
+    <block>
+      <prompt> 
+        Here comes another.
+      </prompt>
+      <goto next="#question_2"/>
+    </block>
   </form>
 
   <form id="question_2">
     <field id="question_2">
       <grammar src="/grammars/intro_round_grammar.xml#q2"/>
-      <prompt> 
-        Here comes another.
-      </prompt>
       <audio src="audio/my_gen.wav"/>
       <prompt bargein ="false">
         Was it A, Highway to Hell,
@@ -372,7 +379,7 @@
         <prompt bargein ="false">
           
           You are out of tries, you lose a life. Next question!
-          <goto next="#question_3"/>
+          <goto next="#q_3_intro"/>
         </prompt>
       <else/>
         <assign name="tries" expr="minus_point(tries)"/>
@@ -387,16 +394,22 @@
         Great job that's correct
       </prompt>
       <assign name="score" expr="add_point(score)"/>    
-      <goto next="#question_3"/>
+      <goto next="#q_3_intro"/>
     </filled>
+  </form>
+
+  <form id="q_3_intro">
+    <block>
+      <prompt> 
+        Song 3
+      </prompt>
+      <goto next="#question_3"/>
+    </block>
   </form>
 
   <form id="question_3">
     <field id="question_3">
       <grammar src="/grammars/intro_round_grammar.xml#q3"/>
-      <prompt bargein ="false"> 
-        Here comes another.
-      </prompt>
       <audio src="audio/brek_on.wav"/>
       <prompt bargein ="false">
         Was it A, Panama,
@@ -412,7 +425,7 @@
         <assign name="lives" expr="minus_point(lives)"/>
         <prompt bargein ="false">
           You are out of tries, you lose a life. Next question!
-          <goto next="#question_4"/>
+          <goto next="#q_4_intro"/>
         </prompt>
       <else/>
         <assign name="tries" expr="minus_point(tries)"/>
@@ -427,8 +440,17 @@
         Great job that's correct
       </prompt>
       <assign name="score" expr="add_point(score)"/>    
-      <goto next="#question_4"/>
+      <goto next="#q_4_intro"/>
     </filled>
+  </form>
+
+   <form id="q_4_intro">
+    <block>
+      <prompt> 
+        This is the final one 
+      </prompt>
+      <goto next="#question_4"/>
+    </block>
   </form>
 
   <form id="question_4">
