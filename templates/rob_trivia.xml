@@ -514,7 +514,7 @@
 
   <form id="l3_q1">
     <field name="numbers">
-      <grammar src="/grammars/numbers.xml"/>
+      <grammar src="/grammars/numbers.xml#equation"/>
       <prompt bargein ='false'>
         Your challenge number is <value expr="challenge"/>. 
         Your big number is <value expr="bigNumber"/>.
@@ -524,7 +524,7 @@
       </prompt> 
     </field>
     <filled>
-      you said, <value expr="numbers"/>
+      you said, <value expr="$numbers.utterance.finalNumber"/>
     </filled>
   
   </form>
