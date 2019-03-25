@@ -516,7 +516,7 @@
     <field name="numbers">
       <grammar src="/grammars/numbers.xml"/>
       <prompt>
-        Your challenge number is <value name="challenge"/>
+        Your challenge number is <value expr="challenge"/>
       </prompt> 
     </field>
   
