@@ -49,7 +49,39 @@
         <item>100</item>
     </rule>
 
-    <rule id="number">
+    <rule id="number1">
+        <one-of>
+            <item>
+                <ruleref uri="#oneTen"/>
+                <!--<tag>out.unit = rules.oneTen;</tag>-->
+            </item>
+            <item>
+                <ruleref uri="#1119"/>
+                <!--<tag>out.teen = rules.1119;</tag>-->
+            </item>
+            <item>
+                <ruleref uri="#biggies"/>
+                <!--<tag>out.big = rules.biggies;</tag>-->
+            </item>
+            <item>
+                <ruleref uri="#biggies"/>
+                <ruleref uri="#oneTen"/>
+                <!--<tag>out.big = rules.biggies</tag>
+                <tag>out.number = rules.oneTen</tag>-->
+            </item>
+            <item>
+                <ruleref uri="#hundred"/>
+                <ruleref uri="#biggies"/>
+                <ruleref uri="#oneTen"/>
+                <!--<tag>out.ton = rules.hundred</tag>
+                <tag>out.big = rules.biggies</tag>
+                <tag>out.unit = rules.oneTen</tag>-->
+            </item>
+
+        </one-of>
+    </rule>
+
+    <rule id="number2">
         <one-of>
             <item>
                 <ruleref uri="#oneTen"/>
@@ -128,13 +160,17 @@
     
     <rule id="equation">
         <item>
-            <ruleref uri="#number"/>
+            <ruleref uri="#number1"/>
             <ruleref uri="#plus"/>
-            <ruleref uri="#number"/>
+            <ruleref uri="#number2"/>
             <ruleref uri="#equals"/>
             <ruleref uri="#finalNumber"/>
             <tag>
+                out.number1 = rules.number1;
+                out.number2 = rules.number2;
+                out.arith = rules.plus;
                 out.answer = rules.finalNumber;
+
             </tag>
         </item>
     </rule>

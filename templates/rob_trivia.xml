@@ -513,8 +513,7 @@
   </form>
 
   <form id="l3_q1">
-    <field name="numbers">
-      <grammar src="/grammars/numbers.xml#equation"/>
+    <block>
       <prompt>
         Your challenge number is <value expr="challenge"/>. 
         Your big number is <value expr="bigNumber"/>.
@@ -522,12 +521,31 @@
         <value expr="s2"/>, <value expr="s3"/>, <value expr="s4"/>
         and <value expr="s5"/>. 
       </prompt> 
+    </block>
+    <goto next="#play"/>
+  </form>
+
+  <form id="play">
+    <field name="maths">
+      <grammar src="/grammars/numbers.xml#equation"/>
+        <prompt></prompt>
     </field>
     <filled>
-      that is, <value expr="numbers$.interpretation.answer"/>
+      <if cond="maths ='finished'">
+        <goto next="finished"/>
+      <else/>
+        <prompt>
+          <value expr="maths$.interpretation.number1"/> 
+          <value expr="maths$.interpretation.plus"/> 
+          <value expr="maths$.interpretation.number2"/> 
+          equals
+          <value expr="maths$.interpretation.answer"/> 
+        </prompt>
+        <reprompt/>
+      </if>
     </filled>
-  
   </form>
+  
 
 
   <!-- finish game -->
