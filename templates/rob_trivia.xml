@@ -527,7 +527,7 @@
 
   <form id="play">
     <field name="maths">
-      <grammar src="/grammars/numbers.xml#equation"/>
+      <grammar src="/grammars/numbers.xml"/>
         <prompt>Go</prompt>
     </field>
     <filled>
