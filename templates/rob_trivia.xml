@@ -516,7 +516,11 @@
     <field name="numbers">
       <grammar src="/grammars/numbers.xml"/>
       <prompt>
-        Your challenge number is <value expr="challenge"/>
+        Your challenge number is <value expr="challenge"/>. 
+        Your big number is <value expr="bigNumber"/>.
+        And your five small numbers are <value expr="s1"/>,
+        <value expr="s2"/>, <value expr="s3"/>, <value expr="s4"/>
+        and <value expr="s5"/>. 
       </prompt> 
     </field>
   
