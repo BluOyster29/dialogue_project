@@ -5,7 +5,7 @@
 
 
   <script src="{{url_for('static', filename='game_script.js')}}"></script>
-
+  <var name="number1"/>
   <!-- welcome screen for game-->
 
   <form id="welcome">
@@ -543,7 +543,7 @@
           <value expr="maths"/>
           <!--<value expr="maths$.interpretation.number1"/> -->
           Number one is 
-          <var name="number1"/>
+          
           <assign name="number1" expr="maths$.interpretation.number1"/>
           <value expr="number1"/>
           <value expr="maths$.interpretation.plus"/> 
