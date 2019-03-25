@@ -77,7 +77,6 @@
                 <tag>out.big = rules.biggies</tag>
                 <tag>out.unit = rules.oneTen</tag>-->
             </item>
-
         </one-of>
     </rule>
 
@@ -159,14 +158,14 @@
     
     <rule id="equation">
         <item>
-            <ruleref uri="#number1"/>
+            <ruleref uri="#number"/>
             <ruleref uri="#plus"/>
-            <ruleref uri="#number2"/>
+            <ruleref uri="#number"/>
             equals
             <ruleref uri="#result"/>
             <tag>
-                out.a = rules.number1;
-                out.b = rules.number2;
+                out.a = rules.number;
+                out.b = rules.number;
                 out.arith = rules.plus;
                 out.answer = rules.result;
             </tag>
