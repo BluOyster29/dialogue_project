@@ -534,13 +534,11 @@
         <goto next="finished"/>
       <else/>
         <prompt>
-          <!--
+          
           <var name="a" expr="maths$.interpretation.a"/>
           <value expr="a"/>
-          -->
           you said
           <value expr="maths"/>
-          <!--<value expr="maths$.interpretation.number1"/> -->
           result is
           <value expr="maths$.interpretation.result"/>        
         
