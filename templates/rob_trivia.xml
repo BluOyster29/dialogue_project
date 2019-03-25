@@ -543,7 +543,8 @@
           <value expr="maths"/>
           <!--<value expr="maths$.interpretation.number1"/> -->
           Number one is 
-          <var name="number1" assign="maths$.interpretation.number1"/>
+          <var name="number1"/>
+          <assign name="number1" expr="maths$.interpretation.number1"/>
           <value expr="number1"/>
           <value expr="maths$.interpretation.plus"/> 
           <value expr="maths$.interpretation.number2"/> 
