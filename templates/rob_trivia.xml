@@ -543,7 +543,7 @@
           <value expr="maths"/>
           <!--<value expr="maths$.interpretation.number1"/> -->
           result is
-          <value expr="maths$.utterance.result"/>        
+          <value expr="maths$.interpretation.result"/>        
         
         </prompt>
         <reprompt/>

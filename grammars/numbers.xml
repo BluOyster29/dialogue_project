@@ -110,7 +110,7 @@
             <ruleref uri="#equals"/>
             <ruleref uri="#result"/>
             <tag>
-                out.result = rules.finalNumber;
+                out.result = rules.result;
             </tag>
         </item>
     </rule>
