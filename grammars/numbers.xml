@@ -132,7 +132,7 @@
             <ruleref uri="#plus"/>
             <ruleref uri="#number"/>
             <ruleref uri="#equals"/>
-            <rulreref uri="#finalNumber"/>
+            <ruleref uri="#finalNumber"/>
             <tag>
                 out.answer = rules.finalNumber;
             </tag>
