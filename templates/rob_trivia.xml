@@ -117,7 +117,7 @@
         Greek, grapes
     </prompt>
     <nomatch>
-      <if cond="lives == '1'">
+      <if cond="lives == '0'">
         <goto next="#fail"/>
       <elseif cond="tries == '1'"/>
         <assign name="lives" expr="minus_point(lives)"/>
@@ -153,7 +153,7 @@
             Unique, New, York.
         </prompt>
         <nomatch>
-          <if cond="lives == '1'">
+          <if cond="lives == '0'">
                   <goto next="#fail"/>
           <elseif cond="tries == '1'"/>
               <assign name="lives" expr="minus_point(lives)"/>
@@ -188,7 +188,7 @@
             Red lorry yellow lorry
         </prompt>
     <nomatch>
-      <if cond="lives == '1'">
+      <if cond="lives == '0'">
               <goto next="#fail"/>
       
       <elseif cond="tries == '1'"/>
@@ -223,10 +223,10 @@
         <prompt bargein ="false">
             <grammar src="grammars/easy_grammar.xml#q4"/>
             Now here is another, repeat after me.
-            She says cheese
+            I washed my Irish wrist watch
         </prompt>
       <nomatch>
-        <if cond="lives == '1'">
+        <if cond="lives == '0'">
                 <goto next="#fail"/>
         
         <elseif cond="tries == '1'"/>
@@ -260,12 +260,12 @@
         <grammar src="grammars/easy_grammar.xml"/>
         <prompt bargein ="false">
             <grammar src="grammars/easy_grammar.xml#q5"/>
-            Here is the final easy twister. You currently have <value expr="score"/> points. It's a bit tougher than the last.
+            Here is the final tongue twister. You currently have <value expr="score"/> points. It's a bit tougher than the last.
             Fred fed Ted bread and Ted fed Fred Bread 
         </prompt>
     </field>
     <nomatch>
-      <if cond="lives == '1'">
+      <if cond="lives == '0'">
               <goto next="#fail"/>
       
       <elseif cond="tries == '1'"/>
@@ -324,7 +324,7 @@
     </field>
     <nomatch>
 
-      <if cond="lives == '1' ">
+      <if cond="lives == '0' ">
         <goto next="#fail"/>
     
       <elseif cond="tries == '1'"/>
@@ -371,7 +371,7 @@
       </prompt>
     </field>
     <nomatch>
-      <if cond="lives=='1'">
+      <if cond="lives=='0'">
         <goto next="#fail"/>
       <elseif cond="tries == '1'"/>
       <assign name="lives" expr="minus_point(lives)"/>
@@ -418,7 +418,7 @@
       </prompt>
     </field>
     <nomatch>
-      <if cond="lives=='1'">
+      <if cond="lives=='0'">
         <goto next="#fail"/>
       <elseif cond="tries == '1'"/>
         <assign name="lives" expr="minus_point(lives)"/>
@@ -467,7 +467,7 @@
       </prompt>
     </field>
     <nomatch>
-      <if cond="lives=='1'">
+      <if cond="lives=='0'">
         <goto next="#fail"/>
       <elseif cond="tries == '1'"/>
         <assign name="lives" expr="minus_point(lives)"/>
@@ -586,22 +586,23 @@
       <assign name="price" expr="end()"/>
         <prompt bargein ="false">
             I am afraid you ahve run out of lives and you only managed to get <value expr="score"/> points, hash tag loser, but that is ok we have a few options.
-            If you have enough money you can bribe the government and try again, or accept your 
-            fate and exit. What would you like to do? Bribe or exit the game?
+            You can play again if you like or quit like the loser you are. Will you quit or play again?
         </prompt>
-        <option>Bribe</option>
-        <option>Exit game</option>
+        <option>quit</option>
+        <option>play again</option>
     </field>
     <filled>
-      <if cond="failureMessage='bribe'">
-        <prompt bargein ="false">You chose bribe! Very British of you, please try again</prompt>
+      <assign name="end" expr="end(end)"/>
+      <assign name="price" expr="get_price(start,end, price)"/>
+      <if cond="failureMessage='play again'">
+        <prompt bargein ="false">Good on you! Good luck this time</prompt>
         <goto next="#question_one"/>
         <assign name="lives" expr="reset_lives"/>
       <else/>
         <assign name="price" expr="end(lives)"/>
         <prompt bargein ="false">
           Thanks for playin. The game costs 2 crowns a second. Your bill is <value expr="price"/> crowns
-          . pay Now or prepare to be attacked by robots.
+          . pay Now or prepare to be attacked by robots. Goodbye 
         </prompt>
       </if>
     </filled>
