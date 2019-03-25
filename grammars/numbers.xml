@@ -129,7 +129,7 @@
     <rule id="equation">
         <item>
             <ruleref uri="#number"/>
-            <ruleref uri="#equation"/>
+            <ruleref uri="#plus"/>
             <ruleref uri="#number"/>
             <ruleref uri="#equals"/>
             <rulreref uri="#finalNumber"/>

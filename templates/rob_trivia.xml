@@ -524,7 +524,7 @@
       </prompt> 
     </field>
     <filled>
-      you said, <value expr="$numbers.utterance.finalNumber"/>
+      you said, <value expr="$numbers.utterance.answer"/>
     </filled>
   
   </form>
