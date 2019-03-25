@@ -2,7 +2,7 @@
 <grammar version="1.0" tag-format="semantics/1.0" root="oneTen">
 
     <rule id="oneTen">
-        <item repeat="0-1">and</item>
+       <item repeat ="0-1">and</item>
         <one-of>
             <item>1</item>
             <item>2</item>
