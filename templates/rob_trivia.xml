@@ -514,7 +514,6 @@
 
   <form id="l3_q1">
     <field name="numbers">
-      <assign name="challenge" expr="randint(gen_num_list(101,1001), challenge)"/>
       <grammar src="/grammars/numbers.xml"/>
       <prompt>
         Your challenge number is <value name="challenge"/>
