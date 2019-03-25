@@ -521,14 +521,14 @@
         <value expr="s2"/>, <value expr="s3"/>, <value expr="s4"/>
         and <value expr="s5"/>. 
       </prompt> 
+      <goto next="#play"/>
     </block>
-    <goto next="#play"/>
   </form>
 
   <form id="play">
     <field name="maths">
       <grammar src="/grammars/numbers.xml#equation"/>
-        <prompt></prompt>
+        <prompt>Go</prompt>
     </field>
     <filled>
       <if cond="maths ='finished'">
