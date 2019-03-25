@@ -170,7 +170,6 @@
                 out.number2 = rules.number2;
                 out.arith = rules.plus;
                 out.answer = rules.finalNumber;
-
             </tag>
         </item>
     </rule>

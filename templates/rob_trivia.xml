@@ -536,7 +536,7 @@
       <else/>
         <prompt>
           <value expr="maths$.interpretation.number1"/> 
-          <value expr="maths$.interpretation.plus"/> 
+          <value expr="maths$.interpretation.arith"/> 
           <value expr="maths$.interpretation.number2"/> 
           equals
           <value expr="maths$.interpretation.answer"/> 
