@@ -93,7 +93,7 @@
     <rule id="equals">
         <item>Equals</item>
     </rule>
-
+    <!--
     <rule id="equation">
         <item>
             <ruleref uri="#number"/>
@@ -106,4 +106,5 @@
             </tag>
         </item>
     </rule>
+    -->
 </grammar>
