@@ -531,7 +531,7 @@
         <prompt>Go</prompt>
     </field>
     <filled>
-      <if cond="maths ='finished'">
+      <if cond="maths == 'finished'">
         <goto next="finished"/>
       <else/>
         <prompt>
