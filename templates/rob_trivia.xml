@@ -515,7 +515,7 @@
   <form id="l3_q1">
     <field name="numbers">
       <grammar src="/grammars/numbers.xml#equation"/>
-      <prompt bargein ='false'>
+      <prompt>
         Your challenge number is <value expr="challenge"/>. 
         Your big number is <value expr="bigNumber"/>.
         And your five small numbers are <value expr="s1"/>,
