@@ -185,7 +185,7 @@
         <prompt bargein ="false">
             <grammar src="grammars/easy_grammar.xml#q3"/>
             Getting better, nice! Here comes another.
-            Red lorry yellow lorry
+            Red lorry yellow lorry red lorry yellow lorry
         </prompt>
     <nomatch>
       <if cond="lives == '0'">
@@ -599,7 +599,6 @@
         <goto next="#question_one"/>
         <assign name="lives" expr="reset_lives"/>
       <else/>
-        <assign name="price" expr="end(lives)"/>
         <prompt bargein ="false">
           Thanks for playin. The game costs 2 crowns a second. Your bill is <value expr="price"/> crowns
           . pay Now or prepare to be attacked by robots. Goodbye 

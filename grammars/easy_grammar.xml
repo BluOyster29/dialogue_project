@@ -42,12 +42,19 @@
     <item>lorry</item>
     <item>yellow</item>
     <item>lorry</item>
+    <item>Red</item>
+    <item>lorry</item>
+    <item>yellow</item>
+    <item>lorry</item>
   </rule>
 
   <rule id="q4">
-    <item>She</item>
-    <item>says</item>
-    <item>Cheese</item>
+    <item>I</item>
+    <item>washed</item>
+    <item>my</item>
+    <item>Irish</item>
+    <item>wrist</item>
+    <item>watch</item>
   </rule>
 
   <rule id="q5">
