@@ -9,11 +9,6 @@ var price;
 var playerName = "Robby Bob Socks";
 var bugNums = [25,50,75,100];
 //var challenge = randint(gen_num_list(101,1001));
-var smallNum1 = randint(gen_num_list(1,11));
-var smallNum2 = randint(gen_num_list(1,11));
-var smallNum3 = randint(gen_num_list(1,11));
-var smallNum4 = randint(gen_num_list(1,11));
-var smallNum5 = randint(gen_num_list(1,11));
 
 
 //random integer from list
