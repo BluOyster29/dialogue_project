@@ -15,7 +15,7 @@
       Welcome to Rob's trivia game. first let's get your name. please spell out your name using the nato alphabet. When you are done say, finished. 
       I will repeat the words after you, if I get it wrong just say start over.
     </prompt>
-    <goto next="#spelling"/>
+    <goto next="#q1"/>
     </block>
   </form>
         
@@ -295,9 +295,8 @@
 
   <!-- round two, intros round -->
   <form id="level_two">
-    <field id="question_1">
+    <block>
       <assign name="tries" expr="reset_tries(tries)"/>
-      <grammar src="/grammars/intro_round_grammar.xml#q1"/>
       <prompt bargein ="false"> 
         Well done <value expr="playerName"/>, You have made it to level two!
         You have <value expr="score"/> points, and <value expr="lives"/> lives.
@@ -307,6 +306,13 @@
       <prompt>
         Here is the first one. 
       </prompt>
+      <goto next="#q1"/>
+    </block>
+  </form>
+
+  <form id="q1">
+    <field id="question_one">
+      <grammar src="/grammars/intro_round_grammar.xml#q1"/>
       <audio src="/audio/swet_child.wav"/>
       <prompt>
         Was it A, Free Bird,
