@@ -53,29 +53,29 @@
         <one-of>
             <item>
                 <ruleref uri="#oneTen"/>
-                <tag>out.unit = rules.oneTen;</tag>
+                <!--<tag>out.unit = rules.oneTen;</tag>-->
             </item>
             <item>
                 <ruleref uri="#1119"/>
-                <tag>out.teen = rules.1119;</tag>
+                <!--<tag>out.teen = rules.1119;</tag>-->
             </item>
             <item>
                 <ruleref uri="#biggies"/>
-                <tag>out.big = rules.biggies;</tag>
+                <!--<tag>out.big = rules.biggies;</tag>-->
             </item>
             <item>
                 <ruleref uri="#biggies"/>
                 <ruleref uri="#oneTen"/>
-                <tag>out.big = rules.biggies</tag>
-                <tag>out.number = rules.oneTen</tag>
+                <!--<tag>out.big = rules.biggies</tag>
+                <tag>out.number = rules.oneTen</tag>-->
             </item>
             <item>
                 <ruleref uri="#hundred"/>
                 <ruleref uri="#biggies"/>
                 <ruleref uri="#oneTen"/>
-                <tag>out.ton = rules.hundred</tag>
+                <!--<tag>out.ton = rules.hundred</tag>
                 <tag>out.big = rules.biggies</tag>
-                <tag>out.unit = rules.oneTen</tag>
+                <tag>out.unit = rules.oneTen</tag>-->
             </item>
 
         </one-of>
