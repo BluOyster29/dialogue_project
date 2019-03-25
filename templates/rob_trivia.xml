@@ -535,6 +535,9 @@
         <goto next="finished"/>
       <else/>
         <prompt>
+          <var name="a" expr="maths$.interpretation.a"/>
+          <value expr="a"/>
+          you said
           <value expr="maths$.interpretation.a"/> 
           <value expr="maths$.interpretation.arith"/> 
           <value expr="maths$.interpretation.b"/> 
