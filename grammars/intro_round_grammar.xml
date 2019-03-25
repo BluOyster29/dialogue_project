@@ -9,4 +9,12 @@
         <item>My Generation</item>
     </rule>
 
+    <rule id="q3">
+        <item>Break on through</item>
+    </rule>
+
+    <rule id="q4">
+        <item>don't fear the reaper</item>
+    </rule>
+
 </grammar>

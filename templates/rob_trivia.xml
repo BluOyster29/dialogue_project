@@ -110,8 +110,8 @@
     <grammar src="grammars/easy_grammar.xml"/>
     <prompt bargein ="false">
       <grammar src="grammars/easy_grammar.xml#q1"/>
-        Hello <value expr="playerName"/>, let's get started. You have <value expr="lives"/> lives and <value expr="tries"/> remaining. I will ask you to repeat after me 
-        some English tongue twisters, you have three tries for this round and ten lives in total.
+        Hello <value expr="playerName"/>, let's get started. You have <value expr="lives"/> lives and <value expr="tries"/> tries remaining. I will ask you to repeat after me 
+        some English tongue twisters.
         If you use all your tries you lose a life. Tries reset at the end of every round. Good luck! 
         Here comes the first tongue twister.
         Repeat after me.
@@ -317,10 +317,12 @@
       <prompt></prompt>
     </field>
     <nomatch>
-      <if cond="lives=='1'">
+
+      <if cond="lives == '1' ">
         <goto next="#fail"/>
     
       <elseif cond="tries == '1'"/>
+      <assign name="lives" expr="minus_point(lives)"/>
         <prompt>
           You are out of tries, you lose a life. Next question!
         </prompt>
@@ -360,7 +362,9 @@
       <if cond="lives=='1'">
         <goto next="#fail"/>
       <elseif cond="tries == '1'"/>
+      <assign name="lives" expr="minus_point(lives)"/>
         <prompt bargein ="false">
+          
           You are out of tries, you lose a life. Next question!
           <goto next="#question_3"/>
         </prompt>
@@ -399,6 +403,7 @@
       <if cond="lives=='1'">
         <goto next="#fail"/>
       <elseif cond="tries == '1'"/>
+        <assign name="lives" expr="minus_point(lives)"/>
         <prompt bargein ="false">
           You are out of tries, you lose a life. Next question!
           <goto next="#question_4"/>
@@ -438,9 +443,10 @@
       <if cond="lives=='1'">
         <goto next="#fail"/>
       <elseif cond="tries == '1'"/>
+        <assign name="lives" expr="minus_point(lives)"/>
         <prompt bargein ="false">
           You are out of tries, you lose a life. Next question!
-          <goto next="#question_2"/>
+          <goto next="#level_three"/>
         </prompt>
       <else/>
         <assign name="tries" expr="minus_point(tries)"/>
@@ -459,46 +465,6 @@
     </filled>
   </form>
 
-  <form id="question_5">
-    <field id="question_5">
-      <assign name="tries" expr="reset_tries(tries)"/>
-      <grammar src="/grammars/intro_round_grammar.xml#q5"/>
-      <prompt bargein ="false"> 
-        Here comes another.
-      </prompt>
-      <audio src="audio/generation.wav"/>
-      <prompt bargein ="false">
-        Was it A, H,
-        Was it B, , 
-        Was it C, ,
-        Or was it D, .
-      </prompt>
-    </field>
-    <nomatch>
-      <if cond="lives=='1'">
-        <goto next="#fail"/>
-    
-      <elseif cond="tries == '1'"/>
-        <prompt bargein ="false">
-          You are out of tries, you lose a life. Next question!
-          <goto next="#question_2"/>
-        </prompt>
-      <else/>
-        <assign name="tries" expr="minus_point(tries)"/>
-        <prompt bargein ="false">
-          That is wrong. You have <value expr="tries"/> tries remaining.
-          Try again.
-        </prompt>
-      </if>  
-    </nomatch>
-    <filled>
-      <prompt bargein ="false">
-        Great job that's correct
-      </prompt>
-      <assign name="score" expr="add_point(score)"/>    
-      <goto next="#completion"/>
-    </filled>
-  </form>
 
   <!-- round three, riddles -->
 
