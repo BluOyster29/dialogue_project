@@ -542,14 +542,9 @@
           you said
           <value expr="maths"/>
           <!--<value expr="maths$.interpretation.number1"/> -->
-          Number one is 
-          
-          <assign name="number1" expr="maths$.interpretation.number1"/>
-          <value expr="number1"/>
-          <value expr="maths$.interpretation.plus"/> 
-          <value expr="maths$.interpretation.number2"/> 
-          equals
-          <value expr="maths$.interpretation.result"/> 
+          result is
+          <value expr="maths$.utterance.result"/>        
+        
         </prompt>
         <reprompt/>
       </if>
