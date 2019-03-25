@@ -8,7 +8,7 @@ var end;
 var challenge;
 var price;
 var playerName = "Robby Bob Socks";
-var bugNumber = randint([25,50,75,100]);
+var bigNumber = randint([25,50,75,100]);
 var challenge = randint(gen_num_list(101,1001));
 var s1 = randint(gen_num_list(1,11));
 var s2 = randint(gen_num_list(1,11));
