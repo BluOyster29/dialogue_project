@@ -112,7 +112,7 @@
         </one-of>
     </rule>
 
-    <rule id="finalNumber">
+    <rule id="result">
         <one-of>
             <item>
                 <ruleref uri="#oneTen"/>
@@ -162,13 +162,13 @@
             <ruleref uri="#number1"/>
             <ruleref uri="#plus"/>
             <ruleref uri="#number2"/>
-            <ruleref uri="#equals"/>
-            <ruleref uri="#finalNumber"/>
+            equals
+            <ruleref uri="#result"/>
             <tag>
-                out.number1 = rules.number1;
-                out.number2 = rules.number2;
+                out.a = rules.number1;
+                out.b = rules.number2;
                 out.arith = rules.plus;
-                out.answer = rules.finalNumber;
+                out.answer = rules.result;
             </tag>
         </item>
     </rule>
