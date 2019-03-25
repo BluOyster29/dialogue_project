@@ -307,7 +307,7 @@
       <prompt>
         Here is the first one. 
       </prompt>
-      <audio src="/audio/metal.wav"/>
+      <audio src="/audio/swet_child.wav"/>
       <prompt>
         Was it A, Free Bird,
         Was it B, Sweet child of mine, 
@@ -344,12 +344,11 @@
 
   <form id="question_2">
     <field id="question_2">
-      <assign name="tries" expr="reset_tries(tries)"/>
       <grammar src="/grammars/intro_round_grammar.xml#q2"/>
       <prompt> 
         Here comes another.
       </prompt>
-      <audio src="audio/generation.wav"/>
+      <audio src="audio/my_gen.wav"/>
       <prompt bargein ="false">
         Was it A, Highway to Hell,
         Was it B, My Generation, 
@@ -378,23 +377,22 @@
         Great job that's correct
       </prompt>
       <assign name="score" expr="add_point(score)"/>    
-      <goto next="#completion"/>
+      <goto next="#question_3"/>
     </filled>
   </form>
 
   <form id="question_3">
     <field id="question_3">
-      <assign name="tries" expr="reset_tries(tries)"/>
       <grammar src="/grammars/intro_round_grammar.xml#q3"/>
       <prompt bargein ="false"> 
         Here comes another.
       </prompt>
-      <audio src="audio/generation.wav"/>
+      <audio src="audio/brek_on.wav"/>
       <prompt bargein ="false">
-        Was it A, ,
-        Was it B, , 
-        Was it C, ,
-        Or was it D, .
+        Was it A, Panama,
+        Was it B, Blue Monday, 
+        Was it C, Break on Through,
+        Or was it D, Born to be Wild.
       </prompt>
     </field>
     <nomatch>
@@ -424,17 +422,16 @@
 
   <form id="question_4">
     <field id="question_4">
-      <assign name="tries" expr="reset_tries(tries)"/>
       <grammar src="/grammars/intro_round_grammar.xml#q4"/>
       <prompt bargein ="false"> 
         Here comes another.
       </prompt>
-      <audio src="audio/generation.wav"/>
+      <audio src="audio/blu_oyst.wav"/>
       <prompt bargein ="false">
-        Was it A, ,
-        Was it B, , 
-        Was it C, .
-        Or was it D, .
+        Was it A, Don't fear the reaper,
+        Was it B, ramble on, 
+        Was it C, fat lip.
+        Or was it D, Back in black.
       </prompt>
     </field>
     <nomatch>
@@ -458,7 +455,7 @@
         Great job that's correct
       </prompt>
       <assign name="score" expr="add_point(score)"/>    
-      <goto next="#question_3"/>
+      <goto next="#level_three"/>
     </filled>
   </form>
 
@@ -499,7 +496,7 @@
         Great job that's correct
       </prompt>
       <assign name="score" expr="add_point(score)"/>    
-      <goto next="#level_three"/>
+      <goto next="#completion"/>
     </filled>
   </form>
 
