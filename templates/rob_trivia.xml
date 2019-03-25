@@ -524,7 +524,7 @@
       </prompt> 
     </field>
     <filled>
-      you said, <value expr="number$.answer"/>
+      that is, <value expr="number$.interpretation.finalNumber"/>
     </filled>
   
   </form>
