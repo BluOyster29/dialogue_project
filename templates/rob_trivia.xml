@@ -541,11 +541,11 @@
           -->
           you said
           <value expr="maths"/>
-          <value expr="maths$.interpretation.a"/> 
-          <value expr="maths$.interpretation.arith"/> 
-          <value expr="maths$.interpretation.b"/> 
+          <value expr="maths$.interpretation.number1"/> 
+          <value expr="maths$.interpretation.plus"/> 
+          <value expr="maths$.interpretation.number2"/> 
           equals
-          <value expr="maths$.interpretation.answer"/> 
+          <value expr="maths$.interpretation.result"/> 
         </prompt>
         <reprompt/>
       </if>

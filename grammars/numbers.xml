@@ -155,10 +155,10 @@
             equals
             <ruleref uri="#result"/>
             <tag>
-                out.a = rules.number1;
-                out.b = rules.number2;
-                out.arith = rules.plus;
-                out.answer = rules.result;
+                out.number1 = rules.number1;
+                out.number2 = rules.number2;
+                out.plus = rules.plus;
+                out.result = rules.result;
             </tag>
         </item>
     </rule>
