@@ -7,6 +7,29 @@ var start;
 var end;
 var price;
 var playerName = "Robby Bob Socks";
+var bugNums = [25,50,75,100];
+//var challenge = randint(gen_num_list(101,1001));
+var smallNum1 = randint(gen_num_list(1,11));
+var smallNum2 = randint(gen_num_list(1,11));
+var smallNum3 = randint(gen_num_list(1,11));
+var smallNum4 = randint(gen_num_list(1,11));
+var smallNum5 = randint(gen_num_list(1,11));
+
+
+//random integer from list
+function randint(listNums){
+  var item = listNums[Math.floor(Math.random()*listNums.length)];
+  return item
+}
+
+function gen_num_list(start, end){
+  var list = [];
+  for (var i = start; i <= end; i++) {
+    list.push(i);
+  } 
+  return list
+}
+
 
 //Function adds 100 to int making game casual
 function casual(points){

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<grammar version="1.0" tag-format="semantics/1.0" root="q1">
+
+    <rule id="oneTen">
+        <item repeat="0-1">and</item>
+        <one-of>
+            <item>1</item>
+            <item>2</item>
+            <item>3</item>
+            <item>4</item>
+            <item>5</item>
+            <item>6</item>
+            <item>7</item>
+            <item>8</item>
+            <item>9</item>
+            <item>10</item>
+        </one-of>
+    </rule>
+
+    <rule id="1119">
+        <one-of>
+            <item>11</item>
+            <item>12</item>
+            <item>13</item>
+            <item>14</item>
+            <item>15</item>
+            <item>16</item>
+            <item>17</item>
+            <item>18</item>
+            <item>19</item>
+        </one-of>
+    </rule>
+
+    <rule id="biggies">
+        <item repeat="0-1">and</item>
+        <one-of>
+            <item>20</item>
+            <item>30</item>
+            <item>40</item>
+            <item>50</item>
+            <item>60</item>
+            <item>70</item>
+            <item>80</item>
+            <item>90</item> 
+        </one-of>
+    </rule>
+
+    <rule id="hundred">
+        <item>100</item>
+    </rule>
+
+    <rule id="number">
+        <one-of>
+            <item>
+                <ruleref uri="#oneTen"/>
+                <tag>out.unit = rules.oneTen;</tag>
+            </item>
+            <item>
+                <ruleref uri="#1119"/>
+                <tag>out.teen = rules.1119;</tag>
+            </item>
+            <item>
+                <ruleref uri="#biggies"/>
+                <tag>out.big = rules.biggies;</tag>
+            </item>
+            <item>
+                <ruleref uri="#biggies"/>
+                <ruleref uri="#oneTen"/>
+                <tag>out.big = rules.biggies</tag>
+                <tag>out.number = rules.oneTen</tag>
+            </item>
+            <item>
+                <ruleref uri="#hundred"/>
+                <ruleref uri="#biggies"/>
+                <ruleref uri="#oneTen"/>
+                <tag>out.ton = rules.hundred</tag>
+                <tag>out.big = rules.biggies</tag>
+                <tag>out.unit = rules.oneTen</tag>
+            </item>
+
+        </one-of>
+    </rule>
+
+    <rule id="plus">
+        <one-of>
+            <item>plus</item>
+            <item>minus</item>
+            <item>times by</item>
+            <item>divided by</item>
+        </one-of>
+    </rule>
+
+    <rule id="equals">
+        <item>Equals</item>
+    </rule>
+
+    <rule id="equation">
+        <item>
+            <ruleref uri="#number"/>
+            <ruleref uri="#equation"/>
+            <ruleref uri="#number"/>
+            <ruleref uri="#equals"/>
+            <rulreref uri="#number"/>
+            <tag>
+                out.number = rules.number;
+            </tag>
+        </item>
+    </rule>
+</grammar>

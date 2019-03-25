@@ -15,7 +15,7 @@
       Welcome to Rob's trivia game. first let's get your name. please spell out your name using the nato alphabet. When you are done say, finished. 
       I will repeat the words after you, if I get it wrong just say start over.
     </prompt>
-    <goto next="#level_two"/>
+    <goto next="#l3_q1"/>
     </block>
   </form>
         
@@ -494,9 +494,32 @@
   </form>
 
 
-  <!-- round three, riddles -->
+  <!-- round three, number -->
 
+  <form id="level_three">
+    <block>
+      <prompt>
+        Welcome to level three. You have <value expr="score"/> points and 
+        <value expr="lives"/> lives remaining. In this round I will give you a random
+        number and then you will get five more random numbers. You need to create 
+        an equation that will get as close as possible to the random number using 
+        the five numbers I give you. For example if the number is ten and you are given
+        five and two as your numbers, you can multiply two by five to get ten. If you 
+        are correct we will add the random number to your score, if you are off by more 
+        than two we will take the random number off your score. 
+      </prompt>
+    </block>
+  </form>
 
+  <form id="l3_q1">
+    <field name="numbers">
+      <assign name="challenge" expr="randing(gen_num_list(101,1001))"/>
+      <prompt>
+        Your challenge number is <value expr="challenge"/>
+      </prompt> 
+    </field>
+  
+  </form>
 
 
   <!-- finish game -->
