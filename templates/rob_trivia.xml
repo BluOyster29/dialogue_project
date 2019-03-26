@@ -183,7 +183,7 @@
     <field name = "q3">
         <grammar src="grammars/easy_grammar.xml"/>
         <prompt bargein ="false">
-            <grammar src="grammars/easy_grammar.xml#q3"/>
+            <grammar src="grammars/easy_grammar.xml"/>
             Getting better, nice! Here comes another.
             Red lorry yellow lorry red lorry yellow lorry
         </prompt>
@@ -259,7 +259,7 @@
     <field name = "q5">
         <grammar src="grammars/easy_grammar.xml"/>
         <prompt bargein ="false">
-            <grammar src="grammars/easy_grammar.xml#q5"/>
+            <grammar src="grammars/easy_grammar.xml"/>
             Here is the final tongue twister. You currently have <value expr="score"/> points. It's a bit tougher than the last.
             Fred fed Ted bread and Ted fed Fred Bread 
         </prompt>
