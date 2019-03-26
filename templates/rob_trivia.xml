@@ -542,7 +542,7 @@
         <assign name="a" expr="maths$.interpretation.a"/>
         <assign name="arith" expr="maths$.interpretation.arith"/>
         <assign name="b" expr="maths$.interpretation.b"/>
-        <assign name="final" expr="maths$.interpretation.resut"/>
+        <assign name="final" expr="maths$.interpretation.result"/>
         <prompt>
           
           You said
