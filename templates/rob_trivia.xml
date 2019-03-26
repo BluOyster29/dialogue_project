@@ -7,6 +7,11 @@
   <script src="{{url_for('static', filename='game_script.js')}}"></script>
   <!-- welcome screen for game-->
 
+  <var name="a"/>
+  <var name="arith"/>
+  <var name="b"/>
+  <var name="final"/>
+
   <form id="welcome">
     <block>
       <goto next="#play"/>
@@ -534,16 +539,20 @@
       <if cond="maths == 'finished'">
         <goto next="finished"/>
       <else/>
+        <assign name="a" expr="maths$.interpretation.a"/>
+        <assign name="arith" expr="maths$.interpretation.arith"/>
+        <assign name="b" expr="maths$.interpretation.b"/>
+        <assign name="final" expr="maths$.interpretation.final"/>
         <prompt>
           
           You said
           <value expr="maths"/>.
           we got 
-          <value expr="maths$.interpretation.number1"/>  
-          <value expr="maths$.interpretation.plus"/>  
-          <value expr="maths$.interpretation.number2"/> 
+          <value expr="maths$.interpretation.a"/>  
+          <value expr="maths$.interpretation.arith"/>  
+          <value expr="maths$.interpretation.b"/> 
           is 
-          <value expr="maths$.interpretation.result"/>        
+          <value expr="maths$.interpretation.final"/>        
         
         </prompt>
         <reprompt/>

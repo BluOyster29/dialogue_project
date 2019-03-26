@@ -134,10 +134,10 @@
             equals
             <ruleref uri="#result"/>
             <tag>
-                out.number1 = rules.number1;
-                out.plus = rules.plus;
-                out.mumber2 = rules.number2;
-                out.result = rules.result;
+                out.a = rules.number1;
+                out.arith = rules.plus;
+                out.b = rules.number2;
+                out.final = rules.result;
             </tag>
         </item>
     </rule>
