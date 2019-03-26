@@ -92,7 +92,7 @@
         <goto next="#question_one"/>
       <elseif cond="chooseDiff == 'Hard'"/>
         <prompt>
-          You have chosen hard, you have three tries that will reset per round but no lives. Good luck
+          You have chosen hard, you have three tries that will reset per round but only one life. Good luck
         </prompt>
         <assign name="lives" expr="hard(lives)"/>
         <goto next="#question_one"/>
