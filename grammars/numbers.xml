@@ -1,10 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <grammar version="1.0" tag-format="semantics/1.0" root="number">
-    <rule id="number">
-    <item repeat="1-">
-      <ruleref uri="#digit"></ruleref>
-    </item>
-  </rule>
+    <rule id="number1">
+        <one-of>
+            <item>1</item>
+            <item>2</item>
+            <item>3</item>
+            <item>4</item>
+            <item>5</item>
+            <item>6</item>
+            <item>7</item>
+            <item>8</item>
+            <item>9</item>
+            <item>10</item>
+        </one-of>
+    </rule>
+
+    <rule id="number2">
+        <one-of>
+            <item>1</item>
+            <item>2</item>
+            <item>3</item>
+            <item>4</item>
+            <item>5</item>
+            <item>6</item>
+            <item>7</item>
+            <item>8</item>
+            <item>9</item>
+            <item>10</item>
+        </one-of>
+    </rule>
 
     <rule id="result">
     <item repeat="1-">
@@ -104,12 +128,15 @@
     
     <rule id="equation">
         <item>
-            <ruleref uri="#number"/>
+            <ruleref uri="#number1"/>
             <ruleref uri="#plus"/>
-            <ruleref uri="#number"/>
-            <ruleref uri="#equals"/>
+            <ruleref uri="#number2"/>
+            equals
             <ruleref uri="#result"/>
             <tag>
+                out.number1 = rules.number1;
+                out.plus = rules.plus;
+                out.mumber2 = rules.number2;
                 out.result = rules.result;
             </tag>
         </item>

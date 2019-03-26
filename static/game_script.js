@@ -8,13 +8,12 @@ var end;
 var challenge;
 var price;
 var playerName = "Robby Bob Socks";
-var bigNumber = randint([25,50,75,100]);
-var challenge = randint(gen_num_list(100,1000));
+var bigNumber = randint([5,10,20]);
+var challenge = randint(gen_num_list(10,100));
 var s1 = randint(gen_num_list(1,10));
 var s2 = randint(gen_num_list(1,10));
 var s3 = randint(gen_num_list(1,10));
-var s4 = randint(gen_num_list(1,10));
-var s5 = randint(gen_num_list(1,10));
+
 
 
 
