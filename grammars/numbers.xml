@@ -137,7 +137,7 @@
                 out.a = rules.number1;
                 out.arith = rules.plus;
                 out.b = rules.number2;
-                out.final = rules.result;
+                out.result = rules.result;
             </tag>
         </item>
     </rule>

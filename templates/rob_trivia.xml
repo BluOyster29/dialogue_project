@@ -10,7 +10,7 @@
   <var name="a"/>
   <var name="arith"/>
   <var name="b"/>
-  <var name="final"/>
+  <var name="result"/>
 
   <form id="welcome">
     <block>
@@ -542,17 +542,17 @@
         <assign name="a" expr="maths$.interpretation.a"/>
         <assign name="arith" expr="maths$.interpretation.arith"/>
         <assign name="b" expr="maths$.interpretation.b"/>
-        <assign name="final" expr="maths$.interpretation.final"/>
+        <assign name="final" expr="maths$.interpretation.resut"/>
         <prompt>
           
           You said
           <value expr="maths"/>.
           we got 
-          <value expr="maths$.interpretation.a"/>  
-          <value expr="maths$.interpretation.arith"/>  
-          <value expr="maths$.interpretation.b"/> 
+          <value expr="a"/>  
+          <value expr="arith"/>  
+          <value expr="b"/> 
           is 
-          <value expr="maths$.interpretation.final"/>        
+          <value expr="result"/>        
         
         </prompt>
         <reprompt/>
