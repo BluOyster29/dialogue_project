@@ -7,13 +7,16 @@ var start;
 var end;
 var challenge;
 var price;
+/*
+var a;
+var b;
 var playerName = "Robby Bob Socks";
 var bigNumber = randint([5,10,20]);
 var challenge = randint(gen_num_list(10,100));
 var s1 = randint(gen_num_list(1,10));
 var s2 = randint(gen_num_list(1,10));
 var s3 = randint(gen_num_list(1,10));
-
+*/
 
 
 
@@ -86,7 +89,7 @@ function minus_point(score) {
     return score - 1;
 }
 
-//for keeping time (not working)
+//for keeping time 
 function start(start) {
     start = new Date();
     return start
