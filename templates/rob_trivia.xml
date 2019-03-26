@@ -9,7 +9,7 @@
 
   <form id="welcome">
     <block>
-      <goto next="#level_three"/>
+      <goto next="#play"/>
     <assign name="start" expr="start(start)"/>
     <prompt bargein ="false">
       Welcome to Rob's trivia game. first let's get your name. please spell out your name using the nato alphabet. When you are done say, finished. 
