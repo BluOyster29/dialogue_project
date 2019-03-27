@@ -8,7 +8,7 @@ The game is a simple trivia game with two rounds, there is room for expansion I 
 
 ## Flowchart 
 
-![game_flowchart](/images/flow_chart.png)
+![game_flowchart](/images/flow_chart.jpg)
 
 ### Form 1: Welcome
 This form welcomes the player to the game and invites them to provide their name using the nato alphabet. 
