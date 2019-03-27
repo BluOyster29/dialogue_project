@@ -6,6 +6,10 @@ The aim of this project was to create a vxml based video game. I have chosen a s
 ## The Game
 The game is a simple trivia game with two rounds, there is room for expansion I just need to come up with extra wordplay games. I will explain next each vxml form.
 
+## Flowchart 
+
+![game_flowchart](/images/flow_chart.png)
+
 ### Form 1: Welcome
 This form welcomes the player to the game and invites them to provide their name using the nato alphabet. 
 
